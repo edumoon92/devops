@@ -7,6 +7,14 @@ Project structure:
 └── README.md
 ```
 
+```
+.
+└── devops
+    └── portainer
+        ├── docker-compose.yml
+        └── README.md
+```        
+        
 # References
 - https://github.com/docker/awesome-compose
 - https://github.com/dockersamples/101-tutorial
