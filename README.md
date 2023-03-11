@@ -9,9 +9,9 @@ Project structure:
 
 # References
 - https://github.com/docker/awesome-compose
+- https://github.com/dockersamples/101-tutorial
 
-
-## Basic setups for different platforms (not production ready - useful for personal use)
+## Basic setups for different platforms
 
 - [`Gitea / PostgreSQL`](gitea-postgres)
 - [`Nextcloud / PostgreSQL`](nextcloud-postgres)
