@@ -10,6 +10,7 @@ Project structure:
 # References
 - https://github.com/docker/awesome-compose
 - https://github.com/dockersamples/101-tutorial
+- https://github.com/dockersamples
 
 ## Basic setups for different platforms
 
