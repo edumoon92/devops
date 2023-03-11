@@ -8,29 +8,6 @@ Project structure:
 ```
 
 
-# Awesome Compose [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-
-![logo](awesome-compose.jpg)
-
-> A curated list of Docker Compose samples.
-
-These samples provide a starting point for how to integrate different services using a Compose file and to manage their deployment with Docker Compose.
-
-> **Note**
-> The following samples are intended for use in local development environments such as project setups, tinkering with software stacks, etc. These samples must not be deployed in production environments.
-
-<!--lint disable awesome-toc-->
-## Contents
-
-- [Samples of Docker Compose applications with multiple integrated services](#samples-of-docker-compose-applications-with-multiple-integrated-services).
-- [Single service samples](#single-service-samples).
-- [Basic setups for different platforms (not production ready - useful for personal use)](#basic-setups-for-different-platforms-not-production-ready---useful-for-personal-use).
-
-## Samples of Docker Compose applications with multiple integrated services
-
-<a href="https://docs.docker.com/desktop/dev-environments/"><img src="icon_devenvs.svg" alt="Use with Docker Dev Environments" height="30" align="top"/></a> Icon indicates Sample is compatible with [Docker Dev Environments](https://docs.docker.com/desktop/dev-environments/) in Docker Desktop version 4.10 or later.
-
-<a href="https://docs.docker.com/desktop/wasm/"><img src="icon_wasm.svg" alt="Docker + wasm" height="30" align="top"/></a> Icon indicates Sample is compatible with [Docker+Wasm](https://docs.docker.com/desktop/wasm/).
 
 - [`ASP.NET / MS-SQL`](aspnet-mssql) - Sample ASP.NET core application
 with MS SQL server database.
@@ -92,11 +69,6 @@ with Spring framework and a Postgres database.&nbsp;<a href="spring-postgres"><i
 
 <!--lint disable awesome-toc-->
 
-## Getting started
-
-These instructions will get you through the bootstrap phase of creating and
-deploying samples of containerized applications with Docker Compose.
-
 ### Prerequisites
 
 - Make sure that you have Docker and Docker Compose installed
@@ -114,23 +86,10 @@ a local environment by going into the root directory of each one and executing:
 
 ```console
 docker compose up -d
-```
-
-Check the `README.md` of each sample to get more details on the structure and
-what is the expected output.
-To stop and remove all containers of the sample application run:
-
-```console
 docker compose down
 ```
 
 ### Quickstart guides
 
 In addition to all the ready to run Compose samples listed above the folder [official-documentation-samples](official-documentation-samples/README.md) contains quickstart guides. Each of these step by step guides explain which files need to be created to build and run a Docker Compose application.
-
-<!--lint disable awesome-toc-->
-## Contribute
-
-We welcome examples that help people understand how to use Docker Compose for
-common applications. Check the [Contribution Guide](CONTRIBUTING.md) for more details. 
 
