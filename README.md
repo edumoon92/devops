@@ -7,7 +7,8 @@ Project structure:
 └── README.md
 ```
 
-
+# References
+- https://github.com/docker/awesome-compose
 
 - [`ASP.NET / MS-SQL`](aspnet-mssql) - Sample ASP.NET core application
 with MS SQL server database.
