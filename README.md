@@ -4,10 +4,72 @@ Project structure:
 
 ```
 .
-└─ devops/
-   └─ portainer/
-      ├─ docker-compose.yml
-      └─ README.md
+├── docker
+│   ├── nodejs-web
+│   │   ├── docker-compose.yml
+│   │   ├── Dockerfile
+│   │   ├── index.js
+│   │   ├── index.js.new
+│   │   ├── index.js.old
+│   │   └── package.json
+│   ├── portainer
+│   │   ├── docker-compose.yml
+│   │   └── README.md
+│   ├── python-web
+│   │   ├── docker-compose.yml
+│   │   ├── Dockerfile
+│   │   └── requirements.txt
+│   └── react-nodejs-mysql
+│       ├── docker-compose-react-nodejs-mysql
+│       │   ├── bezkoder-api
+│       │   │   ├── app
+│       │   │   │   ├── config
+│       │   │   │   │   └── db.config.js
+│       │   │   │   ├── controllers
+│       │   │   │   │   └── tutorial.controller.js
+│       │   │   │   ├── models
+│       │   │   │   │   ├── index.js
+│       │   │   │   │   └── tutorial.model.js
+│       │   │   │   └── routes
+│       │   │   │       └── turorial.routes.js
+│       │   │   ├── Dockerfile
+│       │   │   ├── package.json
+│       │   │   ├── README.md
+│       │   │   └── server.js
+│       │   ├── bezkoder-ui
+│       │   │   ├── Dockerfile
+│       │   │   ├── package.json
+│       │   │   ├── public
+│       │   │   │   ├── favicon.ico
+│       │   │   │   ├── index.html
+│       │   │   │   ├── logo192.png
+│       │   │   │   ├── logo512.png
+│       │   │   │   ├── manifest.json
+│       │   │   │   └── robots.txt
+│       │   │   ├── react-crud-example-web-api-demo.png
+│       │   │   ├── README.md
+│       │   │   └── src
+│       │   │       ├── App.css
+│       │   │       ├── App.js
+│       │   │       ├── components
+│       │   │       │   ├── add-tutorial.component.js
+│       │   │       │   ├── tutorial.component.js
+│       │   │       │   └── tutorials-list.component.js
+│       │   │       ├── http-common.js
+│       │   │       ├── index.js
+│       │   │       ├── logo.svg
+│       │   │       ├── services
+│       │   │       │   └── tutorial.service.js
+│       │   │       ├── serviceWorker.js
+│       │   │       └── setupTests.js
+│       │   ├── docker-compose.yml
+│       │   └── README.md
+│       ├── docker-compose.yml
+│       ├── package.json
+│       └── README.md
+└── gitlab
+    └── docker-compose.yml
+
 ```        
         
 # References
