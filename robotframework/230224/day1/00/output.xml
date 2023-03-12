@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230223 22:35:43.545" rpa="false" schemaversion="3">
+<suite id="s1" name="01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07">
+<suite id="s1-s1" name="01" source="/home/henry/robot/day1/00/01.robot">
+<test id="s1-s1-t1" name="My Test" line="9">
+<kw name="Log" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230223 22:35:43.700" level="INFO">Hello, world!</msg>
+<status status="PASS" starttime="20230223 22:35:43.698" endtime="20230223 22:35:43.701"/>
+</kw>
+<kw name="My Keyword">
+<arg>/tmp</arg>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<msg timestamp="20230223 22:35:43.704" level="INFO" html="true">Directory '&lt;a href="file:///tmp"&gt;/tmp&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230223 22:35:43.703" endtime="20230223 22:35:43.704"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.702" endtime="20230223 22:35:43.705"/>
+</kw>
+<doc>Example test</doc>
+<status status="PASS" starttime="20230223 22:35:43.696" endtime="20230223 22:35:43.705"/>
+</test>
+<test id="s1-s1-t2" name="Another Test" line="14">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Hello, world!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.708" endtime="20230223 22:35:43.709"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.706" endtime="20230223 22:35:43.710"/>
+</test>
+<doc>Example using the space separated plain text format.</doc>
+<status status="PASS" starttime="20230223 22:35:43.653" endtime="20230223 22:35:43.712"/>
+</suite>
+<suite id="s1-s2" name="02" source="/home/henry/robot/day1/00/02.robot">
+<test id="s1-s2-t1" name="시험항목 1.1" line="9">
+<kw name="Log" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230223 22:35:43.731" level="INFO">Hello, world!</msg>
+<status status="PASS" starttime="20230223 22:35:43.730" endtime="20230223 22:35:43.731"/>
+</kw>
+<kw name="시험 내용 - 디렉토리 존재 확인">
+<arg>/tmp</arg>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<msg timestamp="20230223 22:35:43.734" level="INFO" html="true">Directory '&lt;a href="file:///tmp"&gt;/tmp&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230223 22:35:43.733" endtime="20230223 22:35:43.734"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.731" endtime="20230223 22:35:43.735"/>
+</kw>
+<doc>/tmp 폴더 존재 여부 확인</doc>
+<status status="PASS" starttime="20230223 22:35:43.726" endtime="20230223 22:35:43.735"/>
+</test>
+<test id="s1-s2-t2" name="시험항목 1.2" line="14">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Hello, world!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.738" endtime="20230223 22:35:43.739"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.737" endtime="20230223 22:35:43.740"/>
+</test>
+<doc>첫 번째 예제 - 평서문 디렉토리 존재 여부 확인</doc>
+<status status="PASS" starttime="20230223 22:35:43.715" endtime="20230223 22:35:43.740"/>
+</suite>
+<suite id="s1-s3" name="03" source="/home/henry/robot/day1/00/03.robot">
+<test id="s1-s3-t1" name="TC1 - 디렉토리 테스트" line="9">
+<kw name="Log" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230223 22:35:43.750" level="INFO">Hello, world!</msg>
+<status status="PASS" starttime="20230223 22:35:43.750" endtime="20230223 22:35:43.750"/>
+</kw>
+<kw name="디렉테리 존재 확인">
+<arg>/tmp</arg>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<msg timestamp="20230223 22:35:43.752" level="INFO" html="true">Directory '&lt;a href="file:///tmp"&gt;/tmp&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230223 22:35:43.751" endtime="20230223 22:35:43.752"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.751" endtime="20230223 22:35:43.752"/>
+</kw>
+<doc>Example test</doc>
+<status status="PASS" starttime="20230223 22:35:43.748" endtime="20230223 22:35:43.752"/>
+</test>
+<test id="s1-s3-t2" name="TC2 - 메시지 테스트" line="14">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Hello, world!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.754" endtime="20230223 22:35:43.755"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.753" endtime="20230223 22:35:43.755"/>
+</test>
+<doc>Example using the space separated plain text format.</doc>
+<status status="PASS" starttime="20230223 22:35:43.744" endtime="20230223 22:35:43.755"/>
+</suite>
+<suite id="s1-s4" name="04" source="/home/henry/robot/day1/00/04.robot">
+<test id="s1-s4-t1" name="My Test" line="9">
+<kw name="Log" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230223 22:35:43.761" level="INFO">Hello, world!</msg>
+<status status="PASS" starttime="20230223 22:35:43.760" endtime="20230223 22:35:43.761"/>
+</kw>
+<kw name="My Keyword">
+<arg>/tmp</arg>
+<kw name="Directory Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given path points to an existing directory.</doc>
+<msg timestamp="20230223 22:35:43.762" level="INFO" html="true">Directory '&lt;a href="file:///tmp"&gt;/tmp&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230223 22:35:43.761" endtime="20230223 22:35:43.762"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.761" endtime="20230223 22:35:43.762"/>
+</kw>
+<doc>Example test</doc>
+<status status="PASS" starttime="20230223 22:35:43.760" endtime="20230223 22:35:43.763"/>
+</test>
+<test id="s1-s4-t2" name="Another Test" line="12">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Hello, world!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.763" endtime="20230223 22:35:43.764"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.763" endtime="20230223 22:35:43.764"/>
+</test>
+<doc>Example using the pipe separated plain text format.</doc>
+<status status="PASS" starttime="20230223 22:35:43.756" endtime="20230223 22:35:43.765"/>
+</suite>
+<suite id="s1-s5" name="05" source="/home/henry/robot/day1/00/05.robot">
+<test id="s1-s5-t1" name="TestCase 1" line="6">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>1</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.769" endtime="20230223 22:35:43.769"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>2</arg>
+<arg>3</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230223 22:35:43.770" level="FAIL">2 != 3</msg>
+<status status="FAIL" starttime="20230223 22:35:43.769" endtime="20230223 22:35:43.770"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>3</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20230223 22:35:43.770" endtime="20230223 22:35:43.770"/>
+</kw>
+<status status="FAIL" starttime="20230223 22:35:43.768" endtime="20230223 22:35:43.770">2 != 3</status>
+</test>
+<status status="FAIL" starttime="20230223 22:35:43.766" endtime="20230223 22:35:43.771"/>
+</suite>
+<suite id="s1-s6" name="06" source="/home/henry/robot/day1/00/06.robot">
+<test id="s1-s6-t1" name="TestCase 1" line="6">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>1</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.774" endtime="20230223 22:35:43.775"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>2</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.775" endtime="20230223 22:35:43.775"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>3</arg>
+<arg>3</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.775" endtime="20230223 22:35:43.776"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.774" endtime="20230223 22:35:43.776"/>
+</test>
+<test id="s1-s6-t2" name="TestCase 2" line="11">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>1</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.777" endtime="20230223 22:35:43.777"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>3</arg>
+<arg>3</arg>
+<arg>EqualCheck</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.777" endtime="20230223 22:35:43.778"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.776" endtime="20230223 22:35:43.778"/>
+</test>
+<status status="PASS" starttime="20230223 22:35:43.772" endtime="20230223 22:35:43.778"/>
+</suite>
+<suite id="s1-s7" name="07" source="/home/henry/robot/day1/00/07.robot">
+<test id="s1-s7-t1" name="TestCase 1" line="4">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>1</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.782" endtime="20230223 22:35:43.783"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>2</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.783" endtime="20230223 22:35:43.783"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>3</arg>
+<arg>3</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.783" endtime="20230223 22:35:43.784"/>
+</kw>
+<status status="PASS" starttime="20230223 22:35:43.782" endtime="20230223 22:35:43.784"/>
+</test>
+<test id="s1-s7-t2" name="TestCase 2" line="9">
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>1</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230223 22:35:43.785" endtime="20230223 22:35:43.785"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>2</arg>
+<arg>3</arg>
+<arg>같은지?</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230223 22:35:43.785" level="FAIL">같은지?: 2 != 3</msg>
+<status status="FAIL" starttime="20230223 22:35:43.785" endtime="20230223 22:35:43.786"/>
+</kw>
+<status status="FAIL" starttime="20230223 22:35:43.784" endtime="20230223 22:35:43.786">같은지?: 2 != 3</status>
+</test>
+<status status="FAIL" starttime="20230223 22:35:43.779" endtime="20230223 22:35:43.786"/>
+</suite>
+<status status="FAIL" starttime="20230223 22:35:43.552" endtime="20230223 22:35:43.787"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="11" fail="2" skip="0" id="s1" name="01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="01">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.01</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="02">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.02</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s3" name="03">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.03</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s4" name="04">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.04</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s5" name="05">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.05</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s6" name="06">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.06</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s7" name="07">01 &amp; 02 &amp; 03 &amp; 04 &amp; 05 &amp; 06 &amp; 07.07</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
