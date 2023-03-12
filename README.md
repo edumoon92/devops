@@ -1,29 +1,13 @@
 # devops docker compose samples
 
 Project structure:
-- Root Folder
-    - index.html (homepage)
-    - about.html (about page)
-    - blog/
-        - index.html (blog archive page)
-        - post1.html (individual blog post)
-        - post2.html (individual blog post)
-        - post3.html (individual blog post)
-    - assets/
-        - css/
-            - style.css (CSS stylesheet)
-        - js/
-            - script.js (JavaScript file)
-        - img/
-            - logo.png (website logo)
-            - background.jpg (background image)
 
 ```
 .
-└── devops
-    └── portainer
-        ├── docker-compose.yml
-        └── README.md
+└─ devops/
+   └─ portainer/
+      ├─ docker-compose.yml
+      └─ README.md
 ```        
         
 # References
