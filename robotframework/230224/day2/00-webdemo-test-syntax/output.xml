@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230224 08:20:56.864" rpa="false" schemaversion="3">
+<suite id="s1" name="40-Ssh" source="/home/henry/robot/day1/40/40-ssh.robot">
+<test id="s1-t1" name="SSH Test Example" line="11">
+<kw name="Open Connection" library="SSHLibrary">
+<arg>${HOSTNAME}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" starttime="20230224 08:20:57.160" endtime="20230224 08:20:57.161"/>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<msg timestamp="20230224 08:20:57.161" level="INFO">Logging into '192.168.56.101:22' as 'henry'.</msg>
+<msg timestamp="20230224 08:20:58.603" level="INFO">Read output: Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-122-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu 23 Feb 2023 11:20:57 PM UTC
+
+  System load:  0.12              Processes:               143
+  Usage of /:   39.6% of 8.87GB   Users logged in:         1
+  Memory usage: 15%               IPv4 address for enp0s3: 10.0.2.15
+  Swap usage:   0%                IPv4 address for enp0s8: 192.168.56.101
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+149 updates can be applied immediately.
+86 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+New release '22.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Thu Feb 23 23:19:58 2023 from 192.168.56.105
+henry@henrymoon:~$</msg>
+<status status="PASS" starttime="20230224 08:20:57.161" endtime="20230224 08:20:58.603"/>
+</kw>
+<kw name="Execute Command" library="SSHLibrary">
+<var>${output}</var>
+<arg>${COMMAND}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<msg timestamp="20230224 08:20:58.606" level="INFO">Executing command 'ls'.</msg>
+<msg timestamp="20230224 08:20:58.622" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20230224 08:20:58.622" level="INFO">${output} = </msg>
+<status status="PASS" starttime="20230224 08:20:58.605" endtime="20230224 08:20:58.622"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230224 08:20:58.623" endtime="20230224 08:20:58.623"/>
+</kw>
+<kw name="Close Connection" library="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" starttime="20230224 08:20:58.623" endtime="20230224 08:20:58.624"/>
+</kw>
+<status status="PASS" starttime="20230224 08:20:57.160" endtime="20230224 08:20:58.624"/>
+</test>
+<status status="PASS" starttime="20230224 08:20:56.865" endtime="20230224 08:20:58.625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="40-Ssh">40-Ssh</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

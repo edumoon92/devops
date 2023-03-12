@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230223 21:56:36.901" rpa="false" schemaversion="3">
+<suite id="s1" name="Keyword Driven" source="/home/henry/robot/day1/40/calc_test/testcases/keyword_driven.robot">
+<test id="s1-t1" name="Push button" line="16">
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>1</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.935" endtime="20230223 21:56:36.935"/>
+</kw>
+<kw name="Result Should Be" library="CalculatorLibrary">
+<arg>1</arg>
+<doc>Verifies that the current result is ``expected``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.935" endtime="20230223 21:56:36.935"/>
+</kw>
+<status status="PASS" starttime="20230223 21:56:36.934" endtime="20230223 21:56:36.935"/>
+</test>
+<test id="s1-t2" name="Push multiple buttons" line="20">
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>1</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.936" endtime="20230223 21:56:36.937"/>
+</kw>
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>2</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.937" endtime="20230223 21:56:36.937"/>
+</kw>
+<kw name="Result Should Be" library="CalculatorLibrary">
+<arg>12</arg>
+<doc>Verifies that the current result is ``expected``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.937" endtime="20230223 21:56:36.937"/>
+</kw>
+<status status="PASS" starttime="20230223 21:56:36.936" endtime="20230223 21:56:36.937"/>
+</test>
+<test id="s1-t3" name="Simple calculation" line="25">
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>1</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.938" endtime="20230223 21:56:36.938"/>
+</kw>
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>+</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.939" endtime="20230223 21:56:36.939"/>
+</kw>
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>2</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.939" endtime="20230223 21:56:36.939"/>
+</kw>
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>=</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.939" endtime="20230223 21:56:36.940"/>
+</kw>
+<kw name="Result Should Be" library="CalculatorLibrary">
+<arg>3</arg>
+<doc>Verifies that the current result is ``expected``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.940" endtime="20230223 21:56:36.940"/>
+</kw>
+<status status="PASS" starttime="20230223 21:56:36.938" endtime="20230223 21:56:36.940"/>
+</test>
+<test id="s1-t4" name="Longer calculation" line="32">
+<kw name="Push Buttons" library="CalculatorLibrary">
+<arg>5 + 4 - 3 * 2 / 1 =</arg>
+<doc>Pushes the specified ``buttons``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.941" endtime="20230223 21:56:36.941"/>
+</kw>
+<kw name="Result Should Be" library="CalculatorLibrary">
+<arg>3</arg>
+<doc>Verifies that the current result is ``expected``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.941" endtime="20230223 21:56:36.942"/>
+</kw>
+<status status="PASS" starttime="20230223 21:56:36.940" endtime="20230223 21:56:36.942"/>
+</test>
+<test id="s1-t5" name="Clear" line="36">
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>1</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.943" endtime="20230223 21:56:36.943"/>
+</kw>
+<kw name="Push Button" library="CalculatorLibrary">
+<arg>C</arg>
+<doc>Pushes the specified ``button``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.943" endtime="20230223 21:56:36.943"/>
+</kw>
+<kw name="Result Should Be" library="CalculatorLibrary">
+<arg>${EMPTY}</arg>
+<doc>Verifies that the current result is ``expected``.</doc>
+<status status="PASS" starttime="20230223 21:56:36.943" endtime="20230223 21:56:36.944"/>
+</kw>
+<status status="PASS" starttime="20230223 21:56:36.942" endtime="20230223 21:56:36.945"/>
+</test>
+<doc>Example test cases using the keyword-driven testing approach.
+
+All tests contain a workflow constructed from keywords in
+``CalculatorLibrary.py``. Creating new tests or editing
+existing is easy even for people without programming skills.
+
+The _keyword-driven_ appoach works well for normal test
+automation, but the _gherkin_ style might be even better
+if also business people need to understand tests. If the
+same workflow needs to repeated multiple times, it is best
+to use to the _data-driven_ approach.</doc>
+<status status="PASS" starttime="20230223 21:56:36.902" endtime="20230223 21:56:36.945"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Keyword Driven">Keyword Driven</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
