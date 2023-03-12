@@ -1,0 +1,16 @@
+1678616977815	geckodriver	INFO	Listening on 127.0.0.1:45455
+1678616977832	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45933" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileizAKAx"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: glxtest: libEGL initialize failed
+[GFX1-]: glxtest: libEGL initialize failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+DevTools listening on ws://localhost:45933/devtools/browser/44b90caf-f313-4a91-81d7-47bee25a4834
+1678616983027	Marionette	INFO	Listening on port 34591
+1678616983155	Marionette	WARN	TLS certificate errors will be ignored for this session
+1678616988410	Marionette	INFO	Stopped listening on port 34591
+!!! error running onStopped callback: TypeError: callback is not a function
+1678616989354	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 61"  data: no] Stack trace: stop()@TargetObserver.jsm:61
+unwatchForTabs()@TargetList.jsm:71
+unwatchForTargets()@TargetList.jsm:38
+destructor()@TargetList.jsm:110
+close()@RemoteAgent.jsm:124

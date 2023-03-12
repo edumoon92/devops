@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230312 10:31:25.392" rpa="false" schemaversion="3">
+<suite id="s1" name="Test-Selenium-Grid" source="/root/tests/test-selenium-grid.robot">
+<test id="s1-t1" name="Remote Selenium Test" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230312 10:31:26.371" level="INFO">Opening browser 'firefox' to base url 'https://www.google.com' through remote server at 'http://192.168.56.101:4444/wd/hub'.</msg>
+<status status="PASS" starttime="20230312 10:31:26.369" endtime="20230312 10:31:34.289"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=q</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230312 10:31:34.291" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20230312 10:31:34.290" endtime="20230312 10:31:34.756"/>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20230312 10:31:34.756" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20230312 10:31:34.756" endtime="20230312 10:31:35.214"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230312 10:31:35.284" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20230312 10:31:35.214" endtime="20230312 10:31:35.284"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230312 10:31:35.285" endtime="20230312 10:31:36.461"/>
+</kw>
+<status status="PASS" starttime="20230312 10:31:26.367" endtime="20230312 10:31:36.463"/>
+</test>
+<status status="PASS" starttime="20230312 10:31:25.395" endtime="20230312 10:31:36.467"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Selenium-Grid">Test-Selenium-Grid</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
