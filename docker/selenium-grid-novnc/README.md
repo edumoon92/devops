@@ -1,3 +1,4 @@
-# Youtubes
+# TODOS
 
-https://youtu.be/ryNFaorJaSM
+- no vnc
+- selenium grid
