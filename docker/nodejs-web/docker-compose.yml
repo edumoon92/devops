@@ -1,0 +1,29 @@
+version: '3.0'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: tta123!@
+      MYSQL_DB: mydb
+    command: npm start
+
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: tta123!@
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
