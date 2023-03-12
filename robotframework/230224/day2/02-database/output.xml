@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230224 16:21:34.468" rpa="false" schemaversion="3">
+<suite id="s1" name="02-Database-Vm-1" source="/home/henry/robot/more/02-database-vm-1.robot">
+<test id="s1-t1" name="Verify Successful creation of Table" line="13">
+<kw name="Connect DB">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPassword}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20230224 16:21:34.518" level="INFO">Connecting using : pymysql.connect(db=testdb, user=henry, passwd=tta123!@, host=192.168.56.101, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20230224 16:21:34.497" endtime="20230224 16:21:34.525"/>
+</kw>
+<status status="PASS" starttime="20230224 16:21:34.496" endtime="20230224 16:21:34.525"/>
+</kw>
+<status status="PASS" starttime="20230224 16:21:34.496" endtime="20230224 16:21:34.528"/>
+</test>
+<test id="s1-t2" name="Verify Data Insertion in Table" line="17">
+<kw name="Execute Sql Script" library="DatabaseLibrary">
+<var>${output}</var>
+<arg>./insert.sql</arg>
+<doc>Executes the content of the `sqlScriptFileName` as SQL commands. Useful for setting the database to a known
+state before running your tests, or clearing out your test data after running each a test. Set optional input
+`sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20230224 16:21:34.532" level="INFO">Executing : Execute SQL Script  |  ./insert.sql </msg>
+<msg timestamp="20230224 16:21:34.539" level="INFO">${output} = None</msg>
+<status status="PASS" starttime="20230224 16:21:34.532" endtime="20230224 16:21:34.539"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230224 16:21:34.539" level="INFO">Argument types are:
+&lt;class 'NoneType'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230224 16:21:34.539" endtime="20230224 16:21:34.540"/>
+</kw>
+<status status="PASS" starttime="20230224 16:21:34.531" endtime="20230224 16:21:34.540"/>
+</test>
+<doc>Database Testing in Robot Framework</doc>
+<status status="PASS" starttime="20230224 16:21:34.468" endtime="20230224 16:21:34.540"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="02-Database-Vm-1">02-Database-Vm-1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

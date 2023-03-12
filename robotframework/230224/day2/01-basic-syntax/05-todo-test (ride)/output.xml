@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230224 15:22:18.947" rpa="false" schemaversion="3">
+<suite id="s1" name="Project3" source="/home/henry/robot/day2/05-todo-test (ride)/project3.robot">
+<test id="s1-t1" name="TC1-List" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230224 15:22:19.114" level="INFO">Opening browser 'chrome' to base url 'http://todomvc.com/examples/vue/'.</msg>
+<status status="PASS" starttime="20230224 15:22:19.114" endtime="20230224 15:22:20.761"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>${todos}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230224 15:22:20.804" level="INFO">Typing text 'todo 1' into text field 'css=input.new-todo'.</msg>
+<status status="PASS" starttime="20230224 15:22:20.764" endtime="20230224 15:22:20.939"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230224 15:22:20.941" level="INFO">Sending key(s) ('ENTER',) to css=input.new-todo element.</msg>
+<msg timestamp="20230224 15:22:21.241" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230224 15:22:21.241" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230224 15:22:20.940" endtime="20230224 15:22:21.279"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>${todos}[1]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230224 15:22:21.281" level="INFO">Typing text 'todo 2' into text field 'css=input.new-todo'.</msg>
+<status status="PASS" starttime="20230224 15:22:21.280" endtime="20230224 15:22:21.381"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230224 15:22:21.382" level="INFO">Sending key(s) ('ENTER',) to css=input.new-todo element.</msg>
+<msg timestamp="20230224 15:22:21.674" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230224 15:22:21.674" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230224 15:22:21.381" endtime="20230224 15:22:21.689"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>${todos}[2]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230224 15:22:21.691" level="INFO">Typing text 'todo 3' into text field 'css=input.new-todo'.</msg>
+<status status="PASS" starttime="20230224 15:22:21.690" endtime="20230224 15:22:21.777"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>css=input.new-todo</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230224 15:22:21.779" level="INFO">Sending key(s) ('ENTER',) to css=input.new-todo element.</msg>
+<msg timestamp="20230224 15:22:22.083" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230224 15:22:22.083" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230224 15:22:21.778" endtime="20230224 15:22:22.105"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Close Browser</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230224 15:22:22.106" endtime="20230224 15:22:22.106"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Complete Successfully - chrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230224 15:22:22.106" endtime="20230224 15:22:22.107"/>
+</kw>
+<status status="PASS" starttime="20230224 15:22:19.113" endtime="20230224 15:22:22.107"/>
+</test>
+<status status="PASS" starttime="20230224 15:22:18.948" endtime="20230224 15:22:22.109"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Project3">Project3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
