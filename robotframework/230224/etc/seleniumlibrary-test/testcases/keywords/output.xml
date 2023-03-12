@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20220531 15:32:14.776" rpa="false" schemaversion="3">
+<suite id="s1" name="07-Textfields" source="C:\dev\z-work\tta-academy\class\robot-0530\day2\seleniumlibrary-test\testcases\keywords\07-textfields.robot">
+<kw name="Open Browser To Start Page" library="resource" type="SETUP">
+<doc>This keyword also tests 'Set Selenium Speed' and 'Set Selenium Timeout'
+against all reason.</doc>
+<kw name="Open Browser To Start Page Without Testing Default Options" library="resource">
+<var>${default speed}</var>
+<var>${default timeout}</var>
+<doc>Open Browser To Start Page Without Testing Default Options</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${FRONT PAGE}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 15:32:15.210" level="INFO">Opening browser 'firefox' to base url 'http://ttaedu02.cafe24.com:7000/html/'.</msg>
+<msg timestamp="20220531 15:32:15.218" level="INFO">Firefox driver log is always forced to to: C:\dev\z-work\tta-academy\class\robot-0530\day2\seleniumlibrary-test\testcases\keywords\geckodriver-36.log</msg>
+<status status="PASS" starttime="20220531 15:32:15.209" endtime="20220531 15:32:27.069"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<var>${orig speed}</var>
+<arg>${SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220531 15:32:27.071" level="INFO">${orig speed} = 0 seconds</msg>
+<status status="PASS" starttime="20220531 15:32:27.069" endtime="20220531 15:32:27.071"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<var>${orig timeout}</var>
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220531 15:32:27.084" level="INFO">${orig timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220531 15:32:27.071" endtime="20220531 15:32:27.084"/>
+</kw>
+<msg timestamp="20220531 15:32:27.085" level="INFO">${default speed} = 0 seconds</msg>
+<msg timestamp="20220531 15:32:27.086" level="INFO">${default timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220531 15:32:15.208" endtime="20220531 15:32:27.086"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default speed}</arg>
+<arg>0 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:27.087" endtime="20220531 15:32:27.088"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default timeout}</arg>
+<arg>5 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:27.089" endtime="20220531 15:32:27.091"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:15.208" endtime="20220531 15:32:27.091"/>
+</kw>
+<test id="s1-t1" name="Get Value From Text Field" line="9">
+<kw name="Go To Page &quot;forms/prefilled_email_form.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:27.103" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/prefilled_email_form.html'</msg>
+<status status="PASS" starttime="20220531 15:32:27.101" endtime="20220531 15:32:27.466"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:27.099" endtime="20220531 15:32:27.467"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>name</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:27.688" level="INFO">${text} = Prefilled Name</msg>
+<status status="PASS" starttime="20220531 15:32:27.471" endtime="20220531 15:32:27.689"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Prefilled Name</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:27.691" endtime="20220531 15:32:27.692"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>name</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220531 15:32:27.721" endtime="20220531 15:32:27.921"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>name</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:28.016" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20220531 15:32:27.938" endtime="20220531 15:32:28.016"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:28.018" endtime="20220531 15:32:28.022"/>
+</kw>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:27.093" endtime="20220531 15:32:28.024"/>
+</test>
+<test id="s1-t2" name="Input Text and Input Password" line="16">
+<kw name="Go To Page &quot;forms/login.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:28.040" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'</msg>
+<status status="PASS" starttime="20220531 15:32:28.038" endtime="20220531 15:32:28.378"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:28.037" endtime="20220531 15:32:28.378"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>username</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:28.382" level="INFO">Typing text 'username' into text field 'username_field'.</msg>
+<status status="PASS" starttime="20220531 15:32:28.381" endtime="20220531 15:32:28.667"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password_field</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:28.671" level="INFO">Typing password into text field 'password_field'.</msg>
+<msg timestamp="20220531 15:32:28.715" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 15:32:29.016" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 15:32:28.670" endtime="20220531 15:32:29.017"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${username}</var>
+<arg>username_field</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:29.061" level="INFO">${username} = username</msg>
+<status status="PASS" starttime="20220531 15:32:29.018" endtime="20220531 15:32:29.061"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${password}</var>
+<arg>password_field</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:29.090" level="INFO">${password} = password</msg>
+<status status="PASS" starttime="20220531 15:32:29.063" endtime="20220531 15:32:29.091"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${username}</arg>
+<arg>username</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:29.092" endtime="20220531 15:32:29.093"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${password}</arg>
+<arg>password</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:29.096" endtime="20220531 15:32:29.097"/>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:29.099" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20220531 15:32:29.098" endtime="20220531 15:32:29.188"/>
+</kw>
+<kw name="Verify Location Is &quot;forms/submit.html&quot;" library="resource" sourcename="Verify Location Is &quot;${relative url}&quot;">
+<doc>Verifies location</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5</arg>
+<arg>1</arg>
+<arg>Location Should Be</arg>
+<arg>${ROOT}/${relative url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220531 15:32:29.204" level="FAIL">Location should have been 'http://ttaedu02.cafe24.com:7000/html/forms/submit.html' but was 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'.</msg>
+<status status="FAIL" starttime="20220531 15:32:29.192" endtime="20220531 15:32:29.208"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220531 15:32:30.228" level="INFO">Current location is 'http://ttaedu02.cafe24.com:7000/html/forms/submit.html'.</msg>
+<status status="PASS" starttime="20220531 15:32:30.219" endtime="20220531 15:32:30.228"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:29.191" endtime="20220531 15:32:30.228"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:29.190" endtime="20220531 15:32:30.229"/>
+</kw>
+<doc>LOG 1 Typing text 'username' into text field 'username_field'.
+LOG 2 Typing password into text field 'password_field'.</doc>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:28.033" endtime="20220531 15:32:30.232"/>
+</test>
+<test id="s1-t3" name="Input Password Should Not Log Password String" line="29">
+<kw name="Go To Page &quot;forms/login.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:30.250" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'</msg>
+<status status="PASS" starttime="20220531 15:32:30.247" endtime="20220531 15:32:30.425"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:30.246" endtime="20220531 15:32:30.426"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password_field</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:30.429" level="INFO">Typing password into text field 'password_field'.</msg>
+<msg timestamp="20220531 15:32:30.472" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 15:32:30.551" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 15:32:30.428" endtime="20220531 15:32:30.551"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>username</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:30.553" level="INFO">Typing text 'username' into text field 'username_field'.</msg>
+<status status="PASS" starttime="20220531 15:32:30.552" endtime="20220531 15:32:30.838"/>
+</kw>
+<doc>LOG 1:1 INFO Typing password into text field 'password_field'.
+LOG 1:2 DEBUG STARTS: POST http
+LOG 1:3 DEBUG STARTS: http
+LOG 1:4 DEBUG Finished Request
+LOG 1:5 DEBUG STARTS: POST http
+LOG 1:6 DEBUG STARTS: http
+LOG 1:7 DEBUG Finished Request
+LOG 1:8 INFO Temporally setting log level to: NONE
+LOG 1:9 INFO Log level changed from NONE to DEBUG.
+LOG 1:10 NONE
+LOG 2:1 INFO Typing text 'username' into text field 'username_field'.</doc>
+<tag>Known Issue Internet Explorer</tag>
+<tag>NoGrid</tag>
+<status status="PASS" starttime="20220531 15:32:30.239" endtime="20220531 15:32:30.840"/>
+</test>
+<test id="s1-t4" name="Input Text and Input Password No Clear" line="46">
+<kw name="Go To Page &quot;forms/login.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:30.851" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'</msg>
+<status status="PASS" starttime="20220531 15:32:30.849" endtime="20220531 15:32:31.025"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:30.848" endtime="20220531 15:32:31.026"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>user</arg>
+<arg>clear=False</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.029" level="INFO">Typing text 'user' into text field 'username_field'.</msg>
+<status status="PASS" starttime="20220531 15:32:31.027" endtime="20220531 15:32:31.177"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password_field</arg>
+<arg>pass</arg>
+<arg>False</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.180" level="INFO">Typing password into text field 'password_field'.</msg>
+<msg timestamp="20220531 15:32:31.192" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 15:32:31.371" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 15:32:31.179" endtime="20220531 15:32:31.371"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>name</arg>
+<arg>clear=False</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.373" level="INFO">Typing text 'name' into text field 'username_field'.</msg>
+<status status="PASS" starttime="20220531 15:32:31.372" endtime="20220531 15:32:31.596"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password_field</arg>
+<arg>word</arg>
+<arg>False</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.599" level="INFO">Typing password into text field 'password_field'.</msg>
+<msg timestamp="20220531 15:32:31.669" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 15:32:31.803" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 15:32:31.598" endtime="20220531 15:32:31.803"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${username}</var>
+<arg>username_field</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.839" level="INFO">${username} = username</msg>
+<status status="PASS" starttime="20220531 15:32:31.804" endtime="20220531 15:32:31.839"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${password}</var>
+<arg>password_field</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:31.868" level="INFO">${password} = password</msg>
+<status status="PASS" starttime="20220531 15:32:31.840" endtime="20220531 15:32:31.869"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${username}</arg>
+<arg>username</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:31.872" endtime="20220531 15:32:31.873"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${password}</arg>
+<arg>password</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:31.874" endtime="20220531 15:32:31.876"/>
+</kw>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:30.845" endtime="20220531 15:32:31.877"/>
+</test>
+<test id="s1-t5" name="Input Non-ASCII Text" line="57">
+<kw name="Go To Page &quot;forms/prefilled_email_form.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:31.887" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/prefilled_email_form.html'</msg>
+<status status="PASS" starttime="20220531 15:32:31.886" endtime="20220531 15:32:32.092"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:31.884" endtime="20220531 15:32:32.092"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name</arg>
+<arg>Yrjö Ärje</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:32.094" level="INFO">Typing text 'Yrjö Ärje' into text field 'name'.</msg>
+<status status="PASS" starttime="20220531 15:32:32.093" endtime="20220531 15:32:32.296"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>name</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:32.367" level="INFO">${text} = Yrjö Ärje</msg>
+<status status="PASS" starttime="20220531 15:32:32.298" endtime="20220531 15:32:32.367"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>Yrjö Ärje</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220531 15:32:32.371" endtime="20220531 15:32:32.372"/>
+</kw>
+<doc>LOG 1 Typing text 'Yrjö Ärje' into text field 'name'.</doc>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:31.881" endtime="20220531 15:32:32.374"/>
+</test>
+<test id="s1-t6" name="Press Key" line="63">
+<kw name="Go To Page &quot;forms/login.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:32.388" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'</msg>
+<status status="PASS" starttime="20220531 15:32:32.386" endtime="20220531 15:32:32.670"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:32.382" endtime="20220531 15:32:32.671"/>
+</kw>
+<kw name="Cannot Be Executed In IE" library="resource">
+<doc>Cannot Be Executed In IE</doc>
+<kw name="Set Variable If" library="BuiltIn">
+<var>${runsInIE}</var>
+<arg>"${BROWSER}".replace(' ', '').lower() in ['ie', '*iexplore', 'internetexplorer']</arg>
+<arg>${TRUE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<msg timestamp="20220531 15:32:32.679" level="INFO">${runsInIE} = None</msg>
+<status status="PASS" starttime="20220531 15:32:32.677" endtime="20220531 15:32:32.679"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${runsInIE}</arg>
+<arg>Set Tags</arg>
+<arg>ie-incompatible</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220531 15:32:32.680" endtime="20220531 15:32:32.682"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${runsInIE}</arg>
+<arg>Fail And Set Non-Critical</arg>
+<arg>This test does not work in Internet Explorer</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220531 15:32:32.683" endtime="20220531 15:32:32.685"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:32.676" endtime="20220531 15:32:32.685"/>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>James Bon</arg>
+<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
+<msg timestamp="20220531 15:32:32.687" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220531 15:32:32.687" endtime="20220531 15:32:32.874"/>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>\\100</arg>
+<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
+<msg timestamp="20220531 15:32:32.876" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220531 15:32:32.876" endtime="20220531 15:32:32.962"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>username_field</arg>
+<arg>James Bond</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220531 15:32:33.019" level="INFO">Content of text field 'username_field' is 'James Bond'.</msg>
+<status status="PASS" starttime="20220531 15:32:32.963" endtime="20220531 15:32:33.020"/>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<arg>password_field</arg>
+<arg>f</arg>
+<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
+<msg timestamp="20220531 15:32:33.025" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220531 15:32:33.024" endtime="20220531 15:32:33.202"/>
+</kw>
+<kw name="Press Key" library="SeleniumLibrary">
+<arg>login_button</arg>
+<arg>\\10</arg>
+<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
+<msg timestamp="20220531 15:32:33.204" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<status status="PASS" starttime="20220531 15:32:33.203" endtime="20220531 15:32:33.292"/>
+</kw>
+<kw name="Verify Location Is &quot;forms/submit.html&quot;" library="resource" sourcename="Verify Location Is &quot;${relative url}&quot;">
+<doc>Verifies location</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5</arg>
+<arg>1</arg>
+<arg>Location Should Be</arg>
+<arg>${ROOT}/${relative url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220531 15:32:33.320" level="FAIL">Location should have been 'http://ttaedu02.cafe24.com:7000/html/forms/submit.html' but was 'http://ttaedu02.cafe24.com:7000/html/forms/login.html'.</msg>
+<status status="FAIL" starttime="20220531 15:32:33.300" endtime="20220531 15:32:33.321"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220531 15:32:34.336" level="INFO">Current location is 'http://ttaedu02.cafe24.com:7000/html/forms/submit.html'.</msg>
+<status status="PASS" starttime="20220531 15:32:34.331" endtime="20220531 15:32:34.337"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:33.297" endtime="20220531 15:32:34.337"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:33.295" endtime="20220531 15:32:34.337"/>
+</kw>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:32.379" endtime="20220531 15:32:34.338"/>
+</test>
+<test id="s1-t7" name="Attempt Clear Element Text On Non-Editable Field" line="73">
+<kw name="Go To Page &quot;forms/prefilled_email_form.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220531 15:32:34.346" level="INFO">Opening url 'http://ttaedu02.cafe24.com:7000/html/forms/prefilled_email_form.html'</msg>
+<status status="PASS" starttime="20220531 15:32:34.344" endtime="20220531 15:32:34.509"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:34.343" endtime="20220531 15:32:34.510"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>*</arg>
+<arg>Clear Element Text</arg>
+<arg>can_send_email</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>can_send_email</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<msg timestamp="20220531 15:32:34.546" level="FAIL">InvalidElementStateException: Message: Unable to clear element that cannot be edited: &lt;input name="can_send_email" type="checkbox"&gt;
+</msg>
+<status status="FAIL" starttime="20220531 15:32:34.513" endtime="20220531 15:32:34.558"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:34.512" endtime="20220531 15:32:34.559"/>
+</kw>
+<tag>Known Issue Internet Explorer</tag>
+<status status="PASS" starttime="20220531 15:32:34.341" endtime="20220531 15:32:34.561"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220531 15:32:34.570" endtime="20220531 15:32:37.829"/>
+</kw>
+<status status="PASS" starttime="20220531 15:32:14.778" endtime="20220531 15:32:37.829"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">Known Issue Internet Explorer</stat>
+<stat pass="1" fail="0" skip="0">NoGrid</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="07-Textfields">07-Textfields</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220531 15:32:32.687" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<msg timestamp="20220531 15:32:32.876" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<msg timestamp="20220531 15:32:33.025" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+<msg timestamp="20220531 15:32:33.204" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
+</errors>
+</robot>
