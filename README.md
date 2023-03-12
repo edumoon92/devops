@@ -77,16 +77,6 @@ Project structure:
 - https://github.com/dockersamples/101-tutorial
 - https://github.com/dockersamples
 
-## Basic setups for different platforms
-
-- [`Gitea / PostgreSQL`](gitea-postgres)
-- [`Nextcloud / PostgreSQL`](nextcloud-postgres)
-- [`Nextcloud / Redis / MariaDB`](nextcloud-redis-mariadb)
-- [`Pi-hole / cloudflared`](pihole-cloudflared-DoH) - Sample Pi-hole setup with use of DoH cloudflared service
-- [`Prometheus / Grafana`](prometheus-grafana)
-- [`Wordpress / MySQL`](wordpress-mysql)
-
-<!--lint disable awesome-toc-->
 
 ### Prerequisites
 
