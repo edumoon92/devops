@@ -1,0 +1,14 @@
+digraph "008-Rpa-Task" {
+	graph [rankdir=LR]
+	node [fontname="Helvetica, Arial, sans-serif" fontsize=12 height=0 margin="0.15,0.1" shape=box style="rounded,filled"]
+	Start [color="#cccccc" fillcolor="#eeeeee" fontcolor="#0f0f0f" shape=oval style=filled]
+	End [color="#cccccc" fillcolor="#eeeeee" fontcolor="#0f0f0f" shape=oval style=filled]
+	A [label="Check loop condition" color="#5cb85c" fontcolor="#ffffff" tooltip="Check loop condition"]
+	C [label="Increment current number" color="#5cb85c" fontcolor="#ffffff" tooltip="Increment current number"]
+	D [label="Target reached" color="#5cb85c" fontcolor="#ffffff" tooltip="Target reached"]
+	A -> C
+	D -> End
+	A -> D
+	Start -> A
+	C -> A
+}
