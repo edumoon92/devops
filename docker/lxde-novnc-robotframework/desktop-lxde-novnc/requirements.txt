@@ -1,3 +1,4 @@
+attrdict
 robotframework
 robotframework-seleniumlibrary
 robotframework-ride
