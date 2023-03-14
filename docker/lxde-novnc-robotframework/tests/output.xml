@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230314 14:32:18.223" rpa="false" schemaversion="3">
+<suite id="s1" name="Test-Selenium-Local" source="/root/tests/test-selenium-local.robot">
+<test id="s1-t1" name="Remote Selenium Test" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230314 14:32:18.580" level="INFO">Opening browser 'firefox' to base url 'https://www.google.com'.</msg>
+<msg timestamp="20230314 14:32:18.581" level="INFO">Firefox driver log is always forced to to: /root/tests/geckodriver-1.log</msg>
+<status status="PASS" starttime="20230314 14:32:18.579" endtime="20230314 14:32:31.333"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=q</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230314 14:32:31.336" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20230314 14:32:31.333" endtime="20230314 14:32:31.852"/>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20230314 14:32:31.853" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20230314 14:32:31.852" endtime="20230314 14:32:32.104"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230314 14:32:32.126" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20230314 14:32:32.105" endtime="20230314 14:32:32.126"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230314 14:32:32.127" endtime="20230314 14:32:33.000"/>
+</kw>
+<status status="PASS" starttime="20230314 14:32:18.577" endtime="20230314 14:32:33.002"/>
+</test>
+<status status="PASS" starttime="20230314 14:32:18.228" endtime="20230314 14:32:33.006"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Selenium-Local">Test-Selenium-Local</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

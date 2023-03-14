@@ -1,0 +1,8 @@
+version: "3"
+services:
+  novnc:
+    build: ./desktop-lxde-novnc
+    ports:
+      - "6080:80"
+    volumes:
+      - ./tests:/root/tests
