@@ -3,9 +3,9 @@ FROM dorowu/ubuntu-desktop-lxde-vnc:focal
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
 RUN apt-get update \
-    && apt-get install -y python3-pip 
-RUN apt-get update \ 
-    && apt-get install -y build-essential libgtk-3-dev 
+    && apt-get install -y python3-pip
+
+RUN apt-get -y install python3-wxgtk4.0
 
 RUN rm -rf /var/lib/apt/lists/*
 
