@@ -4,6 +4,7 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 
 RUN apt-get update \
     && apt-get install -y python3-pip
+RUN apt-get -y install python3-wxgtk4.0
 
 RUN apt-get -y install software-properties-common apt-transport-https wget
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -13,8 +14,6 @@ RUN apt-get -y install code
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /
-
-RUN apt-get -y install python3-wxgtk4.0
 
 RUN pip install attrdict
 
