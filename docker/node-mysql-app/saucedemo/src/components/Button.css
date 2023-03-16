@@ -1,0 +1,66 @@
+.btn {
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 6px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn_primary {
+  border: 1px solid #132322;
+  color: #132322;
+  background-color: #fff;
+}
+
+.btn_secondary {
+  border: 1px solid #E2231A;
+  background-color: #fff;
+  color: #E2231A;
+}
+
+.btn_action {
+  background-color: #3DDC91;
+  border-radius: 4px;
+  color: #132322;
+}
+
+.btn_secondary.back {
+  position: relative;
+  color: #132322;
+  border: 1px solid #132322;
+}
+
+.btn_secondary .back-image {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  height: 11px;
+  width: 11px;
+}
+
+.btn_small {
+  width: 160px;
+}
+
+.btn_medium {
+  width: 220px;
+}
+
+.btn_large {
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn_small,
+  .btn_medium,
+  .btn_large {
+    width: 100%;
+  }
+}

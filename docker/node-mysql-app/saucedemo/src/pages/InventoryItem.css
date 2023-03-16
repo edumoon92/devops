@@ -1,0 +1,131 @@
+.inventory_item_container {
+  background-color: #fff;
+  padding: 40px 15px;
+}
+
+.inventory_details_container {
+  border: 1px solid #ededed;
+  border-radius: 8px;
+  display: flex;
+  max-width: 1060px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.inventory_details_container .inventory_details_img_container {
+  flex: 2;
+  display: block;
+}
+
+.inventory_details_container .inventory_details_img {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.inventory_details_container .inventory_details_desc_container {
+  padding: 20px 20px 0;
+  flex: 3;
+}
+
+.inventory_details_container .inventory_details_name {
+  font-family: "DM Mono", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #132322;
+  margin-bottom: 15px;
+}
+
+a:hover .inventory_item_name,
+.btn.btn_secondary.inventory_details_back_button:hover {
+  color: #3DDC91
+}
+
+.inventory_details_container .inventory_details_desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: #132322;
+  margin-bottom: 30px;
+}
+
+.inventory_details_container .inventory_details_price {
+  color: #132322;
+  font-family: "DM Mono",  sans-serif;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 500;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.inventory_details_container .inventory_details_desc_container .btn {
+  margin-top: 30px;
+  display: block;
+}
+
+ .large_size {
+  width: 75%;
+}
+
+.left_component .btn_secondary.back {
+  background-color: #fff;
+  color: #18583A;
+  border: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .inventory_details_container .large_size {
+    width: 100%;
+  }
+
+  .inventory_details_container .inventory_details_img_container {
+    flex: 1;
+  }
+
+  .inventory_details_container .inventory_details_desc_container {
+    flex: 2;
+  }
+
+  .inventory_details_container .inventory_details_desc {
+    margin-bottom: 15px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container .btn {
+    display: inline;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .inventory_details_container {
+    border: none;
+    flex-direction: column;
+  }
+
+  .inventory_details .left_component {
+    width: 100%;
+  }
+
+  .inventory_details_container .inventory_item_container {
+    padding: 40px 35px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container {
+    flex: 1;
+    padding: 20px 0;
+  }
+
+  .inventory_details_container .inventory_details_desc {
+    margin-bottom: 20px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container .btn {
+    display: block;
+    margin-left: 0;
+    margin-top: 30px;
+    width: 100%;
+  }
+}

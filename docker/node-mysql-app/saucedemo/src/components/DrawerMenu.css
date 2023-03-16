@@ -1,0 +1,65 @@
+@media only screen and (max-width: 480px) {
+  .bm-menu-wrap {
+    width: 100% !important;
+  }
+}
+.menu-item {
+  border-bottom: 1px solid #EDEDED;
+  color: #18583A;
+  display: inline-block;
+  font-family: 'DM Mono', 'sans-serif';
+  font-size: 16px;
+  margin-bottom: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.menu-item:hover {
+  color: #3DDC91;
+}
+
+/* ===============Burger button styling==================== */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #777;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 20px !important;
+  width: 20px !important;
+  right: 16px !important;
+  top: 16px !important;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #ffffff;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #fff;
+  padding: 2.5em 1.5em 0;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Individual item */
+.bm-item {
+}

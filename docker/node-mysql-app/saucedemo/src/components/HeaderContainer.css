@@ -1,0 +1,71 @@
+.header_container {
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-direction: column;
+}
+
+.primary_header {
+  border-bottom: 1px solid #ededed;
+  height: 56px;
+}
+
+.primary_header .header_label {
+  background: #fff;
+  padding: 4px 0;
+  text-align: center;
+  font-size: 24px;
+  position: relative;
+}
+
+.primary_header .app_logo {
+  font-family: DM Mono, 'sans-serif';
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  margin: 0 50px;
+}
+
+.primary_header .shopping_cart_container {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.header_secondary_container {
+  background: #fff;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header_secondary_container .title {
+  color: #132322;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+/* .primary_header, .header_secondary_container{
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+} */
+
+.right_component {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 640px) {
+  .header_secondary_container {
+    height: 60px;
+    padding: 0 15px;
+  }
+}

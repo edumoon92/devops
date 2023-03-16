@@ -1,0 +1,66 @@
+.select_container {
+  border: 1px solid #ededed;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 0 0 0 40px;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  display: block;
+  position: relative;
+}
+
+.active_option {
+  display: none;
+}
+
+.select_container:before {
+  content: "";
+  background: url("../assets/img/filter.png") no-repeat center center;
+  background: url("../assets/svg/filter3x.svg") no-repeat center center,
+    linear-gradient(transparent, transparent);
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.product_sort_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  /* This needs to be like this because otherwise Safari can't click on an element that is not visible */
+  opacity: 0.001;
+}
+
+@media only screen and (min-width: 900px) {
+  .select_container {
+    padding: 0 32px;
+    width: 225px;
+    line-height: 32px;
+  }
+
+  .select_container:after {
+    content: "";
+    background: url("../assets/img/arrow.png") no-repeat center center;
+    background: url("../assets/svg/arrow3x.svg") no-repeat center center,
+      linear-gradient(transparent, transparent);
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .active_option {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+}
