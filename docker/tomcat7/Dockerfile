@@ -6,4 +6,4 @@ RUN apt-get update && apt-get -y install vim
 RUN mkdir -p /usr/local/tomcat/shared/lib
 RUN mkdir -p /usr/local/tomcat/server/lib
 
-COPY /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps/
+RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps/
