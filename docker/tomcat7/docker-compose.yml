@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  db:
+    image: mariadb:10
+    volumes:
+      #마운트 작업 로컬 <-> 도커 컨테이너
+      - "./db/data:/var/lib/mysql"
+      - "./db/dump:/disk"
+      - "./db/initdb.d:/docker-entrypoint-initdb.d"
+    environment:
+      TZ: Asia/Seoul
+      MYSQL_ROOT_PASSWORD: tta123!@
+      MYSQL_DATABASE: champtta
+    ports:
+      #포트포워딩 할 포트 설정
+      - "3306:3306"
+    restart: always
+  tomcat:
+    image: tomcat:7.0
+    environment:
+      - "JAVA_OPTS=-Dspring.profiles.active=dev"
+    build:
+      context: .
+      #참조할 도커파일 명시
+      dockerfile: Dockerfile
+    ports:
+    #포트포워딩 할 포트 설정
+      - "8080:8080"
+    volumes:
+      #마운트 작업 로컬 <-> 도커 컨테이너
+      - ./lib/tomcat.shared.lib/:/usr/local/tomcat/shared/lib/
+      - ./lib/tomcat.server.lib/:/usr/local/tomcat/server/lib/
+      - ./lib/tomcat.webapps.WEB-INF.lib/:/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
+      - ./tomcat/webapps/ROOT/:/usr/local/tomcat/webapps/ROOT/
+    links:
+      - db
+    restart: always
