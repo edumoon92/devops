@@ -21,7 +21,7 @@ WORKDIR /app
 
 # Only copy the package.json file to work directory
 COPY saucedemo ./saucedemo
-RUN npm install
+RUN cd saucedemo && npm install
 
 # Docker Demon Port Mapping
 EXPOSE 3000
