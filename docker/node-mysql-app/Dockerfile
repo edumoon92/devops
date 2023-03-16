@@ -23,7 +23,7 @@ RUN apk --no-cache add tzdata && \
 WORKDIR /app
 
 # Only copy the package.json file to work directory
-COPY package*.json ./
+COPY saucedemo/package*.json ./
 RUN npm install
 
 # wait-for-it.sh
