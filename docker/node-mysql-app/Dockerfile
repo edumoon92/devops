@@ -1,5 +1,9 @@
 FROM node:16-alpine3.11
 
+# Build Tool
+RUN apk update
+RUN apk add g++ build-essential
+
 # Korean Fonts
 RUN apk --update add fontconfig
 RUN mkdir -p /usr/share/fonts/nanumfont
