@@ -5,7 +5,7 @@ RUN apt update \
     && apt install -y g++ build-essential 
 
 # bash install
-RUN apt install -y bash
+RUN apt install -y bash wget
 
 # Language
 ENV LANG=ko_KR.UTF-8 \
