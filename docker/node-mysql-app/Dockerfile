@@ -2,10 +2,10 @@ FROM node:14
 
 # Build Tool
 RUN apt update \
-    && apt install -y g++ build-essential 
+    && apt-get install -y g++ build-essential 
 
 # bash install
-RUN apt install -y bash wget
+RUN apt-get install -y bash wget
 
 # Language
 ENV LANG=ko_KR.UTF-8 \
