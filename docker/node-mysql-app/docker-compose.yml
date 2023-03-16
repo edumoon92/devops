@@ -11,4 +11,5 @@ services:
       - bash
       - -c
       - |
+        cd /app/saucedemo
         npm run start

@@ -20,7 +20,7 @@ RUN apt-get install -y tzdata
 WORKDIR /app
 
 # Only copy the package.json file to work directory
-COPY saucedemo/package*.json ./
+COPY saucedemo ./
 RUN npm install
 
 # Docker Demon Port Mapping
