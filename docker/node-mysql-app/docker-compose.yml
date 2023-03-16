@@ -29,5 +29,3 @@ services:
       - |
         /app/wait-for-it.sh db:3306 -t 10
         npm run start
-    volumes:
-      - ./:/app/
