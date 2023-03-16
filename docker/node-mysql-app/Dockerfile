@@ -1,8 +1,8 @@
 FROM node:16-alpine3.11
 
 # Build Tool
-RUN apk update
-RUN apk add g++ build-essential
+RUN apk update \
+    && apk --no-cache --update add build-base 
 
 # Korean Fonts
 RUN apk --update add fontconfig
