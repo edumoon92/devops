@@ -28,6 +28,8 @@ services:
       - SE_NODE_MAX_INSTANCES=1
       - SE_NODE_MAX_SESSIONS=1
   #      - SE_NODE_SESSION_TIMEOUT=180
+    ports:
+    - "5900:5900"
 
   firefox:
     image: selenium/node-firefox:4.1.4-20220427
@@ -57,3 +59,8 @@ services:
     build:
       context: .
     command: ./scripts/run_nightwatch.sh
+
+  novnc:
+    image: dorowu/ubuntu-desktop-lxde-vnc
+    ports:
+      - "6080:80"    
