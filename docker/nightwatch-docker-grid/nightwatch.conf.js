@@ -5,7 +5,7 @@ module.exports = {
   test_settings: {
     default: {
       launch_url: 'http://web',
-      selenium_host: 'hub',
+      selenium_host: 'selenium-hub',
       desiredCapabilities: {
         browserName: 'chrome',
       },
