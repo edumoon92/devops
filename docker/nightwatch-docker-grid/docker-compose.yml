@@ -29,7 +29,7 @@ services:
       - SE_NODE_MAX_SESSIONS=1
   #      - SE_NODE_SESSION_TIMEOUT=180
     ports:
-    - "5900:5900"
+      - "5900:5900"
 
   firefox:
     image: selenium/node-firefox:4.1.4-20220427
