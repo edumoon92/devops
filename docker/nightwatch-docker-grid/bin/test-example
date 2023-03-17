@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Starts nightwatch execution of all specs.
+#
+# See the 'nightwatch' service config in docker-compose.example.yml to see what
+# nightwatch command the container runs.
+
+set -e
+
+container=nightwatch_grid_results
+
+function cleanup() {
+  exit_code=$?
+
+  docker cp $container:/home/docker/app/tests_output .
+  docker rm -fv $container > /dev/null
+
+  if [[ "$exit_code" != "0" ]]; then
+    printf "\n Test failure! View screenshots in tests_output/screenshots. \n"
+  fi
+}
+
+trap cleanup INT TERM EXIT
+
+docker-compose -f docker-compose.example.yml pull
+
+docker-compose -f docker-compose.yml -f docker-compose.example.yml run \
+  --name $container nightwatch

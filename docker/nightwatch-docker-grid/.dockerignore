@@ -1,0 +1,14 @@
+.dockerignore
+.DS_Store
+.git
+.gitignore
+.idea
+.travis.yml
+
+Dockerfile
+docker-compose.*
+
+bin/
+node_modules/
+scripts/ci/
+tests_output/

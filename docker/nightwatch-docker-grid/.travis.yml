@@ -1,0 +1,35 @@
+---
+language: node_js
+
+notifications:
+  email: false
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.25.5
+
+branches:
+  only:
+    - master
+
+before_install: ./scripts/ci/upgrade_docker_compose.sh
+
+install: true
+
+jobs:
+  include:
+    - stage: lint, build, test
+      script: ./scripts/ci/test.sh
+
+deploy:
+  provider: script
+  script: ./scripts/ci/publish_docker_image.sh
+  on:
+    branch: master

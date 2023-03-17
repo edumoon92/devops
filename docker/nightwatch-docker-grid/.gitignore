@@ -1,0 +1,9 @@
+.idea
+.DS_Store
+.node_repl_history
+docker-compose.override.yml
+npm-debug.log
+
+.npm/
+node_modules/
+tests_output/
