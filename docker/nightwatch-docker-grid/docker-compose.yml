@@ -57,6 +57,3 @@ services:
     build:
       context: .
     command: ./scripts/run_nightwatch.sh
-    networks:
-      - nightwatch-docker-grid-network
-    logging: *LOG
