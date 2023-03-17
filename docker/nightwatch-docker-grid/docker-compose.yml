@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   hub:
-    image: selenium/hub:3.0.1
+    image: selenium/hub:latest
     environment:
       GRID_BROWSER_TIMEOUT: 120000
       GRID_NEW_SESSION_WAIT_TIMEOUT: 8000
