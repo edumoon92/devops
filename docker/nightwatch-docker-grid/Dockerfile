@@ -1,4 +1,4 @@
-FROM alpine:3
+FROM node:14-alpine
 
 USER root
 
@@ -12,12 +12,6 @@ RUN apk --no-cache add bash ${TEMPORARY_DEPENDENCIES}
 # add user as per: https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#user
 RUN groupadd -r docker && useradd --no-log-init -r -g docker docker
 RUN chown -R docker $HOME
-
-RUN apk --no-cache add \
-    nodejs-current \
-    nodejs-current-npm \
-    # clean up obsolete files
-    && rm -rf /tmp/* /root/.npm
 
 # clean no longer needed dependencies
 RUN apk del ${TEMPORARY_DEPENDENCIES}
