@@ -1,15 +1,15 @@
 version: '3.2'
 services:
-  sentimentalyzer:
-    build: ../
+  app:
+    build: ./hello-world-go
     environment:
       - PORT=8123
   cypress:
     image: "cypress/included:4.4.0"
     depends_on:
-      - sentimentalyzer
+      - app
     environment:
-      - CYPRESS_baseUrl=http://sentimentalyzer:8123
+      - CYPRESS_baseUrl=http://app:8123
     working_dir: /e2e
     volumes:
       - ./:/e2e
