@@ -18,6 +18,6 @@ services:
       - CYPRESS_video=false
     volumes:
       - ./todomvc:/app  # Add this line
-      - ./tests:/app/tests
+      - ./cypress/tests:/app/cypress/tests
       - /dev/shm:/dev/shm
   command: sh -c "cd /e2e && npm install && npm run cypress:run"
