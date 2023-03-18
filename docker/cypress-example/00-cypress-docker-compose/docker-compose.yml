@@ -10,7 +10,7 @@ services:
       - "8080:8080"
 
   cypress:
-    image: cypress/browsers:chrome87
+    image: cypress/browsers:node14.16.0-chrome89-ff86
     depends_on:
       - app
     environment:
