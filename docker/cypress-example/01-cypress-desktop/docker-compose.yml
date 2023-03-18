@@ -10,3 +10,9 @@ services:
     ports:
       - "5901:5901"
       - "6901:6901"
+    command: ["npm", "run", "cy:run"]
+
+  app:
+    build: ../cypress-example-kitchensink
+    ports:
+      - "8080:8080"
