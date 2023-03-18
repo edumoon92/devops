@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "plugin:mocha/recommended"
+  ],
+  "plugins": [
+    "cypress",
+    "mocha"
+  ],
+  "env": {
+    "cypress/globals": true
+  },
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1, "MemberExpression": "off" }],
+    "mocha/no-exclusive-tests": "error"
+  }
+}
