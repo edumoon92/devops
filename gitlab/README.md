@@ -1,0 +1,1 @@
+docker-compose exec -it web grep 'Password:' /etc/gitlab/initial_root_password
