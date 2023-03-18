@@ -4,6 +4,8 @@ services:
     build: ./hello-world-go
     environment:
       - PORT=8123
+    ports:
+      - "8123:8123"
   cypress:
     image: "cypress/included:4.4.0"
     depends_on:
