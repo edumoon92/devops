@@ -10,8 +10,8 @@ services:
         external_url 'http://192.168.56.101:8929'
     ports:
       - '8929:8929'
-      - '2289:22'
+      - '8922:22'
     volumes:
-      - '/srv/gitlab/config:/etc/gitlab'
-      - '/srv/gitlab/logs:/var/log/gitlab'
-      - '/srv/gitlab/data:/var/opt/gitlab'
+      - '/data/gitlab/config:/etc/gitlab'
+      - '/data/gitlab/logs:/var/log/gitlab'
+      - '/data/gitlab/data:/var/opt/gitlab'
