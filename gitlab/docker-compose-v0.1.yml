@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: 'hcmoon92/devops:gitlab-v0.2'
+    image: 'hcmoon92/devops:gitlab-v0.1'
     restart: always
     hostname: '192.168.56.101'
     environment:
