@@ -16,28 +16,32 @@ export class AuthGuard extends PassportAuthGuard('jwt') implements CanActivate {
   }
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest<AuthedRequest>();
+    try {
+      const request = context.switchToHttp().getRequest<AuthedRequest>();
 
-    const requiredRoles = this.reflector.get<string[]>(
-      'roles',
-      context.getHandler()
-    );
+      const requiredRoles = this.reflector.get<string[]>(
+        'roles',
+        context.getHandler(),
+      );
 
-    let user: User;
-    if (request.headers.authorization) {
-      await (super.canActivate(context) as Promise<boolean>);
-      user = request.user;
-    }
-    if (requiredRoles) {
-      if (!user) {
-        return false;
+      let user: User;
+      if (request.headers.authorization) {
+        await (super.canActivate(context) as Promise<boolean>);
+        user = request.user;
       }
-      if (requiredRoles.indexOf('admin') >= 0) {
-        return user.isAdmin;
+      if (requiredRoles) {
+        if (!user) {
+          return false;
+        }
+        if (requiredRoles.indexOf('admin') >= 0) {
+          return user.isAdmin;
+        }
+        return true;
+      } else {
+        return true;
       }
-      return true;
-    } else {
-      return true;
+    } catch (ex) {
+      throw ex;
     }
   }
 }

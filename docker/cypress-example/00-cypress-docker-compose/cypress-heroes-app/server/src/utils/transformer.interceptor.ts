@@ -13,9 +13,7 @@ export class TransformerInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
       map((result) => {
-        const request = context.switchToHttp().getRequest();
-        //pass the request into the transformer as its used to construct urls
-        return instanceToPlain(result, { request } as any);
+        return instanceToPlain(result);
       }),
     );
   }

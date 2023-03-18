@@ -3,18 +3,19 @@ import {
   Controller,
   Delete,
   Get,
-  HttpCode,
+  NotFoundException,
   Param,
   ParseIntPipe,
   Patch,
   Post,
   Put,
+  Req,
   Res,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
 import { HeroesService } from './heroes.service';
-import { Response } from 'express';
+import { Response, Request } from 'express';
 import {
   HeroCreateModel,
   HeroUpdateModel,
@@ -37,6 +38,9 @@ export class HeroesController {
   @Get(':id')
   async getHero(@Param('id', ParseIntPipe) id: number) {
     const hero = await this.heroesService.getById(id);
+    if (!hero) {
+      throw new NotFoundException();
+    }
     return hero;
   }
 
@@ -68,7 +72,6 @@ export class HeroesController {
   }
 
   @Roles('admin')
-  @HttpCode(204)
   @Delete(':id')
   async delete(@Param('id', ParseIntPipe) id: number) {
     await this.heroesService.delete(id);
@@ -99,13 +102,16 @@ export class HeroesController {
   async uploadAvatar(
     @UploadedFile() file: Express.Multer.File,
     @Param('id', ParseIntPipe) id: number,
-    // @Req() req: Request
+    @Req() req: Request,
   ) {
     const hero = await this.heroesService.getById(id);
+    if (!hero) {
+      throw new NotFoundException();
+    }
+
     await this.heroesService.addOrUpdateAvatar(hero, file);
-    return true;
-    // const url = `${req.protocol}://${req.get('Host')}`;
-    // hero.avatarUrl = `${url}/heroes/${hero.id}/avatar`;
-    // return { avatar: hero.avatarUrl };
+    const url = `${req.protocol}://${req.get('Host')}`;
+    hero.avatarUrl = `${url}/heroes/${hero.id}/avatar`;
+    return { avatar: hero.avatarUrl };
   }
 }

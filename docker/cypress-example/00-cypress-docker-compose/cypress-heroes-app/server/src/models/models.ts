@@ -5,40 +5,20 @@ import {
   User as UserDataModel,
   Prisma,
 } from '@prisma/client';
-import { Exclude, Expose, Transform } from 'class-transformer';
-import {
-  IsString,
-  IsNumber,
-  IsNotEmpty,
-  Min,
-  IsArray,
-  IsOptional,
-} from 'class-validator';
+import { Exclude } from 'class-transformer';
+import { IsString, IsNumber, IsNotEmpty, Min, IsArray, IsOptional } from 'class-validator';
 
 export class HeroViewModel implements HeroDataModel {
   id: number;
   name: string;
+  avatarUrl: string;
   price: number;
   saves: number;
   fans: number;
   powers: PowerViewModel[];
-
-  @Expose({ name: 'avatarUrl' })
-  @Transform(({ value, options, obj: hero }) => {
-    if (!value?.id) {
-      return value;
-    }
-    const req = (options as any).request;
-    return `${req.protocol}://${req.get('Host')}/heroes/${hero.id}/avatar`;
-  })
-  avatar: AvatarImage;
-
+  @Exclude() avatar: AvatarImage;
   @Exclude() createdAt;
   @Exclude() updatedAt;
-
-  constructor(partial: Partial<HeroDataModel>) {
-    Object.assign(this, partial);
-  }
 }
 
 export class HeroCreateModel
@@ -101,7 +81,7 @@ export class HeroUpdateModel implements Partial<HeroCreateModel> {
 export class PowerViewModel implements PowerDataModel {
   id: number;
   name: string;
-  // heroId: number;
+  heroId: number;
 }
 
 export class UserViewModel implements UserDataModel {

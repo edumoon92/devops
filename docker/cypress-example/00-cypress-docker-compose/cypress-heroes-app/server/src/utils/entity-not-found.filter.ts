@@ -1,4 +1,8 @@
-import { ArgumentsHost, Catch, HttpStatus } from '@nestjs/common';
+import {
+  ArgumentsHost,
+  Catch,
+  HttpStatus,
+} from '@nestjs/common';
 import { BaseExceptionFilter } from '@nestjs/core';
 import { Request, Response } from 'express';
 
@@ -17,7 +21,7 @@ export class EntityNotFoundFilter extends BaseExceptionFilter {
         url: request.url,
       });
     } else {
-      super.catch(exception, host);
+      super.catch(exception, host)
     }
   }
 }

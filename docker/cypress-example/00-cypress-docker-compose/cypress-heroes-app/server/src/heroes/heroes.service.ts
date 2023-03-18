@@ -1,6 +1,4 @@
-/// <reference types="@types/multer" />
-
-import { Inject, Injectable, NotFoundException, Scope } from '@nestjs/common';
+import { Inject, Injectable, Scope } from '@nestjs/common';
 import { REQUEST } from '@nestjs/core';
 import { Prisma } from '@prisma/client';
 import {
@@ -8,6 +6,7 @@ import {
   HeroUpdateModel,
   HeroCreateModel,
 } from '../models/models';
+import { mapper } from '../utils/mapper';
 import { PrismaService } from '../utils/prisma.service';
 import { Request } from 'express';
 
@@ -29,7 +28,15 @@ export class HeroesService {
         },
       },
     });
-    const heroes = heroDataModels.map((hero) => new HeroViewModel(hero));
+    const heroes = heroDataModels.map((hero) => {
+      return mapper(new HeroViewModel(), hero, (obj) => {
+        if (hero.avatar?.id) {
+          obj.avatarUrl = `${this.req.protocol}://${this.req.get(
+            'Host',
+          )}/heroes/${obj.id}/avatar`;
+        }
+      });
+    });
     return heroes;
   }
 
@@ -47,12 +54,19 @@ export class HeroesService {
         },
       },
     });
-    const hero = new HeroViewModel(heroDataModel);
+
+    const hero = mapper(new HeroViewModel(), heroDataModel, (obj) => {
+      if (heroDataModel.avatar?.id) {
+        obj.avatarUrl = `${this.req.protocol}://${this.req.get(
+          'Host',
+        )}/heroes/${obj.id}/avatar`;
+      }
+    });
     return hero;
   }
 
   async getImage(id: number) {
-    const heroDataModel = await this.prismaService.hero.findUniqueOrThrow({
+    const heroDataModel = await this.prismaService.hero.findUnique({
       where: {
         id,
       },
@@ -60,9 +74,6 @@ export class HeroesService {
         avatar: true,
       },
     });
-    if (!heroDataModel.avatar) {
-      throw new NotFoundException();
-    }
 
     return heroDataModel.avatar;
   }
@@ -76,27 +87,25 @@ export class HeroesService {
       },
       avatar: {},
     };
-    const newHero = await this.prismaService.hero.create({
+    return await this.prismaService.hero.create({
       data: heroToCreate,
     });
-    return this.getById(newHero.id);
   }
 
-  async update(id: number, hero: HeroUpdateModel) {
-    const { powers, ...rest } = hero;
+  async update(id: number, hero: HeroUpdateModel) {  
+    const { powers, ...rest } = hero ;
     const heroToUpdate: Prisma.HeroUpdateInput = {
       ...rest,
       powers: {
-        set: powers?.map((x) => ({ id: x })),
+        connect: powers?.map((x) => ({ id: x })),
       },
     };
-    const updatedHero = await this.prismaService.hero.update({
+    return await this.prismaService.hero.update({
       where: {
         id,
       },
       data: heroToUpdate,
     });
-    return this.getById(updatedHero.id);
   }
 
   async delete(id: number) {
