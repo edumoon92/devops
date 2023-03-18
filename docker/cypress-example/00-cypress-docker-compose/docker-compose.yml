@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    image: cypress/base:10
+    working_dir: /app
+    volumes:
+      - ./todomvc:/app  # Add this line
+    command: ["npm", "start"]
+    ports:
+      - "3000:3000"
+  cypress:
+    image: cypress/included:10
+    depends_on:
+      - app
+    environment:
+      - CYPRESS_baseUrl=http://app:3000
+      - CYPRESS_video=false
+    volumes:
+      - ./todomvc:/app  # Add this line
+      - ./tests:/app/tests
+      - /dev/shm:/dev/shm
+  command: sh -c "cd /e2e && npm install && npm run cypress:run"
