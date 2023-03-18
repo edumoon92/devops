@@ -4,7 +4,7 @@ services:
     image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-focal-v0.2 # NO_PUBKEY, passwd changed
     environment:
       - USER=henry
-      #- VNC_PASSWORD=tta123!@
+      - VNC_PASSWORD=tta123!@
     ports:
       - "6080:80"
       - "5900:5900"
