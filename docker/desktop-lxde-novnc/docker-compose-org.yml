@@ -1,0 +1,13 @@
+version: "3"
+services:
+  novnc:
+    image: dorowu/ubuntu-desktop-lxde-vnc:focal
+    environment:
+      - USER=henry
+      #- VNC_PASSWORD=tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm

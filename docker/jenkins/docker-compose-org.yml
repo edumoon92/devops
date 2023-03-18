@@ -2,7 +2,7 @@ version: '3'
 
 services:
   jenkins:
-    image: hcmoon92/devops:jenkins-v0.1
+    image: jenkins/jenkins:lts
     container_name: jenkins
     ports:
       - "8080:8080"
