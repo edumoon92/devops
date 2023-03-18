@@ -20,4 +20,4 @@ services:
       - ./todomvc:/app  # Add this line
       - ./cypress/tests:/app/cypress/tests
       - /dev/shm:/dev/shm
-  command: sh -c "cd /e2e && npm install && npm run cypress:run"
+    command: sh -c "cd /e2e && npm install && npm run cypress:run"
