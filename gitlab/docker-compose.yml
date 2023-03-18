@@ -8,10 +8,13 @@ services:
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://192.168.56.101:8929'
+      GITLAB_ROOT_PASSWORD: tta123!@
+      GITLAB_TIMEZONE: Asia/Seoul            
     ports:
       - '8929:8929'
       - '8922:22'
-    volumes:
-      - './data/gitlab/config:/etc/gitlab'
-      - './data/gitlab/logs:/var/log/gitlab'
-      - './data/gitlab/data:/var/opt/gitlab'
+
+#    volumes:
+#      - './data/gitlab/config:/etc/gitlab'
+#      - './data/gitlab/logs:/var/log/gitlab'
+#      - './data/gitlab/data:/var/opt/gitlab'
