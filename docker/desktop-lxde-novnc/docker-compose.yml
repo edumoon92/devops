@@ -11,4 +11,3 @@ services:
     volumes:
       - ./:/app
       - /dev/shm:/dev/shm
-~
