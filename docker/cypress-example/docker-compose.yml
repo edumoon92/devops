@@ -34,3 +34,21 @@ services:
     volumes:
       - ./e2e/cypress:/app/cypress
       - ./e2e/cypress.config.js:/app/cypress.config.js
+
+  realworld-testing:
+    image: cypress
+    container_name: realworld-testing
+    environment:
+      - CYPRESS_baseUrl=http://localhost
+    command: npx cypress run
+    # mount the host directory e2e/cypress and the file e2e/cypress.config.js as
+    # volumes within the container
+    # this means that:
+    #  1. anything that Cypress writes to these folders (e.g., screenshots,
+    #     videos) appears also on the Docker host's filesystem
+    #  2. any change that the developer applies to Cypress files on the host
+    #     machine immediately takes effect within the e2e container (no docker
+    #     rebuild required).
+    volumes:
+      - ./cypress-realworld-testing-course-app/cypress:/app/cypress
+      - ./cypress-realworld-testing-course-app/cypress.config.js:/app/cypress.config.js
