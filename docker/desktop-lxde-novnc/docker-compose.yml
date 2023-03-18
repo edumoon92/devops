@@ -1,7 +1,7 @@
 version: "3"
 services:
   novnc:
-    image: dorowu/ubuntu-desktop-lxde-vnc:focal
+    image: hcmoon92/ubuntu-desktop-lxde-vnc:focal
     environment:
       - USER=henry
       #- VNC_PASSWORD=tta123!@
