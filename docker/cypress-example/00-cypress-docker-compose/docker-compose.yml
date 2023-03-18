@@ -4,7 +4,7 @@ services:
   app:
     image: node:12-alpine
     volumes:
-      - ./heroes:/app
+      - ./cypress-heroes-app:/app
     command: sh -c "cd /app && npm install && npm start"
     ports:
       - "8080:8080"
