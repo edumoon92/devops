@@ -1,0 +1,21 @@
+stages:
+  - test
+
+image: docker:latest
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+before_script:
+  - docker-compose build
+
+test:
+  stage: test
+  script:
+    - docker-compose up -d
+    - docker-compose run --rm api npm test
+    - docker-compose down
