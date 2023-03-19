@@ -1,0 +1,15 @@
+version: "3"
+services:
+  novnc:
+    build:
+      context: .
+      dockerfile: ../Dockerfile-docker-ubuntu-vnc/Dockerfile-nodejs  
+    environment:
+      - USER=henry
+      #- VNC_PASSWORD=tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm
