@@ -6,4 +6,4 @@ login: root
 docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
 ```
 
-pw: tta123!@
+id:root pw: tta123!@
