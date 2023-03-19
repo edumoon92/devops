@@ -7,7 +7,7 @@ services:
     hostname: '192.168.56.101'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://192.168.56.101:8929'
+        external_url 'http://192.168.56.101'
         gitlab_rails['gitlab_shell_ssh_port'] = 8022
       GITLAB_ROOT_PASSWORD: tta123!@
       GITLAB_TIMEZONE: Asia/Seoul            
