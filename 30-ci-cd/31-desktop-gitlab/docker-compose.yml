@@ -1,7 +1,8 @@
 version: "3.8"
 services:
-  desktop-novnc:
-    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-v0.3
+  desktop-novnc-rf:
+    image: hcmoon92/devops:desktop-lxde-vnc-rf-v0.1	
+    # python, node10, robotframework
     environment:
       - USER=henry
       - VNC_PASSWORD=tta123!@
@@ -13,6 +14,7 @@ services:
       - /dev/shm:/dev/shm
   gitlab-ui:
     image: 'hcmoon92/devops:gitlab-v0.2'
+    # account: root/tta123!@
     restart: always
     hostname: '192.168.56.101'
     environment:
