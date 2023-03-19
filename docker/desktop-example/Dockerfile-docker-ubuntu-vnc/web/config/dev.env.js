@@ -3,6 +3,5 @@ const merge = require('webpack-merge')
 const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
-  NODE_ENV: '"development"',
-  PREFIX_PATH: `"${process.env.PREFIX_PATH}"`
+  NODE_ENV: '"development"'
 })
