@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  desktop-novnc:
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-v0.3
+    environment:
+      - USER=henry
+      - VNC_PASSWORD=tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm
+  gitlab-ui:
+    image: 'hcmoon92/devops:gitlab-v0.2'
+    restart: always
+    hostname: '192.168.56.101'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://192.168.56.101'
+        gitlab_rails['gitlab_shell_ssh_port'] = 8022
+      GITLAB_ROOT_PASSWORD: tta123!@
+      GITLAB_TIMEZONE: Asia/Seoul            
+    ports:
+      - '80:80'
+      - '8022:22'
+    volumes:
+      - './gitlab-config/config:/etc/gitlab'
+      - './gitlab-config/logs:/var/log/gitlab'
+      - './gitlab-config/data:/var/opt/gitlab'      
