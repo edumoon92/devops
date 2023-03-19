@@ -1,6 +1,7 @@
 services:
   portainer:
     image: portainer/portainer-ce:alpine
+    # admin / tta123tta123!@
     container_name: portainer
     command: -H unix:///var/run/docker.sock
     ports:

@@ -1,0 +1,43 @@
+version: '3.0'
+
+services:
+  desktop-novnc-rf:
+    image: hcmoon92/devops:desktop-lxde-vnc-rf-v0.1	
+    # python, node10, robotframework
+    environment:
+      - USER=henry
+      #- VNC_PASSWORD=tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm   
+
+  webserver:
+    context: ./nodejs-web
+    build: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: tta123!@
+      MYSQL_DB: mydb
+    command: npm start
+
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: tta123!@
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
