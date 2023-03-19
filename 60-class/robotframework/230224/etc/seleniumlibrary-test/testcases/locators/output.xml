@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.2 on win32)" generated="20220529 22:26:02.629" rpa="false" schemaversion="3">
+<suite id="s1" name="Sizzle" source="C:\dev\z-work\tta-academy\class\robot-0530\day2\robotframework-seleniumlibrary\testcases\locators\sizzle.robot">
+<kw name="Open Browser To Start Page" library="resource" type="SETUP">
+<doc>This keyword also tests 'Set Selenium Speed' and 'Set Selenium Timeout'
+against all reason.</doc>
+<kw name="Open Browser To Start Page Without Testing Default Options" library="resource">
+<var>${default speed}</var>
+<var>${default timeout}</var>
+<doc>Open Browser To Start Page Without Testing Default Options</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${FRONT PAGE}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220529 22:26:02.971" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7000/html/'.</msg>
+<msg timestamp="20220529 22:26:02.974" level="INFO">Firefox driver log is always forced to to: C:\dev\z-work\tta-academy\class\robot-0530\day2\robotframework-seleniumlibrary\testcases\locators\geckodriver-2.log</msg>
+<status status="PASS" starttime="20220529 22:26:02.970" endtime="20220529 22:26:10.858"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<var>${orig speed}</var>
+<arg>${SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220529 22:26:10.860" level="INFO">${orig speed} = 0 seconds</msg>
+<status status="PASS" starttime="20220529 22:26:10.859" endtime="20220529 22:26:10.860"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<var>${orig timeout}</var>
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220529 22:26:10.869" level="INFO">${orig timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220529 22:26:10.860" endtime="20220529 22:26:10.869"/>
+</kw>
+<msg timestamp="20220529 22:26:10.870" level="INFO">${default speed} = 0 seconds</msg>
+<msg timestamp="20220529 22:26:10.870" level="INFO">${default timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220529 22:26:02.969" endtime="20220529 22:26:10.870"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default speed}</arg>
+<arg>0 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220529 22:26:10.871" endtime="20220529 22:26:10.872"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default timeout}</arg>
+<arg>5 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220529 22:26:10.873" endtime="20220529 22:26:10.873"/>
+</kw>
+<status status="PASS" starttime="20220529 22:26:02.969" endtime="20220529 22:26:10.874"/>
+</kw>
+<test id="s1-t1" name="Find By Id" line="9">
+<kw name="Go To Page &quot;jquery.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:26:10.882" level="INFO">Opening url 'http://localhost:7000/html/jquery.html'</msg>
+<status status="PASS" starttime="20220529 22:26:10.881" endtime="20220529 22:26:11.027"/>
+</kw>
+<status status="PASS" starttime="20220529 22:26:10.880" endtime="20220529 22:26:11.028"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>jquery=#div_id</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220529 22:26:11.083" level="INFO">Current page contains element 'jquery=#div_id'.</msg>
+<status status="PASS" starttime="20220529 22:26:11.031" endtime="20220529 22:26:11.083"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>jquery=#foo</arg>
+<arg>Text and image</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 22:26:11.135" level="INFO">Element 'jquery=#foo' contains text 'Text and image'.</msg>
+<status status="PASS" starttime="20220529 22:26:11.084" endtime="20220529 22:26:11.135"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>sizzle=#some_id</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220529 22:26:11.138" level="INFO">Clicking link 'sizzle=#some_id'.</msg>
+<status status="PASS" starttime="20220529 22:26:11.137" endtime="20220529 22:26:11.266"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>(root)/broken.html</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220529 22:26:11.273" level="INFO">Page title is '(root)/broken.html'.</msg>
+<status status="PASS" starttime="20220529 22:26:11.268" endtime="20220529 22:26:11.273"/>
+</kw>
+<doc>Find By Id</doc>
+<status status="PASS" starttime="20220529 22:26:10.875" endtime="20220529 22:26:11.274"/>
+</test>
+<test id="s1-t2" name="Find In Table" line="16">
+<kw name="Go To Page &quot;jquery.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:26:11.282" level="INFO">Opening url 'http://localhost:7000/html/jquery.html'</msg>
+<status status="PASS" starttime="20220529 22:26:11.280" endtime="20220529 22:26:11.408"/>
+</kw>
+<status status="PASS" starttime="20220529 22:26:11.279" endtime="20220529 22:26:11.409"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#simpleTable</arg>
+<arg>simpleTable</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:26:11.410" endtime="20220529 22:26:11.503"/>
+</kw>
+<kw name="Table Header Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#tableWithTwoHeaders</arg>
+<arg>tableWithTwoHeaders_C2</arg>
+<doc>Verifies table header contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:26:11.504" endtime="20220529 22:26:11.643"/>
+</kw>
+<kw name="Table Footer Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#withHeadAndFoot</arg>
+<arg>withHeadAndFoot_AF1</arg>
+<doc>Verifies table footer contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:26:11.644" endtime="20220529 22:26:11.701"/>
+</kw>
+<kw name="Table Row Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#mergedRows</arg>
+<arg>1</arg>
+<arg>mergedRows_D1</arg>
+<doc>Verifies that table row contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:26:11.702" endtime="20220529 22:26:12.012"/>
+</kw>
+<kw name="Table Column Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#mergedCols</arg>
+<arg>1</arg>
+<arg>mergedCols_D1</arg>
+<doc>Verifies table column contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:26:12.013" endtime="20220529 22:26:12.447"/>
+</kw>
+<kw name="Table Cell Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#formattedTable</arg>
+<arg>1</arg>
+<arg>1</arg>
+<arg>formattedTable_A1</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<msg timestamp="20220529 22:26:12.695" level="INFO">Table cell contains 'formattedTable_A1'.</msg>
+<status status="PASS" starttime="20220529 22:26:12.448" endtime="20220529 22:26:12.696"/>
+</kw>
+<kw name="Table Cell Should Contain" library="SeleniumLibrary">
+<arg>jquery=table#formattedTable</arg>
+<arg>2</arg>
+<arg>4</arg>
+<arg>äöü€&amp;äöü€&amp;</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<msg timestamp="20220529 22:26:12.929" level="INFO">Table cell contains 'äöü€&amp;äöü€&amp;'.</msg>
+<status status="PASS" starttime="20220529 22:26:12.697" endtime="20220529 22:26:12.929"/>
+</kw>
+<kw name="Table Cell Should Contain" library="SeleniumLibrary">
+<arg>jquery=h2.someClass ~ table:last-child</arg>
+<arg>2</arg>
+<arg>4</arg>
+<arg>äöü€&amp;äöü€&amp;</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<msg timestamp="20220529 22:26:13.170" level="INFO">Table cell contains 'äöü€&amp;äöü€&amp;'.</msg>
+<status status="PASS" starttime="20220529 22:26:12.930" endtime="20220529 22:26:13.170"/>
+</kw>
+<doc>Find In Table</doc>
+<status status="PASS" starttime="20220529 22:26:11.277" endtime="20220529 22:26:13.171"/>
+</test>
+<test id="s1-t3" name="Find By Everything Else" line="27">
+<kw name="Go To Page &quot;jquery.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:26:13.177" level="INFO">Opening url 'http://localhost:7000/html/jquery.html'</msg>
+<status status="PASS" starttime="20220529 22:26:13.176" endtime="20220529 22:26:13.285"/>
+</kw>
+<status status="PASS" starttime="20220529 22:26:13.175" endtime="20220529 22:26:13.286"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>jquery=[href="index.html"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220529 22:26:13.315" level="INFO">Current page contains element 'jquery=[href="index.html"]'.</msg>
+<status status="PASS" starttime="20220529 22:26:13.286" endtime="20220529 22:26:13.315"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>jquery=[target="_blank"]</arg>
+<arg>Target opens in new window</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 22:26:13.334" level="INFO">Element 'jquery=[target="_blank"]' contains text 'Target opens in new window'.</msg>
+<status status="PASS" starttime="20220529 22:26:13.316" endtime="20220529 22:26:13.334"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>sizzle=:has(img[alt="tooltip"])</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220529 22:26:13.336" level="INFO">Clicking link 'sizzle=:has(img[alt="tooltip"])'.</msg>
+<status status="PASS" starttime="20220529 22:26:13.335" endtime="20220529 22:26:13.456"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>(root)/index.html</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220529 22:26:13.469" level="INFO">Page title is '(root)/index.html'.</msg>
+<status status="PASS" starttime="20220529 22:26:13.463" endtime="20220529 22:26:13.470"/>
+</kw>
+<doc>Find By Everything Else</doc>
+<status status="PASS" starttime="20220529 22:26:13.173" endtime="20220529 22:26:13.470"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220529 22:26:13.473" endtime="20220529 22:26:15.143"/>
+</kw>
+<doc>Tests JQuery</doc>
+<status status="PASS" starttime="20220529 22:26:02.632" endtime="20220529 22:26:15.143"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Sizzle">Sizzle</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

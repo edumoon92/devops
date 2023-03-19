@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20220531 13:51:20.130" rpa="false" schemaversion="3">
+<suite id="s1" name="01-Setup-Teardown" source="C:\dev\z-work\tta-academy\class\robot-0530\day2\04-setup-teardown\01-setup-teardown.robot">
+<kw name="Suite Setup" type="SETUP">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Suite Setup</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.227" endtime="20220531 13:51:20.228"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.226" endtime="20220531 13:51:20.229"/>
+</kw>
+<test id="s1-t1" name="TC 1.1" line="14">
+<kw name="Test Setup" type="SETUP">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Setup</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.233" endtime="20220531 13:51:20.234"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.232" endtime="20220531 13:51:20.234"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>TC 1.1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.235" endtime="20220531 13:51:20.237"/>
+</kw>
+<kw name="Test Teardown" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Teardown</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.243" endtime="20220531 13:51:20.244"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.241" endtime="20220531 13:51:20.248"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.230" endtime="20220531 13:51:20.249"/>
+</test>
+<test id="s1-t2" name="TC 1.2" line="16">
+<kw name="Test Setup" type="SETUP">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Setup</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.257" endtime="20220531 13:51:20.259"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.256" endtime="20220531 13:51:20.259"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>TC 1.2</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.260" endtime="20220531 13:51:20.262"/>
+</kw>
+<kw name="Test Teardown" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Teardown</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.265" endtime="20220531 13:51:20.268"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.263" endtime="20220531 13:51:20.269"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.254" endtime="20220531 13:51:20.271"/>
+</test>
+<kw name="Suite Teardown" type="TEARDOWN">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Suite Teardown</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220531 13:51:20.277" endtime="20220531 13:51:20.279"/>
+</kw>
+<status status="PASS" starttime="20220531 13:51:20.276" endtime="20220531 13:51:20.279"/>
+</kw>
+<doc>This suite was initially created for testing keyword types
+with listeners but can be used for other purposes too.</doc>
+<status status="PASS" starttime="20220531 13:51:20.137" endtime="20220531 13:51:20.280"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="01-Setup-Teardown">01-Setup-Teardown</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
