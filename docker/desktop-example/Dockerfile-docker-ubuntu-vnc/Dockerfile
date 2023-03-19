@@ -30,14 +30,14 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /bin/
 RUN chmod +x /bin/tini
 
 # ffmpeg
-RUN mkdir -p /usr/local/ffmpeg \
-    && curl -sSL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz | tar xJvf - -C /usr/local/ffmpeg/ --strip 1
+#RUN mkdir -p /usr/local/ffmpeg \
+#    && curl -sSL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz | tar xJvf - -C /usr/local/ffmpeg/ --strip 1
 
 # python library
 COPY image/usr/local/lib/web/backend/requirements.txt /tmp/
 RUN apt-get update \
     && dpkg-query -W -f='${Package}\n' > /tmp/a.txt \
-    && apt-get install -y python-pip python-dev build-essential \
+    && apt-get install -y python3-pip python3-dev build-essential \
 	&& pip install setuptools wheel && pip install -r /tmp/requirements.txt \
     && dpkg-query -W -f='${Package}\n' > /tmp/b.txt \
     && apt-get remove -y `diff --changed-group-format='%>' --unchanged-group-format='' /tmp/a.txt /tmp/b.txt | xargs` \
