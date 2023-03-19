@@ -1,7 +1,7 @@
 ################################################################################
 # base system
 ################################################################################
-FROM ubuntu:16.04 as system
+FROM ubuntu:20.04 as system
 
 ARG localbuild
 RUN if [ "x$localbuild" != "x" ]; then sed -i 's#http://archive.ubuntu.com/#http://qnap.dorowu.com/#' /etc/apt/sources.list; fi
@@ -52,7 +52,7 @@ RUN apt-get update \
 ################################################################################
 # builder
 ################################################################################
-FROM ubuntu:16.04 as builder
+FROM ubuntu:20.04 as builder
 
 ARG localbuild
 RUN if [ "x$localbuild" != "x" ]; then sed -i 's#http://archive.ubuntu.com/#http://qnap.dorowu.com/#' /etc/apt/sources.list; fi
@@ -61,7 +61,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates
 
 # nodejs
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs
 
 # yarn
