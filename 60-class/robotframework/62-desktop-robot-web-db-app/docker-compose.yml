@@ -15,8 +15,9 @@ services:
       - /dev/shm:/dev/shm   
 
   webserver:
-    context: ./nodejs-web
-    build: Dockerfile
+    build: 
+      context: ./nodejs-web
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
