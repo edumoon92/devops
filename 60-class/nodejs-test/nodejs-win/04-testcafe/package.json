@@ -1,0 +1,20 @@
+{
+  "name": "prj-testcafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test1": "testcafe chrome tests",
+    "test-all-crh-all": "testcafe chrome:headless tests",
+    "test-all-ffh": "testcafe firefox:headless tests",
+    "test-all-ie": "testcafe ie tests",
+    "test-all-ed": "testcafe edge:headless tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "testcafe": "^1.8.2"
+  }
+}

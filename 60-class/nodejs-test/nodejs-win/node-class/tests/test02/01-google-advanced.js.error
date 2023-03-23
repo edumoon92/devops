@@ -1,0 +1,18 @@
+module.exports = {
+    'Google advanced search : Elon Musk' : function(browser) {
+        const mainQuerySelector = 'input[name="as_q"]';
+        const mainQuery = 'Elon Musk';
+
+        const langDropdownSelector = '#lr_menu';
+        const langDropdownValueSelector = '.goog-menuitem[value="lang_ko"]';
+    
+        browser
+            .url('http://www.google.com/advanced_search')
+            .waitForElementVisible(mainQuerySelector, 2000)
+            .setValue(mainQuerySelector, mainQuery)
+            .click(langDropdownSelector)
+            .click(langDropdownValueSelector)
+            .saveScreenshot('screenshots/test02/test02-screenshots-google-advanced-1.png')
+    }
+}
+    

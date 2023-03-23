@@ -1,0 +1,16 @@
+module.exports = {
+  'demo Test': function(browser) {
+    
+     browser.url('http://google.com');
+      
+     browser.waitForElementVisible('#main');
+     
+     browser.waitForElementVisible('input[name="q"]');
+ 
+     // with callback
+     browser.waitForElementVisible('input[name="q"]', 1000, function() {
+       // do something while we're here
+       console.log('button visible');
+     });
+  }
+}
