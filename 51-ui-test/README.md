@@ -1,4 +1,4 @@
-# demo site
+# UI Automation Testing Demo Site
 
 - Automation Book Store: https://automationbookstore.dev/
 - Automation Test Store: https://automationteststore.com/
