@@ -7,3 +7,5 @@
 - FakeRESTApi.Web V1	https://fakerestapi.azurewebsites.net/index.html
 - Swagger Petstore	https://petstore.swagger.io/
 - This site list many other Free API	https://apipheny.io/free-api/
+
+# https://github.com/PacktPublishing/API-Testing-and-Development-with-Postman
