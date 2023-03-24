@@ -9,13 +9,16 @@ sudo password : ubuntu
 
 # JAVA 설치
 ## openjdk 설치
-$ sudo apt-get install openjdk-17-jdk
-$ java -version
-$ javac -version
-
+```bash
+sudo apt-get install openjdk-17-jdk
+java -version
+javac -version
+```
 
 ## javac location  
-$ readlink -f /usr/bin/javac
+```bash
+readlink -f /usr/bin/javac
+```
 
 ## .profile
 ```
