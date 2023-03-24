@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Mocha Tests</title>
+
+    <link rel="stylesheet" href="./node_modules/mocha/mocha.css">
+</head>
+<body>
+<div id="mocha"></div>
+<script src="./node_modules/mocha/mocha.js"></script>
+<script src="./node_modules/chai/chai.js"></script>
+<script>
+    mocha.setup({
+        ui: 'bdd',
+        reporter: 'html'
+    })
+</script>
+
+<!-- 모듈 코드 -->
+<script src="./41-mocha-browser-module.js"></script>
+
+<!-- 테스트 코드 -->
+<script src="./41-mocha-browser-module-test.js"></script>
+
+<script>
+    mocha.checkLeaks();
+    mocha.run();
+</script>
+</body>
+</html>
