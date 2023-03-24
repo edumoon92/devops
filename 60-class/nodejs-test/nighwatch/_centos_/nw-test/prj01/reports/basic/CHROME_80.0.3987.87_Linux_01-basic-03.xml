@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="basic.01-basic-03"
+    errors="0" failures="0" hostname="" id="" package="basic" skipped="0"
+    tests="1" time="1.634" timestamp="">
+  
+    <testcase name="Get URL and title" classname="basic.01-basic-03" time="1.634" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

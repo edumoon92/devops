@@ -1,0 +1,16 @@
+{
+  "name": "01-mocha-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test-get-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0"
+  }
+}

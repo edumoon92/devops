@@ -1,0 +1,45 @@
+{
+  "automerge": true,
+  "extends": [
+    "config:base"
+  ],
+  "labels": [
+    "type: dependencies",
+    "renovate"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "major": {
+    "automerge": false
+  },
+  "masterIssue": true,
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 2,
+  "rangeStrategy": "pin",
+  "schedule": [
+    "after 2am and before 3am on sunday"
+  ],
+  "separateMultipleMajor": true,
+  "separatePatchReleases": true,
+  "timezone": "America/New_York",
+  "updateNotScheduled": false,
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "*"
+      ],
+      "excludePackagePatterns": [
+        "cypress",
+        "@cypress/browserify-preprocessor",
+        "@cypress/eslint-plugin-dev",
+        "@cypress/snapshot",
+        "@cypress/webpack-preprocessor",
+        "start-server-and-test",
+        "typescript",
+        "cypress-file-upload"
+      ],
+      "enabled": false
+    }
+  ]
+}

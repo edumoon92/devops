@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let i;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",i=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")&&this._isValidScriptType(i)?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}_isValidScriptType(e){return!e||""===e||"string"==typeof e&&["text/javascript","text/x-javascript","text/ecmascript","text/jscript","application/javascript","application/x-javascript","application/ecmascript","application/jscript","module"].includes(e.toLowerCase())}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){const n=e[t];Object.defineProperty(e,t,{get:n||function(){},set:n=>{e["rocket"+t]=n}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const o=document.createDocumentFragment();i.setStart(o,0),o.appendChild(i.createContextualFragment(t)),r.insertBefore(o,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}}</script>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://ultimateqa.com/xmlrpc.php" />
+
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<meta name='robots' content='max-image-preview:large' />
+
+<!-- Social Warfare v4.3.0 https://warfareplugins.com - BEGINNING OF OUTPUT -->
+<meta property="og:title" content="Complicated Page">
+<meta property="article_author" content="Nikolay Advolodkin">
+<meta property="article_publisher" content="https://www.facebook.com/Ultimateqa1">
+<meta property="fb:app_id" content="529576650555031">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultimateqa.com/complicated-page/">
+<meta property="og:site_name" content="Ultimate QA">
+<meta property="article:published_time" content="2016-11-12T21:19:00-05:00">
+<meta property="article:modified_time" content="2018-05-01T00:22:45-04:00">
+<meta property="og:updated_time" content="2018-05-01T00:22:45-04:00">
+<meta name="twitter:title" content="Complicated Page">
+<meta name="twitter:site" content="@Nikolay_A00">
+<meta name="twitter:creator" content="@Nikolay_a00">
+<meta name="twitter:card" content="summary">
+<style>
+	@font-face {
+		font-family: "sw-icon-font";
+		src:url("https://ultimateqa.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.3.0");
+		src:url("https://ultimateqa.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.3.0#iefix") format("embedded-opentype"),
+		url("https://ultimateqa.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.woff?ver=4.3.0") format("woff"),
+		url("https://ultimateqa.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.ttf?ver=4.3.0") format("truetype"),
+		url("https://ultimateqa.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.svg?ver=4.3.0#1445203416") format("svg");
+		font-weight: normal;
+		font-style: normal;
+		font-display:block;
+	}
+</style>
+<!-- Social Warfare v4.3.0 https://warfareplugins.com - END OF OUTPUT -->
+
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v14.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Complicated Page | Ultimate QA</title><link rel="stylesheet" href="https://ultimateqa.com/wp-content/cache/min/1/1c33dbd63962e654005508cc71905f52.css" media="all" data-minify="1" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://ultimateqa.com/complicated-page/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Complicated Page - Ultimate QA" />
+	<meta property="og:description" content="ShareTweetShare" />
+	<meta property="og:url" content="https://ultimateqa.com/complicated-page/" />
+	<meta property="og:site_name" content="Ultimate QA" />
+	<meta property="article:modified_time" content="2018-05-01T04:22:45+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@Nikolay_A00" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://ultimateqa.com/#website","url":"https://ultimateqa.com/","name":"Ultimate QA","description":"Quality Assurance Evolution","potentialAction":[{"@type":"SearchAction","target":"https://ultimateqa.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://ultimateqa.com/complicated-page/#webpage","url":"https://ultimateqa.com/complicated-page/","name":"Complicated Page - Ultimate QA","isPartOf":{"@id":"https://ultimateqa.com/#website"},"datePublished":"2016-11-12T21:19:00+00:00","dateModified":"2018-05-01T04:22:45+00:00","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://ultimateqa.com/complicated-page/"]}]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="amphtml" href="https://ultimateqa.com/complicated-page/amp/" /><meta name="generator" content="AMP for WP 1.0.77.38"/><link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel='dns-prefetch' href='//jetpack.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//public-api.wordpress.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+
+<link rel="alternate" type="application/rss+xml" title="Ultimate QA &raquo; Feed" href="https://ultimateqa.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ultimate QA &raquo; Comments Feed" href="https://ultimateqa.com/comments/feed/" />
+<meta content="Divi v.4.16.0" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+
+
+
+
+
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://ultimateqa.com/wp-json/" /><link rel="alternate" type="application/json" href="https://ultimateqa.com/wp-json/wp/v2/pages/579" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ultimateqa.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ultimateqa.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel='shortlink' href='https://wp.me/P7absY-9l' />
+<link rel="alternate" type="application/json+oembed" href="https://ultimateqa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://ultimateqa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F&#038;format=xml" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">setTimeout(function() {!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '493382947514321');
+fbq('track', 'PageView');
+
+(function(h,o,t,j,a,r){
+h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+h._hjSettings={hjid:1671609,hjsv:6};
+a=o.getElementsByTagName('head')[0];
+r=o.createElement('script');r.async=1;
+r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');}, 10000)</script><!-- SEO meta tags powered by SmartCrawl https://wpmudev.com/project/smartcrawl-wordpress-seo/ -->
+<link rel="canonical" href="https://ultimateqa.com/complicated-page/" />
+<meta name="description" content="Skills Improved: How to deal with a large page that has many elements and divisions? Properly structuring your page objects Section of Buttons Section of Social Media Follows Twitter facebook Twitter facebook Twitter facebook Twitter facebook Twitter facebook Section of Random Stuff Inside of toggle" />
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Organization","@id":"https:\/\/ultimateqa.com\/#schema-publishing-organization","url":"https:\/\/ultimateqa.com","name":"Ultimate QA"},{"@type":"WebSite","@id":"https:\/\/ultimateqa.com\/#schema-website","url":"https:\/\/ultimateqa.com","name":"Ultimate QA","encoding":"UTF-8","potentialAction":{"@type":"SearchAction","target":"https:\/\/ultimateqa.com\/search\/{search_term_string}\/","query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https:\/\/ultimateqa.com\/author\/qa-administrator87\/#schema-author","name":"Nikolay Advolodkin","url":"https:\/\/ultimateqa.com\/author\/qa-administrator87\/","description":"Nikolay Advolodkin is a self-driven SDET on a lifelong mission to create profound change in the IT world and ultimately leave a legacy for his loved ones, community, and the world at large. Today, he serves as the CEO and Test Automation Instructor at UltimateQA.com and contributes informative articles to leading test automaton websites like SimpleProgrammer.com and TechBeacon.com"},{"@type":"WebPage","@id":"https:\/\/ultimateqa.com\/complicated-page\/#schema-webpage","isPartOf":{"@id":"https:\/\/ultimateqa.com\/#schema-website"},"publisher":{"@id":"https:\/\/ultimateqa.com\/#schema-publishing-organization"},"url":"https:\/\/ultimateqa.com\/complicated-page\/"},{"@type":"Article","mainEntityOfPage":{"@id":"https:\/\/ultimateqa.com\/complicated-page\/#schema-webpage"},"author":{"@id":"https:\/\/ultimateqa.com\/author\/qa-administrator87\/#schema-author"},"publisher":{"@id":"https:\/\/ultimateqa.com\/#schema-publishing-organization"},"dateModified":"2018-05-01T00:22:45","datePublished":"2016-11-12T21:19:00","headline":"Complicated Page | Ultimate QA","description":"Skills Improved: How to deal with a large page that has many elements and divisions? Properly structuring your page objects Section of Buttons Section of\u00a0Social Media Follows Twitter facebook Twitter facebook Twitter facebook Twitter facebook Twitter facebook Section of\u00a0Random Stuff Inside of toggle","name":"Complicated Page"}]}</script>
+<!-- /SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type="text/css" id="tve_global_variables">:root{--tcb-color-0:rgb(8, 6, 10);--tcb-color-1:rgb(8, 6, 10);}</style><meta name="google-site-verification" content="kkbQ29fy6PMF9w85q6Hn0nYk7R4CMUXcOB54ZykmTOE">
+<meta name="google-site-verification" content="Xku0vRTHtsF1ZvrIw_OxM5Th94D8sOWJJWcf01EHQRk">
+<!-- FB Ads Verification -->
+<meta name="facebook-domain-verification" content="nw73ne6ncto12h4nxlyg7o4kp19soq">
+
+<!--GetEmails.com script-->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+!function(){var geq=window.geq=window.geq||[];if(geq.initialize) return;if (geq.invoked){if (window.console && console.error) {console.error("GE snippet included twice.");}return;}geq.invoked = true;geq.methods = ["page", "suppress", "trackOrder", "identify", "addToCart"];geq.factory = function(method){return function(){var args = Array.prototype.slice.call(arguments);args.unshift(method);geq.push(args);return geq;};};for (var i = 0; i < geq.methods.length; i++) {var key = geq.methods[i];geq[key] = geq.factory(key);}geq.load = function(key){var script = document.createElement("script");script.type = "text/javascript";script.async = true;if (location.href.includes("vge=true")) {script.src = "https://s3-us-west-2.amazonaws.com/storejs/a/" + key + "/ge.js?v=" + Math.random();} else {script.src = "https://s3-us-west-2.amazonaws.com/storejs/a/" + key + "/ge.js";}var first = document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script, first);};geq.SNIPPET_VERSION = "1.5.1";
+geq.load("E82HWVD");}();
+</script>
+<script type="rocketlazyloadscript">geq.page()</script>
+
+<!--GetEmails.com END-->
+<link rel="icon" href="https://ultimateqa.com/wp-content/uploads/2016/04/QALOGO-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://ultimateqa.com/wp-content/uploads/2016/04/QALOGO.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://ultimateqa.com/wp-content/uploads/2016/04/QALOGO.png" />
+<meta name="msapplication-TileImage" content="https://ultimateqa.com/wp-content/uploads/2016/04/QALOGO.png" />
+<style id="et-divi-customizer-global-cached-inline-styles">body{color:#000000}h1,h2,h3,h4,h5,h6{color:#000000}.container,.et_pb_row,.et_pb_slider .et_pb_container,.et_pb_fullwidth_section .et_pb_title_container,.et_pb_fullwidth_section .et_pb_title_featured_container,.et_pb_fullwidth_header:not(.et_pb_fullscreen) .et_pb_fullwidth_header_container{max-width:1221px}.et_boxed_layout #page-container,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #top-header,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #main-header,.et_fixed_nav.et_boxed_layout #page-container #top-header,.et_fixed_nav.et_boxed_layout #page-container #main-header,.et_boxed_layout #page-container .container,.et_boxed_layout #page-container .et_pb_row{max-width:1381px}a{color:#8224e3}#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:#003c96}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#ffffff}.et_search_form_container input::-moz-placeholder{color:#ffffff}.et_search_form_container input::-webkit-input-placeholder{color:#ffffff}.et_search_form_container input:-ms-input-placeholder{color:#ffffff}#top-menu li a{font-size:17px}body.et_vertical_nav .container.et_search_form_container .et-search-form input{font-size:17px!important}.footer-widget,.footer-widget li,.footer-widget li a,#footer-info{font-size:18px}.footer-widget .et_pb_widget div,.footer-widget .et_pb_widget ul,.footer-widget .et_pb_widget ol,.footer-widget .et_pb_widget label{line-height:1.7em}#footer-widgets .footer-widget li:before{top:12.3px}#et-footer-nav .bottom-nav li.current-menu-item a{color:#2ea3f2}body .et_pb_button{background-color:#80cb79;border-color:#80cb79}body.et_pb_button_helper_class .et_pb_button,body.et_pb_button_helper_class .et_pb_module.et_pb_button{color:#ffffff}body .et_pb_button:after{content:'9';font-size:20px}body .et_pb_bg_layout_light.et_pb_button:hover,body .et_pb_bg_layout_light .et_pb_button:hover,body .et_pb_button:hover{color:#ffffff!important}h1,h2,h3,h4,h5,h6,.et_quote_content blockquote p,.et_pb_slide_description .et_pb_slide_title{font-weight:bold;font-style:normal;text-transform:none;text-decoration:none}@media only screen and (min-width:981px){#main-footer .footer-widget h4,#main-footer .widget_block h1,#main-footer .widget_block h2,#main-footer .widget_block h3,#main-footer .widget_block h4,#main-footer .widget_block h5,#main-footer .widget_block h6{font-size:22px}.et_header_style_left #et-top-navigation,.et_header_style_split #et-top-navigation{padding:15px 0 0 0}.et_header_style_left #et-top-navigation nav>ul>li>a,.et_header_style_split #et-top-navigation nav>ul>li>a{padding-bottom:15px}.et_header_style_split .centered-inline-logo-wrap{width:30px;margin:-30px 0}.et_header_style_split .centered-inline-logo-wrap #logo{max-height:30px}.et_pb_svg_logo.et_header_style_split .centered-inline-logo-wrap #logo{height:30px}.et_header_style_centered #top-menu>li>a{padding-bottom:5px}.et_header_style_slide #et-top-navigation,.et_header_style_fullscreen #et-top-navigation{padding:6px 0 6px 0!important}.et_header_style_centered #main-header .logo_container{height:30px}#logo{max-height:100%}.et_pb_svg_logo #logo{height:100%}.et_header_style_centered.et_hide_primary_logo #main-header:not(.et-fixed-header) .logo_container,.et_header_style_centered.et_hide_fixed_logo #main-header.et-fixed-header .logo_container{height:5.4px}.et_header_style_left .et-fixed-header #et-top-navigation,.et_header_style_split .et-fixed-header #et-top-navigation{padding:15px 0 0 0}.et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,.et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a{padding-bottom:15px}.et_header_style_centered header#main-header.et-fixed-header .logo_container{height:30px}.et_header_style_split #main-header.et-fixed-header .centered-inline-logo-wrap{width:30px;margin:-30px 0}.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{max-height:30px}.et_pb_svg_logo.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{height:30px}.et_header_style_slide .et-fixed-header #et-top-navigation,.et_header_style_fullscreen .et-fixed-header #et-top-navigation{padding:6px 0 6px 0!important}.et-fixed-header #top-menu li a{font-size:15px}.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#ffffff!important}body.home-posts #left-area .et_pb_post h2,body.archive #left-area .et_pb_post h2,body.search #left-area .et_pb_post h2{font-size:30.333333333333px}body.single .et_post_meta_wrapper h1{font-size:35px}}@media only screen and (min-width:1526px){.et_pb_row{padding:30px 0}.et_pb_section{padding:61px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:91px}.et_pb_fullwidth_section{padding:0}}@media only screen and (max-width:980px){body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1_3 .et_link_content a.et_link_main_url,.et_pb_column_3_8 .et_link_content a.et_link_main_url,.et_pb_column_1_4 .et_link_content a.et_link_main_url,.et_pb_blog_grid .et_link_content a.et_link_main_url{font-size:15px}.et_pb_slider.et_pb_module .et_pb_slides .et_pb_slide_content,.et_pb_best_value{font-size:17px}.et_pb_section{padding:0px 0}.et_pb_section.et_pb_fullwidth_section{padding:0}.et_pb_row,.et_pb_column .et_pb_row_inner{padding:19px 0}}@media only screen and (max-width:767px){h1{font-size:22px}h2,.product .related h2,.et_pb_column_1_2 .et_quote_content blockquote p{font-size:18px}h3{font-size:16px}h4,.et_pb_circle_counter h3,.et_pb_number_counter h3,.et_pb_column_1_3 .et_pb_post h2,.et_pb_column_1_4 .et_pb_post h2,.et_pb_blog_grid h2,.et_pb_column_1_3 .et_quote_content blockquote p,.et_pb_column_3_8 .et_quote_content blockquote p,.et_pb_column_1_4 .et_quote_content blockquote p,.et_pb_blog_grid .et_quote_content blockquote p,.et_pb_column_1_3 .et_link_content h2,.et_pb_column_3_8 .et_link_content h2,.et_pb_column_1_4 .et_link_content h2,.et_pb_blog_grid .et_link_content h2,.et_pb_column_1_3 .et_audio_content h2,.et_pb_column_3_8 .et_audio_content h2,.et_pb_column_1_4 .et_audio_content h2,.et_pb_blog_grid .et_audio_content h2,.et_pb_column_3_8 .et_pb_audio_module_content h2,.et_pb_column_1_3 .et_pb_audio_module_content h2,.et_pb_gallery_grid .et_pb_gallery_item h3,.et_pb_portfolio_grid .et_pb_portfolio_item h2,.et_pb_filterable_portfolio_grid .et_pb_portfolio_item h2{font-size:13px}.et_pb_slider.et_pb_module .et_pb_slides .et_pb_slide_description .et_pb_slide_title{font-size:33px}.et_pb_gallery_grid .et_pb_gallery_item h3,.et_pb_portfolio_grid .et_pb_portfolio_item h2,.et_pb_filterable_portfolio_grid .et_pb_portfolio_item h2,.et_pb_column_1_4 .et_pb_audio_module_content h2{font-size:11px}h5{font-size:11px}h6{font-size:10px}.et_pb_row,.et_pb_column .et_pb_row_inner{padding:0px 0}}.page-id-214853 #main-header{display:none}.page-id-215343 #header-sec{display:none}.et-waypoint:not(.et_pb_counters){opacity:1!important}.post-sections .post-img .et_pb_image_wrap img{width:600px}.post-sections .et_pb_module{box-shadow:0 0px 40px rgb(0 0 0 / 10%)}.post-sections .et_pb_module .et_pb_blurb_content{padding:30px 0 30px 0}.post-sections .et_pb_blurb_content .et_pb_blurb_container h4.et_pb_module_header span{background:#bed3f2;padding:10px;font-size:14px}.post-sections .et_pb_blurb_description{padding-top:30px}.post-sections .et_pb_blurb_description h3{font-size:20px}.page-id-214853 #page-container{padding-top:0px!important;margin-top:-1px!important}#top-menu-nav li a:before{content:"";height:calc(100% + 15px);top:-15px;width:calc(100% + 15px);display:none;position:absolute;background-color:#09e1c0;z-index:-1;left:-7.5px;display:inline-block;opacity:0}#top-menu-nav li:hover a:before,#top-menu-nav li.current-menu-item a:before{opacity:1}#top-menu-nav li:hover a,#top-menu-nav li.current-menu-item a{color:#fff!important}#top-menu-nav li a{opacity:1!important;position:relative;z-index:99}ul#mobile_menu li a:hover,ul#mobile_menu li.current_page_item a{background-color:#09e1c0}.enroll_btn{position:fixed!important;right:15px;bottom:30px}@media (max-width:1199px){.enroll_btn{position:relative!important;right:auto;bottom:auto}.et_pb_row.et_pb_row_22.fix_enroll_btn{background:#ffffff;position:fixed;z-index:1111;padding:8px!important;bottom:54px}.fix_enroll_btn .et_pb_button_module_wrapper.et_pb_button_8_wrapper.et_pb_button_alignment_center.et_pb_module{margin:0!important}}.et_pb_equal_columns>.et_pb_column{margin-top:auto;margin-bottom:auto}.banner-row .ds-icon-search .et_pb_searchform:before,.banner-row .widget_search:before{padding:0.9em 1.5em;top:1px;right:1px}.grid-modules .et_pb_blurb_content .et_pb_blurb_container h4.et_pb_module_header span{background:#BED3F2;padding:10px;font-size:14px}.grid-modules .et_pb_blurb_content .et_pb_blurb_container{padding:40px 25px}.grid-modules .et_pb_blurb_content .et_pb_blurb_container h4.et_pb_module_header span{background:#bed3f2;padding:10px;font-size:14px}.grid-modules .et_pb_blurb_content .et_pb_blurb_container .et_pb_blurb_description a h3{line-height:1.5em}.grid-modules.et_pb_blurb .et_pb_blurb_content>div{flex:1;margin:0}.grid-modules.et_pb_blurb .et_pb_blurb_content{display:flex;flex-wrap:wrap;min-height:320px}.grid-modules .et_pb_blurb_content .et_pb_main_blurb_image .et_pb_image_wrap{width:100%!important;height:100%!important}.grid-modules .et_pb_blurb_content .et_pb_main_blurb_image .et_pb_image_wrap img{height:100%;object-fit:cover}.grid-modules.et_pb_blurb{box-shadow:0 0px 40px rgba(0,0,0,0.1)}.grid-modules .et_pb_blurb_content .et_pb_blurb_container .et_pb_blurb_description h3{line-height:1.4em}.latest-content article .post-content a.more-link{font-weight:700!important}.latest-content article .post-content .post-content-inner p{font-weight:400;margin-bottom:20px}.footer-nav a{font-weight:600;margin-right:20px;font-size:17px;font-family:'Roboto'}#header-sec{position:absolute;width:100%;background-color:rgba(0,0,0,0)}.header-menu .et-menu-nav ul#menu-home-page-menu li{margin-right:20px}@media only screen and (max-width:1500px){.header-menu .et-menu-nav ul#menu-home-page-menu li{margin-right:0}.header-menu .et-menu-nav ul#menu-home-page-menu li a{font-size:14px}}@media only screen and (max-width:1400px){.post-sections .et_pb_module .et_pb_blurb_content{padding:30px}}@media only screen and (max-width:1200px){.header-menu .et-menu-nav ul#menu-home-page-menu li a{font-size:12px}.header-menu .et-menu-nav ul#menu-home-page-menu li{padding:0 10px 0 0}.post-sections .et_pb_module .et_pb_blurb_content{padding:20px}}@media only screen and (max-width:980px){.grid-modules.et_pb_blurb .et_pb_blurb_content{min-height:auto}.featured h4:after{content:'';display:block;width:100px;background-color:#333;height:1px;margin:18px auto 0}.et_pb_menu .et_pb_menu__search-input,.et_pb_fullwidth_menu .et_pb_menu__search-input{border:0;width:100%;color:#333;background:#fff;padding:20px 30px;position:absolute;right:0;left:-15%;top:40px;width:130%}.banner-row .ds-icon-search .et_pb_searchform:before,.banner-row .widget_search:before{padding:0.59em 1.2em;font-size:14px}.post-sections .post-img .et_pb_image_wrap img{width:675px}}@media only screen and (max-width:768px){.banner-row .ds-icon-search .et_pb_searchform:before,.banner-row .widget_search:before{padding:0.59em 1.2em;font-size:14px}h3{font-size:20px}.affiliate-banner-section .align-items.et_pb_row_0.et_pb_row{padding:0!important}.affiliate-banner-section.et_pb_section_0.et_pb_section{padding-bottom:50px!important}}@media only screen and (max-width:480px){.grid-modules.et_pb_blurb .et_pb_blurb_content>div{flex:auto}.grid-modules .et_pb_blurb_content .et_pb_main_blurb_image .et_pb_image_wrap{height:270px!important}}div.et_pb_section.et_pb_section_1{background:linear-gradient(90deg,#003c96 0%,#8c3cf9 100%)!important}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="page-template-default page page-id-579 et-tb-has-template et-tb-has-header et_color_scheme_green et_button_custom_icon et_pb_button_helper_class et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters2 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+	<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 0.49803921568627" /><fefuncg type="table" tablevalues="0 0.49803921568627" /><fefuncb type="table" tablevalues="0 0.49803921568627" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 0.27843137254902" /><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0 0" /><fefuncg type="table" tablevalues="0 0.64705882352941" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.78039215686275 1" /><fefuncg type="table" tablevalues="0 0.94901960784314" /><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.44705882352941 0.4" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB" ><fefuncr type="table" tablevalues="0.098039215686275 1" /><fefuncg type="table" tablevalues="0 0.66274509803922" /><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" /><fefunca type="table" tablevalues="1 1" /></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		<header class="et-l et-l--header">
+			<div class="et_builder_inner_content et_pb_gutters2"><div id="header-sec" class="et_pb_section et_pb_section_0_tb_header et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_header header-row et_pb_row--with-menu">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_header  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header header-menu et_pb_bg_layout_light  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--with-logo et_pb_menu--style-left_aligned">
+					
+					
+					
+					
+					<div class="et_pb_menu_inner_container clearfix">
+						<div class="et_pb_menu__logo-wrap">
+			  <div class="et_pb_menu__logo">
+				<img width="157" height="23" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20157%2023'%3E%3C/svg%3E" alt="" data-lazy-srcset="https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp.png 157w, https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp-150x23.png 150w" data-lazy-sizes="(max-width: 157px) 100vw, 157px" class="wp-image-216051" data-lazy-src="https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp.png" /><noscript><img width="157" height="23" src="https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp.png" alt="" srcset="https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp.png 157w, https://ultimateqa.com/wp-content/uploads/2020/11/01_Ultimate-QA_Logo_V1_rp-150x23.png 150w" sizes="(max-width: 157px) 100vw, 157px" class="wp-image-216051" /></noscript>
+			  </div>
+			</div>
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav"><ul id="menu-home-page-menu" class="et-menu nav"><li class="et_pb_menu_page_id-216155 menu-item menu-item-type-custom menu-item-object-custom menu-item-216155"><a href="https://courses.ultimateqa.com/collections">Courses</a></li>
+<li class="et_pb_menu_page_id-216153 menu-item menu-item-type-custom menu-item-object-custom menu-item-216153"><a href="https://ultimateqa.com/selenium-webdriver-java-course/">Selenium Java</a></li>
+<li class="et_pb_menu_page_id-216154 menu-item menu-item-type-custom menu-item-object-custom menu-item-216154"><a href="https://courses.ultimateqa.com/courses/selenium-with-c">Selenium C#</a></li>
+<li class="et_pb_menu_page_id-6838 menu-item menu-item-type-custom menu-item-object-custom menu-item-6838"><a href="https://ultimateqa.com/best-selenium-webdriver-resources/">Selenium Resources</a></li>
+<li class="et_pb_menu_page_id-507 menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="https://ultimateqa.com/automation/">Automation Exercises</a></li>
+<li class="et_pb_menu_page_id-216855 menu-item menu-item-type-post_type menu-item-object-page menu-item-216868"><a href="https://ultimateqa.com/consulting/">Pro Services</a></li>
+<li class="et_pb_menu_page_id-213448 menu-item menu-item-type-post_type menu-item-object-page menu-item-214031"><a href="https://ultimateqa.com/blog/">Blog</a></li>
+</ul></nav>
+							</div>
+							
+							<button type="button" class="et_pb_menu__icon et_pb_menu__search-button"></button>
+							<div class="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="mobile_menu_bar"></span>
+				</div>
+			</div>
+						</div>
+						<div class="et_pb_menu__search-container et_pb_menu__search-container--disabled">
+				<div class="et_pb_menu__search">
+					<form role="search" method="get" class="et_pb_menu__search-form" action="https://ultimateqa.com/">
+						<input type="search" class="et_pb_menu__search-input" placeholder="Search &hellip;" name="s" title="Search for:" />
+					</form>
+					<button type="button" class="et_pb_menu__icon et_pb_menu__close-search-button"></button>
+				</div>
+			</div>
+					</div>
+				</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</header>
+	<div id="et-main-area">
+	
+<div id="main-content">
+
+
+			
+				<article id="post-579" class="post-579 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters3"><div class="et_pb_section et_pb_section_0 et_section_regular">
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2><span id="Skills_Improved">Skills Improved:</span></h2>
+<ul>
+<li>How to deal with a large page that has many elements and divisions?</li>
+<li>Properly structuring your page objects</li>
+</ul></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h1><span id="Section_of_Buttons">Section of Buttons</span></h1></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_2">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_1 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_2 et_pb_bg_layout_light" href="">Button</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_3 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_4 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_5 et_pb_bg_layout_light" href="">Button</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_6_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_6 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_7_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_7 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_8_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_8 et_pb_bg_layout_light" href="">Button</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_9_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_9 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_10_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_10 et_pb_bg_layout_light" href="">Button</a>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_11_wrapper et_pb_button_alignment_left et_pb_module">
+				<a class="et_pb_button et_pb_button_11 et_pb_bg_layout_light" href="">Button</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_3">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_divider et_pb_divider_1 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h1><span id="Section_of_Social_Media_Follows">Section of Social Media Follows</span></h1></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_4">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_0 et_pb_social_icon et_pb_social_network_link  et-social-twitter"><a href="https://twitter.com/Nikolay_A00" class="icon et_pb_with_border" title="Follow on Twitter"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_1 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_1 et_pb_social_icon et_pb_social_network_link  et-social-facebook"><a href="https://www.facebook.com/Ultimateqa1/" class="icon et_pb_with_border" title="Follow on Facebook"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_2 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_2 et_pb_social_icon et_pb_social_network_link  et-social-twitter"><a href="https://twitter.com/Nikolay_A00" class="icon et_pb_with_border" title="Follow on Twitter"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_3 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_3 et_pb_social_icon et_pb_social_network_link  et-social-facebook"><a href="https://www.facebook.com/Ultimateqa1/" class="icon et_pb_with_border" title="Follow on Facebook"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_4 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_4 et_pb_social_icon et_pb_social_network_link  et-social-twitter"><a href="https://twitter.com/Nikolay_A00" class="icon et_pb_with_border" title="Follow on Twitter"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_5 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_5 et_pb_social_icon et_pb_social_network_link  et-social-facebook"><a href="https://www.facebook.com/Ultimateqa1/" class="icon et_pb_with_border" title="Follow on Facebook"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_6 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_6 et_pb_social_icon et_pb_social_network_link  et-social-twitter"><a href="https://twitter.com/Nikolay_A00" class="icon et_pb_with_border" title="Follow on Twitter"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_7 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_7 et_pb_social_icon et_pb_social_network_link  et-social-facebook"><a href="https://www.facebook.com/Ultimateqa1/" class="icon et_pb_with_border" title="Follow on Facebook"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_8 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_8 et_pb_social_icon et_pb_social_network_link  et-social-twitter"><a href="https://twitter.com/Nikolay_A00" class="icon et_pb_with_border" title="Follow on Twitter"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_9 clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li class="et_pb_social_media_follow_network_9 et_pb_social_icon et_pb_social_network_link  et-social-facebook"><a href="https://www.facebook.com/Ultimateqa1/" class="icon et_pb_with_border" title="Follow on Facebook"><span class="et_pb_social_media_follow_network_name" aria-hidden="true">Follow</span></a></li>
+			</ul>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_5">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h1><span id="Section_of_Random_Stuff">Section of Random Stuff</span></h1></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_6">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_sidebar_0 et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div id="lpwtoc_widget-2" class="et_pb_widget widget_lpwtoc_widget"><div class="lwptoc lwptoc-right lwptoc-autoWidth lwptoc-baseItems lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title">Contents</b>                    <span class="lwptoc_toggle">
+                <a href="#" class="lwptoc_toggle_label" data-label="show">hide</a>
+            </span>
+            </div>
+<div class="lwptoc_items lwptoc_items-visible">
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Skills_Improved">
+                    <span class="lwptoc_item_number">1</span>
+                <span class="lwptoc_item_label">Skills Improved:</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Buttons">
+                    <span class="lwptoc_item_number">2</span>
+                <span class="lwptoc_item_label">Section of Buttons</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Social_Media_Follows">
+                    <span class="lwptoc_item_number">3</span>
+                <span class="lwptoc_item_label">Section of Social Media Follows</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Random_Stuff">
+                    <span class="lwptoc_item_number">4</span>
+                <span class="lwptoc_item_label">Section of Random Stuff</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Get_Latest_Blog_Posts">
+                    <span class="lwptoc_item_number">4.1</span>
+                <span class="lwptoc_item_label">Get Latest Blog Posts</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Login">
+                    <span class="lwptoc_item_number">4.2</span>
+                <span class="lwptoc_item_label">Login</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#A_toggle">
+                    <span class="lwptoc_item_number">4.2.1</span>
+                <span class="lwptoc_item_label">A toggle</span>
+    </a>
+    </div></div></div><div class="lwptoc_item">    <a href="#Login1">
+                    <span class="lwptoc_item_number">4.3</span>
+                <span class="lwptoc_item_label">Login</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Get_Latest_Blog_Posts1">
+                    <span class="lwptoc_item_number">4.3.1</span>
+                <span class="lwptoc_item_label">Get Latest Blog Posts</span>
+    </a>
+    </div></div></div></div></div><div class="lwptoc_item">    <a href="#0_Comments">
+                    <span class="lwptoc_item_number">5</span>
+                <span class="lwptoc_item_label">0 Comments</span>
+    </a>
+    </div></div></div>
+</div></div></div><div id="blog_subscription-2" class="et_pb_widget widget_blog_subscription jetpack_subscription_widget"><h4 class="widgettitle"><span id="Get_Latest_Blog_Posts">Get Latest Blog Posts</span></h4>
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+									<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div>
+																			<div class="jetpack-subscribe-count">
+						<p>
+						Join 132 other subscribers						</p>
+					</div>
+										<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" class="screen-reader-text" for="subscribe-field-blog_subscription-2">
+							Email Address						</label>
+						<input type="email" name="email" required="required" value="" id="subscribe-field-blog_subscription-2" placeholder="Email Address">
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="source" value="https://ultimateqa.com/complicated-page/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="subscribe-blog-blog_subscription-2">
+												<button type="submit" class="wp-block-button__link" name="jetpack_subscriptions_widget">
+							Subscribe						</button>
+					</p>
+							</form>
+			
+</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				
+			<div id="et_pb_contact_form_0" class="et_pb_module et_pb_contact_form_0 et_pb_contact_form_container clearfix" data-form_unique_num="0" data-form_unique_id="">
+				
+				
+				
+				
+				
+				<div class="et-pb-contact-message"></div>
+				
+				<div class="et_pb_contact">
+					<form class="et_pb_contact_form clearfix" method="post" action="https://ultimateqa.com/complicated-page/">
+						<p class="et_pb_contact_field et_pb_contact_field_0 et_pb_contact_field_half" data-id="name" data-type="input">
+				
+				
+				
+				
+				<label for="et_pb_contact_name_0" class="et_pb_contact_form_label">Name</label>
+				<input type="text" id="et_pb_contact_name_0" class="input" value="" name="et_pb_contact_name_0" data-required_mark="required" data-field_type="input" data-original_id="name" placeholder="Name">
+			</p><p class="et_pb_contact_field et_pb_contact_field_1 et_pb_contact_field_half et_pb_contact_field_last" data-id="email" data-type="email">
+				
+				
+				
+				
+				<label for="et_pb_contact_email_0" class="et_pb_contact_form_label">Email Address</label>
+				<input type="text" id="et_pb_contact_email_0" class="input" value="" name="et_pb_contact_email_0" data-required_mark="required" data-field_type="email" data-original_id="email" placeholder="Email Address">
+			</p><p class="et_pb_contact_field et_pb_contact_field_2 et_pb_contact_field_last" data-id="message" data-type="text">
+				
+				
+				
+				
+				<label for="et_pb_contact_message_0" class="et_pb_contact_form_label">Message</label>
+				<textarea name="et_pb_contact_message_0" id="et_pb_contact_message_0" class="et_pb_contact_message input" data-required_mark="required" data-field_type="text" data-original_id="message" placeholder="Message"></textarea>
+			</p>
+						<input type="hidden" value="et_contact_proccess" name="et_pb_contactform_submit_0">
+						<div class="et_contact_bottom_container">
+							
+			<div class="et_pb_contact_right">
+				<p class="clearfix">
+					<span class="et_pb_contact_captcha_question">6 + 5</span> = <input type="text" size="2" class="input et_pb_contact_captcha" data-first_digit="6" data-second_digit="5" value="" name="et_pb_contact_captcha_0" data-required_mark="required" autocomplete="off">
+				</p>
+			</div>
+							<button type="submit" name="et_builder_submit_button" class="et_pb_contact_submit et_pb_button">Submit</button>
+						</div>
+						<input type="hidden" id="_wpnonce-et-pb-contact-form-submitted-0" name="_wpnonce-et-pb-contact-form-submitted-0" value="adbb722f77"><input type="hidden" name="_wp_http_referer" value="/complicated-page/">
+					</form>
+				</div>
+			</div>
+			<div class="et_pb_module et_pb_login et_pb_login_0 et_pb_newsletter clearfix  et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_newsletter_description"><h2 class="et_pb_module_header"><span id="Login">Login</span></h2><div class="et_pb_newsletter_description_content"> </div></div>
+				
+				<div class="et_pb_newsletter_form et_pb_login_form">
+					<form action="https://ultimateqa.com/backoffice" method="post">
+						<p class="et_pb_contact_form_field">
+							<label class="et_pb_contact_form_label" for="user_login_626089ad1bc52" style="display: none;">Username</label>
+							<input id="user_login_626089ad1bc52" placeholder="Username" class="input" type="text" value="" name="log">
+						</p>
+						<p class="et_pb_contact_form_field">
+							<label class="et_pb_contact_form_label" for="user_pass_626089ad1bc52" style="display: none;">Password</label>
+							<input id="user_pass_626089ad1bc52" placeholder="Password" class="input" type="password" value="" name="pwd">
+						</p>
+						<p class="et_pb_forgot_password"><a href="https://ultimateqa.com/backoffice?action=lostpassword">Forgot your password?</a></p>
+						<p>
+							<button type="submit" name="et_builder_submit_button" class="et_pb_newsletter_button et_pb_button">Login</button>
+							
+						</p>
+					</form>
+				</div>
+			</div><div class="et_pb_module et_pb_toggle et_pb_toggle_0 et_pb_toggle_item  et_pb_toggle_close">
+				
+				
+				
+				
+				<h5 class="et_pb_toggle_title"><span id="A_toggle">A toggle</span></h5>
+				<div class="et_pb_toggle_content clearfix">Inside of toggle</div>
+			</div>
+			<div id="et_pb_contact_form_1" class="et_pb_module et_pb_contact_form_1 et_pb_contact_form_container clearfix" data-form_unique_num="1" data-form_unique_id="">
+				
+				
+				
+				
+				
+				<div class="et-pb-contact-message"></div>
+				
+				<div class="et_pb_contact">
+					<form class="et_pb_contact_form clearfix" method="post" action="https://ultimateqa.com/complicated-page/">
+						<p class="et_pb_contact_field et_pb_contact_field_3 et_pb_contact_field_half" data-id="name" data-type="input">
+				
+				
+				
+				
+				<label for="et_pb_contact_name_1" class="et_pb_contact_form_label">Name</label>
+				<input type="text" id="et_pb_contact_name_1" class="input" value="" name="et_pb_contact_name_1" data-required_mark="required" data-field_type="input" data-original_id="name" placeholder="Name">
+			</p><p class="et_pb_contact_field et_pb_contact_field_4 et_pb_contact_field_half et_pb_contact_field_last" data-id="email" data-type="email">
+				
+				
+				
+				
+				<label for="et_pb_contact_email_1" class="et_pb_contact_form_label">Email Address</label>
+				<input type="text" id="et_pb_contact_email_1" class="input" value="" name="et_pb_contact_email_1" data-required_mark="required" data-field_type="email" data-original_id="email" placeholder="Email Address">
+			</p><p class="et_pb_contact_field et_pb_contact_field_5 et_pb_contact_field_last" data-id="message" data-type="text">
+				
+				
+				
+				
+				<label for="et_pb_contact_message_1" class="et_pb_contact_form_label">Message</label>
+				<textarea name="et_pb_contact_message_1" id="et_pb_contact_message_1" class="et_pb_contact_message input" data-required_mark="required" data-field_type="text" data-original_id="message" placeholder="Message"></textarea>
+			</p>
+						<input type="hidden" value="et_contact_proccess" name="et_pb_contactform_submit_1">
+						<div class="et_contact_bottom_container">
+							
+			<div class="et_pb_contact_right">
+				<p class="clearfix">
+					<span class="et_pb_contact_captcha_question">10 + 10</span> = <input type="text" size="2" class="input et_pb_contact_captcha" data-first_digit="10" data-second_digit="10" value="" name="et_pb_contact_captcha_1" data-required_mark="required" autocomplete="off">
+				</p>
+			</div>
+							<button type="submit" name="et_builder_submit_button" class="et_pb_contact_submit et_pb_button">Submit</button>
+						</div>
+						<input type="hidden" id="_wpnonce-et-pb-contact-form-submitted-1" name="_wpnonce-et-pb-contact-form-submitted-1" value="adbb722f77"><input type="hidden" name="_wp_http_referer" value="/complicated-page/">
+					</form>
+				</div>
+			</div>
+			<div class="et_pb_module et_pb_login et_pb_login_1 et_pb_newsletter clearfix  et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_newsletter_description"><h2 class="et_pb_module_header"><span id="Login1">Login</span></h2><div class="et_pb_newsletter_description_content"> </div></div>
+				
+				<div class="et_pb_newsletter_form et_pb_login_form">
+					<form action="https://ultimateqa.com/backoffice" method="post">
+						<p class="et_pb_contact_form_field">
+							<label class="et_pb_contact_form_label" for="user_login_626089ad22ba1" style="display: none;">Username</label>
+							<input id="user_login_626089ad22ba1" placeholder="Username" class="input" type="text" value="" name="log">
+						</p>
+						<p class="et_pb_contact_form_field">
+							<label class="et_pb_contact_form_label" for="user_pass_626089ad22ba1" style="display: none;">Password</label>
+							<input id="user_pass_626089ad22ba1" placeholder="Password" class="input" type="password" value="" name="pwd">
+						</p>
+						<p class="et_pb_forgot_password"><a href="https://ultimateqa.com/backoffice?action=lostpassword">Forgot your password?</a></p>
+						<p>
+							<button type="submit" name="et_builder_submit_button" class="et_pb_newsletter_button et_pb_button">Login</button>
+							
+						</p>
+					</form>
+				</div>
+			</div>
+			<div id="et_pb_contact_form_2" class="et_pb_module et_pb_contact_form_2 et_pb_contact_form_container clearfix" data-form_unique_num="2" data-form_unique_id="">
+				
+				
+				
+				
+				
+				<div class="et-pb-contact-message"></div>
+				
+				<div class="et_pb_contact">
+					<form class="et_pb_contact_form clearfix" method="post" action="https://ultimateqa.com/complicated-page/">
+						<p class="et_pb_contact_field et_pb_contact_field_6 et_pb_contact_field_half" data-id="name" data-type="input">
+				
+				
+				
+				
+				<label for="et_pb_contact_name_2" class="et_pb_contact_form_label">Name</label>
+				<input type="text" id="et_pb_contact_name_2" class="input" value="" name="et_pb_contact_name_2" data-required_mark="required" data-field_type="input" data-original_id="name" placeholder="Name">
+			</p><p class="et_pb_contact_field et_pb_contact_field_7 et_pb_contact_field_half et_pb_contact_field_last" data-id="email" data-type="email">
+				
+				
+				
+				
+				<label for="et_pb_contact_email_2" class="et_pb_contact_form_label">Email Address</label>
+				<input type="text" id="et_pb_contact_email_2" class="input" value="" name="et_pb_contact_email_2" data-required_mark="required" data-field_type="email" data-original_id="email" placeholder="Email Address">
+			</p><p class="et_pb_contact_field et_pb_contact_field_8 et_pb_contact_field_last" data-id="message" data-type="text">
+				
+				
+				
+				
+				<label for="et_pb_contact_message_2" class="et_pb_contact_form_label">Message</label>
+				<textarea name="et_pb_contact_message_2" id="et_pb_contact_message_2" class="et_pb_contact_message input" data-required_mark="required" data-field_type="text" data-original_id="message" placeholder="Message"></textarea>
+			</p>
+						<input type="hidden" value="et_contact_proccess" name="et_pb_contactform_submit_2">
+						<div class="et_contact_bottom_container">
+							
+			<div class="et_pb_contact_right">
+				<p class="clearfix">
+					<span class="et_pb_contact_captcha_question">5 + 4</span> = <input type="text" size="2" class="input et_pb_contact_captcha" data-first_digit="5" data-second_digit="4" value="" name="et_pb_contact_captcha_2" data-required_mark="required" autocomplete="off">
+				</p>
+			</div>
+							<button type="submit" name="et_builder_submit_button" class="et_pb_contact_submit et_pb_button">Submit</button>
+						</div>
+						<input type="hidden" id="_wpnonce-et-pb-contact-form-submitted-2" name="_wpnonce-et-pb-contact-form-submitted-2" value="adbb722f77"><input type="hidden" name="_wp_http_referer" value="/complicated-page/">
+					</form>
+				</div>
+			</div>
+			
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_sidebar_1 et_pb_widget_area clearfix et_pb_widget_area_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div id="lpwtoc_widget-2" class="et_pb_widget widget_lpwtoc_widget"><div class="lwptoc lwptoc-right lwptoc-autoWidth lwptoc-baseItems lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title">Contents</b>                    <span class="lwptoc_toggle">
+                <a href="#" class="lwptoc_toggle_label" data-label="show">hide</a>
+            </span>
+            </div>
+<div class="lwptoc_items lwptoc_items-visible">
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Skills_Improved">
+                    <span class="lwptoc_item_number">1</span>
+                <span class="lwptoc_item_label">Skills Improved:</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Buttons">
+                    <span class="lwptoc_item_number">2</span>
+                <span class="lwptoc_item_label">Section of Buttons</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Social_Media_Follows">
+                    <span class="lwptoc_item_number">3</span>
+                <span class="lwptoc_item_label">Section of Social Media Follows</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Section_of_Random_Stuff">
+                    <span class="lwptoc_item_number">4</span>
+                <span class="lwptoc_item_label">Section of Random Stuff</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Get_Latest_Blog_Posts">
+                    <span class="lwptoc_item_number">4.1</span>
+                <span class="lwptoc_item_label">Get Latest Blog Posts</span>
+    </a>
+    </div><div class="lwptoc_item">    <a href="#Login">
+                    <span class="lwptoc_item_number">4.2</span>
+                <span class="lwptoc_item_label">Login</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#A_toggle">
+                    <span class="lwptoc_item_number">4.2.1</span>
+                <span class="lwptoc_item_label">A toggle</span>
+    </a>
+    </div></div></div><div class="lwptoc_item">    <a href="#Login1">
+                    <span class="lwptoc_item_number">4.3</span>
+                <span class="lwptoc_item_label">Login</span>
+    </a>
+    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#Get_Latest_Blog_Posts1">
+                    <span class="lwptoc_item_number">4.3.1</span>
+                <span class="lwptoc_item_label">Get Latest Blog Posts</span>
+    </a>
+    </div></div></div></div></div><div class="lwptoc_item">    <a href="#0_Comments">
+                    <span class="lwptoc_item_number">5</span>
+                <span class="lwptoc_item_label">0 Comments</span>
+    </a>
+    </div></div></div>
+</div></div></div><div id="blog_subscription-2" class="et_pb_widget widget_blog_subscription jetpack_subscription_widget"><h4 class="widgettitle"><span id="Get_Latest_Blog_Posts1">Get Latest Blog Posts</span></h4>
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+									<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div>
+																			<div class="jetpack-subscribe-count">
+						<p>
+						Join 132 other subscribers						</p>
+					</div>
+										<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" class="screen-reader-text" for="subscribe-field-blog_subscription-2">
+							Email Address						</label>
+						<input type="email" name="email" required="required" value="" id="subscribe-field-blog_subscription-2" placeholder="Email Address">
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="source" value="https://ultimateqa.com/complicated-page/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="subscribe-blog-blog_subscription-2">
+												<button type="submit" class="wp-block-button__link" name="jetpack_subscriptions_widget">
+							Subscribe						</button>
+					</p>
+							</form>
+			
+</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_7">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_comments_0 et_pb_comments_module et_pb_bg_layout_light">
+				
+				
+				
+				
+				
+
+<section id="comment-wrap">
+	<h1 id="comments" class="page_title"><span id="0_Comments">0 Comments</span></h1>
+		   <div id="comment-section" class="nocomments">
+		  
+		  	   </div>
+		
+	</section>
+
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+	<div class="swp-hidden-panel-wrap" style="display: none; visibility: collapse; opacity: 0"><div class="swp_social_panel swp_horizontal_panel swp_flat_fresh  swp_default_full_color swp_other_full_color swp_individual_full_color scale-100 scale-full_width" data-min-width="1100" data-float-color="#ffffff" data-float="left" data-float-mobile="bottom" data-transition="slide" data-post-id="579"><div class="nc_tweetContainer swp_share_button swp_facebook" data-network="facebook"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dfacebook%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare" data-link="https://www.facebook.com/share.php?u=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dfacebook%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_facebook_icon"></i><span class="swp_share">Share</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_twitter" data-network="twitter"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://twitter.com/intent/tweet?text=Complicated+Page&amp;url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dtwitter%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare&amp;via=Nikolay_a00" data-link="https://twitter.com/intent/tweet?text=Complicated+Page&amp;url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dtwitter%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare&amp;via=Nikolay_a00"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_twitter_icon"></i><span class="swp_share">Tweet</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_linkedin" data-network="linkedin"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dlinkedin%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare" data-link="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dlinkedin%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_linkedin_icon"></i><span class="swp_share">Share</span></span></span></span></a></div></div></div><div class="swp-content-locator"></div>					</div>
+
+				
+				</article>
+
+			
+
+</div>
+
+	
+	<span class="et_pb_scroll_top et-pb-icon"></span>
+
+	<footer id="main-footer">
+		
+		
+			<div id="et-footer-nav">
+				<div class="container">
+					<ul id="menu-footer-menu" class="bottom-nav"><li id="menu-item-3331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3331"><a href="https://ultimateqa.com/about/">About</a></li>
+<li id="menu-item-216747" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216747"><a href="https://ultimateqa.com/affiliate/">Affiliate Program</a></li>
+<li id="menu-item-216867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216867"><a href="https://ultimateqa.com/consulting/">Consulting Services</a></li>
+<li id="menu-item-215048" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215048"><a href="http://courses.ultimateqa.com/pages/terms">Terms and conditions</a></li>
+<li id="menu-item-215049" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215049"><a href="http://courses.ultimateqa.com/pages/privacy">Privacy policy</a></li>
+<li id="menu-item-215228" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215228"><a href="https://www.youtube.com/channel/UCVZXj9vKyZ6L2OakzRH2aOQ?sub_confirmation=1">YouTube</a></li>
+<li id="menu-item-215229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215229"><a href="https://www.facebook.com/Ultimateqa1/">Facebook</a></li>
+<li id="menu-item-216842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216842"><a href="https://ultimateqa.com/contact/">Contact Us</a></li>
+</ul>				</div>
+			</div>
+
+		
+		<div id="footer-bottom">
+			<div class="container clearfix">
+				<ul class="et-social-icons">
+
+
+</ul><div id="footer-info">© NextLevel Solutions USA, LLC</div>			</div>
+		</div>
+	</footer>
+	</div>
+
+			
+		</div>
+		</div>
+
+			<!-- Start Subscriber Embed Code -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+var subscribersSiteId = 'dd3f8c9a-cc8c-485e-a4da-ae55a2d42cbe';
+var subscribersServiceWorkerPath = '/?firebase-messaging-sw';
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://ultimateqa.com/wp-content/cache/min/1/assets/subscribers.js?ver=1650128170"></script>
+<!-- End Subscriber Embed Code --><script type="rocketlazyloadscript" data-rocket-type="text/javascript">setTimeout(function() {jQuery('body').append('<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=493382947514321&ev=PageView&noscript=1"/><noscript>');
+
+var subscribersScript = document.createElement("script");
+subscribersScript.src = "https://cdn.subscribers.com/assets/subscribers.js";
+subscribersScript.defer = true;
+document.body.appendChild(subscribersScript);}, 10000)</script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				var _paq = _paq || [];
+								_paq.push(['trackPageView']);
+								(function () {
+					var u = "https://stats1.wpmudev.com/";
+					_paq.push(['setTrackerUrl', u + 'track/']);
+					_paq.push(['setSiteId', '11726']);
+					var d   = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+					g.type  = 'text/javascript';
+					g.async = true;
+					g.defer = true;
+					g.src   = 'https://stats.wpmucdn.com/analytics.js';
+					s.parentNode.insertBefore(g, s);
+				})();
+			</script>
+			<script type="rocketlazyloadscript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69766398-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="data:text/javascript;base64,dmFyIGtwZGV0ZWN0ZGVsYXlqcyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ3NjcmlwdFt0eXBlPSJyb2NrZXRsYXp5bG9hZHNjcmlwdCJdJykubGVuZ3RoO2lmKGtwZGV0ZWN0ZGVsYXlqcz49MSl7Y2xhc3Mga3Bzb0V4ZWN1dGVTY3JpcHRzIGV4dGVuZHMgUm9ja2V0TGF6eUxvYWRTY3JpcHRze3N0YXRpYyBrcHNvRmlyZSgpe2lmKG5hdmlnYXRvci51c2VyQWdlbnQubWF0Y2goLzkwLjAuNDQzMC4yMTJ8bGlnaHRob3VzZXxwaW5nZG9tfGRhcmVib29zdHxwdHN0L2kpKXt2YXIgZT1uZXcgUm9ja2V0TGF6eUxvYWRTY3JpcHRzKFsia2V5ZG93biIsIm1vdXNlb3ZlciIsInRvdWNobW92ZSIsInRvdWNoc3RhcnQiLCJ0b3VjaGVuZCIsInRvdWNoY2FuY2VsIiwidG91Y2hmb3JjZWNoYW5nZSIsIndoZWVsIl0pO31lbHNle3ZhciBlPW5ldyBSb2NrZXRMYXp5TG9hZFNjcmlwdHMoWyJsb2FkIl0pO31lLl9hZGRVc2VySW50ZXJhY3Rpb25MaXN0ZW5lcihlKTt9fWtwc29FeGVjdXRlU2NyaXB0cy5rcHNvRmlyZSgpO30=" id="mLQFAVgBhg"></script>
+	
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/dg-divi-carousel/scripts/swiper.min.js?ver=2.0.23' id='swipe-script-js'></script>
+<script type='text/javascript' id='wp_ulike-js-extra'>
+/* <![CDATA[ */
+var wp_ulike_params = {"ajax_url":"https:\/\/ultimateqa.com\/wp-admin\/admin-ajax.php","notifications":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/wp-ulike/assets/js/wp-ulike.min.js?ver=4.5.9' id='wp_ulike-js'></script>
+<script type='text/javascript' id='social_warfare_script-js-extra'>
+/* <![CDATA[ */
+var socialWarfare = {"addons":["pro"],"post_id":"579","variables":{"emphasizeIcons":"0","powered_by_toggle":false,"affiliate_link":"https:\/\/warfareplugins.com"},"floatBeforeContent":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/social-warfare/assets/js/script.min.js?ver=4.3.0' id='social_warfare_script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/backoffice|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/ultimateqa.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='divi-custom-script-js-extra'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/ultimateqa.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/ultimateqa.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/ultimateqa.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"93bca28365","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"389d3d0643","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"579","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https:\/\/ultimateqa.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.16.0' id='divi-custom-script-js'></script>
+<script type='text/javascript' id='tve-dash-frontend-js-extra'>
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/ultimateqa.com\/wp-admin\/admin-ajax.php","force_ajax_send":"1","is_crawler":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/thrive-leads/thrive-dashboard/js/dist/frontend.min.js?ver=2.1.5' id='tve-dash-frontend-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=1650128170' id='fitvids-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-includes/js/comment-reply.min.js?ver=5.9.3' id='comment-reply-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=1650128170' id='jquery-mobile-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/hashchange.js?ver=1650128170' id='hashchange-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=1650128170' id='magnific-popup-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=1650128170' id='easypiechart-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=1650128170' id='salvattore-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/dg-divi-carousel/scripts/frontend-bundle.min.js?ver=2.0.23' id='divi-carousel-frontend-bundle-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/faq-module-for-divi/scripts/frontend-bundle.min.js?ver=1.0.0' id='faq-module-for-divi-theme-frontend-bundle-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/core/admin/js/common.js?ver=1650128170' id='et-core-common-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/enlighter/cache/enlighterjs.min.js?ver=LaSPlNt0jnH7A7u' id='enlighterjs-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='enlighterjs-js-after'>
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":4,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"classic","language":"generic","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.4' id='lwptoc-main-js'></script>
+<script type='text/javascript' id='et-builder-modules-script-motion-js-extra'>
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=1650128170' id='et-builder-modules-script-motion-js'></script>
+<script type='text/javascript' id='et-builder-modules-script-sticky-js-extra'>
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://ultimateqa.com/wp-content/cache/min/1/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=1650128170' id='et-builder-modules-script-sticky-js'></script>
+<script id="cz8MjVA6ko" async src="data:text/javascript;base64,aWYobmF2aWdhdG9yLnVzZXJBZ2VudC5tYXRjaCgvOTAuMC40NDMwLjIxMnxsaWdodGhvdXNlfHBpbmdkb218ZGFyZWJvb3N0fHB0c3QvaSkpewl2YXIga3BVc2VySW50ZXJhY3Rpb25FdmVudHM9WyJrZXlkb3duIiwibW91c2VvdmVyIiwidG91Y2htb3ZlIiwidG91Y2hzdGFydCIsInRvdWNoZW5kIiwidG91Y2hjYW5jZWwiLCJ0b3VjaGZvcmNlY2hhbmdlIiwid2hlZWwiXTt9ZWxzZXt2YXIga3BVc2VySW50ZXJhY3Rpb25FdmVudHM9WyJsb2FkIl07fWtwVXNlckludGVyYWN0aW9uRXZlbnRzLmZvckVhY2goZnVuY3Rpb24oZXZlbnQpe3dpbmRvdy5hZGRFdmVudExpc3RlbmVyKGV2ZW50LGtwVHJpZ2dlclNjcmlwdExvYWRlcix7cGFzc2l2ZTp0cnVlfSl9KTtmdW5jdGlvbiBrcFRyaWdnZXJTY3JpcHRMb2FkZXIoKXtod3RMSExvY1JGNmt1M08oKTtrcFVzZXJJbnRlcmFjdGlvbkV2ZW50cy5mb3JFYWNoKGZ1bmN0aW9uKGV2ZW50KXt3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcihldmVudCxrcFRyaWdnZXJTY3JpcHRMb2FkZXIse3Bhc3NpdmU6dHJ1ZX0pfSk7fWZ1bmN0aW9uIGh3dExITG9jUkY2a3UzTygpe2RvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImxpbmtbZGF0YS10eXBlPSdrcHBhc3NpdmUnXSIpLmZvckVhY2goZnVuY3Rpb24oZWxlbSl7ZWxlbS5zZXRBdHRyaWJ1dGUoImhyZWYiLGVsZW0uZ2V0QXR0cmlidXRlKCJkYXRhLWtwbGlua2hyZWYiKSl9KTtzZXRUaW1lb3V0KGZ1bmN0aW9uKCl7ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgic2NyaXB0W2RhdGEtdHlwZT0na3BwYXNzaXZlJ10iKS5mb3JFYWNoKGZ1bmN0aW9uKGVsZW0pe2VsZW0uc2V0QXR0cmlidXRlKCJzcmMiLGVsZW0uZ2V0QXR0cmlidXRlKCJkYXRhLWtwc2NyaXB0c3JjIikpfSk7fSwyMDApO30="></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">/*<![CDATA[*/if ( !window.TL_Const ) {var TL_Const={"security":"3a52b02a0e","ajax_url":"https:\/\/ultimateqa.com\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":4037,"display_options":{"allowed_post_types":[],"flag_url_match":null},"custom_post_data":[],"current_screen":{"screen_type":3,"screen_id":579},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]};} else {ThriveGlobal.$j.extend(true, TL_Const, {"security":"3a52b02a0e","ajax_url":"https:\/\/ultimateqa.com\/wp-admin\/admin-ajax.php","forms":[],"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":1,"main_group_id":4037,"display_options":{"allowed_post_types":[],"flag_url_match":null},"custom_post_data":[],"current_screen":{"screen_type":3,"screen_id":579},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin"]})} /*]]> */</script><div class="swp_social_panelSide swp_floating_panel swp_social_panel swp_boxed swp_default_full_color swp_other_full_color swp_individual_full_color slide swp_float_left swp_side_center scale-100 float-position-center-left" data-min-width="1100" data-float-color="#ffffff" data-float="left" data-float-mobile="bottom" data-transition="slide" data-post-id="579" ><div class="nc_tweetContainer swp_share_button swp_facebook" data-network="facebook"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dfacebook%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare" data-link="https://www.facebook.com/share.php?u=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dfacebook%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_facebook_icon"></i><span class="swp_share">Share</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_twitter" data-network="twitter"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://twitter.com/intent/tweet?text=Complicated+Page&url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dtwitter%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare&via=Nikolay_a00" data-link="https://twitter.com/intent/tweet?text=Complicated+Page&url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dtwitter%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare&via=Nikolay_a00"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_twitter_icon"></i><span class="swp_share">Tweet</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_linkedin" data-network="linkedin"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dlinkedin%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare" data-link="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fultimateqa.com%2Fcomplicated-page%2F%3Futm_source%3Dlinkedin%26utm_medium%3DSocial%26utm_campaign%3DSocialWarfare"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_linkedin_icon"></i><span class="swp_share">Share</span></span></span></span></a></div></div><style id="et-builder-module-design-tb-216288-579-cached-inline-styles">.et_pb_section_0_tb_header.et_pb_section{padding-top:20px;padding-bottom:20px}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-top:0px}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-weight:700;font-size:17px;color:#ffffff!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul{background-color:#ffffff!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu a,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu a{color:#000000!important}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu ul{background-color:#FFFFFF!important}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot{width:auto;max-width:100%}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{height:auto;max-height:none}.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar:before,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button{color:#ffffff}.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#2ea3f2}.et_pb_divider_0:before,.et_pb_divider_2:before,.et_pb_divider_1:before{border-top-color:#000000}.et_pb_button_2,.et_pb_button_2:after,.et_pb_button_1,.et_pb_button_1:after,.et_pb_button_4,.et_pb_button_4:after,.et_pb_button_5,.et_pb_button_5:after,.et_pb_button_6,.et_pb_button_6:after,.et_pb_button_7,.et_pb_button_7:after,.et_pb_button_8,.et_pb_button_8:after,.et_pb_button_9,.et_pb_button_9:after,.et_pb_button_10,.et_pb_button_10:after,.et_pb_button_11,.et_pb_button_11:after,.et_pb_button_0,.et_pb_button_0:after,.et_pb_button_3,.et_pb_button_3:after{transition:all 300ms ease 0ms}.et_pb_login_0.et_pb_login,.et_pb_login_1.et_pb_login{background-color:#2ea3f2}.et_pb_social_media_follow_network_4 a.icon,.et_pb_social_media_follow_network_6 a.icon,.et_pb_social_media_follow_network_8 a.icon,.et_pb_social_media_follow_network_2 a.icon,.et_pb_social_media_follow_network_0 a.icon{background-color:#00aced!important}.et_pb_social_media_follow_network_3 a.icon,.et_pb_social_media_follow_network_5 a.icon,.et_pb_social_media_follow_network_7 a.icon,.et_pb_social_media_follow_network_9 a.icon,.et_pb_social_media_follow_network_1 a.icon{background-color:#3b5998!important}@media only screen and (min-width:768px) and (max-width:980px){.et_pb_divider_0,.et_pb_divider_1,.et_pb_divider_2{display:none!important}}@media only screen and (max-width:767px){.et_pb_divider_0,.et_pb_divider_1,.et_pb_divider_2{display:none!important}}</style><script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var swp_nonce = "56ff22d2f1";var swpFloatBeforeContent = false; var swp_ajax_url = "https://ultimateqa.com/wp-admin/admin-ajax.php"; var swp_post_id = "579";var swpClickTracking = true; swpPinIt={"enabled":false};</script><script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async data-type="kppassive" data-kpscriptsrc="https://ultimateqa.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>	
+			<span class="et_pb_scroll_top et-pb-icon"></span>
+	</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1650493869 -->

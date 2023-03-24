@@ -1,0 +1,895 @@
+{
+  "stats": {
+    "suites": 15,
+    "tests": 18,
+    "passes": 11,
+    "pending": 3,
+    "failures": 4,
+    "start": "2022-04-21T15:34:42.704Z",
+    "end": "2022-04-21T15:34:43.816Z",
+    "duration": 1112,
+    "testsRegistered": 20,
+    "passPercent": 64.70588235294117,
+    "pendingPercent": 15,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "3effbdc5-54a3-4251-83c4-3512b671b5ff",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "expect - String",
+          "fullTitle": "expect - String",
+          "timedOut": false,
+          "duration": 4,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "var str = 'Awesome!!';\n\nexpect(str).to.be.a('String');                  //str type\nexpect(str).to.equal('Awesome!!');              //str === 'Awesome!!'\nexpect(str).to.have.lengthOf(7, 'Why fail?');   //Error",
+          "err": {
+            "message": "AssertionError: Why fail?: expected 'Awesome!!' to have a length of 7 but got 9",
+            "estack": "AssertionError: Why fail?: expected 'Awesome!!' to have a length of 7 but got 9\n    at Context.<anonymous> (bdd\\04-mocha-test-chai-string.js:10:25)",
+            "diff": "- 9\n+ 7\n"
+          },
+          "uuid": "23e6f810-ee19-41d2-ad94-e34aaa528857",
+          "parentUUID": "3effbdc5-54a3-4251-83c4-3512b671b5ff",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "62b39104-8c60-418f-99cb-2ea832b2ff31",
+          "title": "#Hello World!",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\01-mocha-test-hello.js",
+          "file": "\\bdd\\01-mocha-test-hello.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "입력 값은 Hello World!",
+              "fullTitle": "#Hello World! 입력 값은 Hello World!",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var input = 'Hello World!'; // 입력 값이라고 가정\nassert.equal('Hello World!', input);",
+              "err": {},
+              "uuid": "79ca249e-6880-4ba3-abd0-76af30c8cb2e",
+              "parentUUID": "62b39104-8c60-418f-99cb-2ea832b2ff31",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "79ca249e-6880-4ba3-abd0-76af30c8cb2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1b092d18-6c49-4524-88cd-28a4a4cbbc64",
+          "title": "#Hello World!",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\02-mocha-test-nested.js",
+          "file": "\\bdd\\02-mocha-test-nested.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "입력 값은 Hello World!",
+              "fullTitle": "#Hello World! 입력 값은 Hello World!",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var input = 'Hello World!'; // 입력 값이라고 가정\nassert.equal('Hello World!', input);",
+              "err": {},
+              "uuid": "f8fbc0cf-709f-4ef5-b898-366209d7e32d",
+              "parentUUID": "1b092d18-6c49-4524-88cd-28a4a4cbbc64",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "72e9a525-2852-480f-93a9-fb3e6753740c",
+              "title": "#String Test",
+              "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\02-mocha-test-nested.js",
+              "file": "\\bdd\\02-mocha-test-nested.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Hello의 문자 개수는 5",
+                  "fullTitle": "#Hello World! #String Test Hello의 문자 개수는 5",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var str = 'Hello';\n\nif (str.length == 5) {\n    assert.ok(true);\n} else {\n    assert.ok(false);\n}",
+                  "err": {},
+                  "uuid": "ad2aca0e-7505-4ded-9de2-3c355e5f2c52",
+                  "parentUUID": "72e9a525-2852-480f-93a9-fb3e6753740c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "World는 W 대문자",
+                  "fullTitle": "#Hello World! #String Test World는 W 대문자",
+                  "timedOut": false,
+                  "duration": 27,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "var str = 'World';\n\nif (str.indexOf('w') > -1) {     //오류 발생\n    assert.ok(true);\n}else {\n    assert.ok(false);\n}",
+                  "err": {
+                    "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(false)\n",
+                    "estack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(false)\n\n    at Context.<anonymous> (bdd\\02-mocha-test-nested.js:27:23)",
+                    "diff": "- false\n+ true\n"
+                  },
+                  "uuid": "69d8c68b-9f35-4f68-84de-fdb53654e7f4",
+                  "parentUUID": "72e9a525-2852-480f-93a9-fb3e6753740c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ad2aca0e-7505-4ded-9de2-3c355e5f2c52"
+              ],
+              "failures": [
+                "69d8c68b-9f35-4f68-84de-fdb53654e7f4"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 27,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "f8fbc0cf-709f-4ef5-b898-366209d7e32d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a34cef2d-9adb-4b9f-8a72-fae1deb6b631",
+          "title": "#Expect Test",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\03-mocha-test-chai.js",
+          "file": "\\bdd\\03-mocha-test-chai.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "expect - Array",
+              "fullTitle": "#Expect Test expect - Array",
+              "timedOut": false,
+              "duration": 5,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var arr = [1, 2, 5, 3, 4];\nexpect(arr).to.have.lengthOf(5);                        //array length\nexpect(arr).to.be.not.empty;                            //empty\narr = [1, 3, 5, 3, 4];\nexpect(arr).to.have.ordered.members([1, 2, 5, 3, 4]);   //arr === members",
+              "err": {
+                "message": "AssertionError: expected [ 1, 3, 5, 3, 4 ] to have the same ordered members as [ 1, 2, 5, 3, 4 ]",
+                "estack": "AssertionError: expected [ 1, 3, 5, 3, 4 ] to have the same ordered members as [ 1, 2, 5, 3, 4 ]\n    at Context.<anonymous> (bdd\\03-mocha-test-chai.js:14:37)",
+                "diff": " [\n   1\n-   3\n+   2\n   5\n   3\n   4\n ]\n"
+              },
+              "uuid": "c5d7f916-7492-4b96-94f6-33fd5227c28c",
+              "parentUUID": "a34cef2d-9adb-4b9f-8a72-fae1deb6b631",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c5d7f916-7492-4b96-94f6-33fd5227c28c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d2ccc68c-e99d-412d-baff-055c1725419c",
+          "title": "#Should Test",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\05-mocha-test-chai-should.js",
+          "file": "\\bdd\\05-mocha-test-chai-should.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should - String",
+              "fullTitle": "#Should Test should - String",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var str = 'Awesome!!';\nstr.should.be.a('String');                  //str type\nstr.should.equal('Awesome!!');              //str === 'Awesome!!'\nstr.should.have.lengthOf(7, 'Why fail?');   //Error",
+              "err": {
+                "message": "AssertionError: Why fail?: expected 'Awesome!!' to have a length of 7 but got 9",
+                "estack": "AssertionError: Why fail?: expected 'Awesome!!' to have a length of 7 but got 9\n    at Context.<anonymous> (bdd\\05-mocha-test-chai-should.js:12:25)",
+                "diff": "- 9\n+ 7\n"
+              },
+              "uuid": "248b333b-b311-4aa6-9318-48ebee7809ca",
+              "parentUUID": "d2ccc68c-e99d-412d-baff-055c1725419c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "248b333b-b311-4aa6-9318-48ebee7809ca"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "94baac4d-c914-406f-b86c-dec74781e454",
+          "title": "#Assert Test",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\06-mocha-test-chai-assert.js",
+          "file": "\\bdd\\06-mocha-test-chai-assert.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "assert - Array",
+              "fullTitle": "#Assert Test assert - Array",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var str = 'Awesome!!';\nvar obj = {\n    assertion: ['assert', 'expect', 'should'],\n    framework: 'mocha'\n};\nassert.equal(str, 'Awesome!!');         //str === 'Awesome!!'\nassert.typeOf(str, 'String');           //str type\nassert.lengthOf(obj.assertion, 3);      //assertion value length",
+              "err": {},
+              "uuid": "0f19521c-5b7c-4010-8548-8c9aeb97a9d5",
+              "parentUUID": "94baac4d-c914-406f-b86c-dec74781e454",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0f19521c-5b7c-4010-8548-8c9aeb97a9d5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+          "title": "#Hooks",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\10-mocha-hook.js",
+          "file": "\\bdd\\10-mocha-hook.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook",
+              "fullTitle": "#Hooks \"before all\" hook",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('before');",
+              "err": {},
+              "uuid": "1b0cf48b-4529-4ea1-96b4-84998c825367",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook",
+              "fullTitle": "#Hooks \"before each\" hook",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('beforeEach');",
+              "err": {},
+              "uuid": "89cacfb2-e900-42e8-80df-d3fd3ded687e",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook",
+              "fullTitle": "#Hooks \"after all\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('after');",
+              "err": {},
+              "uuid": "418e5063-65cc-4f3d-a78c-9e32daa83a20",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook",
+              "fullTitle": "#Hooks \"after each\" hook",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('afterEach');",
+              "err": {},
+              "uuid": "1c34a886-31c1-4284-87ab-6bff0137c742",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "test case #1",
+              "fullTitle": "#Hooks test case #1",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('test case #1');",
+              "err": {},
+              "uuid": "d39ca6aa-38aa-4347-a261-9501be5c5254",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "test case #2",
+              "fullTitle": "#Hooks test case #2",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('test case #2');",
+              "err": {},
+              "uuid": "116a6b1e-f1f4-4b2c-afb5-06cfe9757e8d",
+              "parentUUID": "03bf7a21-94fe-414b-b66b-caa81d346db4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d39ca6aa-38aa-4347-a261-9501be5c5254",
+            "116a6b1e-f1f4-4b2c-afb5-06cfe9757e8d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7201dd0a-408a-48d2-9177-02f499bf5472",
+          "title": "#Describing Hooks",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\11-mocha-hook-name.js",
+          "file": "\\bdd\\11-mocha-hook-name.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook",
+              "fullTitle": "#Describing Hooks \"before each\" hook",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// beforeEach hook\nconsole.log('beforeEach')",
+              "err": {},
+              "uuid": "7c4db7c7-6cb6-4be8-bf13-9b396f4895f8",
+              "parentUUID": "7201dd0a-408a-48d2-9177-02f499bf5472",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: namedFun",
+              "fullTitle": "#Describing Hooks \"before each\" hook: namedFun",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// beforeEach:namedFun\nconsole.log('beforeEach namedFun')",
+              "err": {},
+              "uuid": "b74ee517-fbcc-4046-b59c-75f0f3b73cc0",
+              "parentUUID": "7201dd0a-408a-48d2-9177-02f499bf5472",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: some description for \"test case #1\"",
+              "fullTitle": "#Describing Hooks \"before each\" hook: some description for \"test case #1\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// beforeEach:some description\nerror",
+              "err": {
+                "message": "ReferenceError: error is not defined",
+                "estack": "ReferenceError: error is not defined\n    at Context.<anonymous> (bdd\\11-mocha-hook-name.js:14:9)",
+                "diff": null
+              },
+              "uuid": "f90d204c-88cb-4293-94c1-76591229c352",
+              "parentUUID": "7201dd0a-408a-48d2-9177-02f499bf5472",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test case #1",
+              "fullTitle": "#Describing Hooks test case #1",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('test case #1');",
+              "err": {},
+              "uuid": "731da0eb-66d5-45a2-92e2-8024c3d27173",
+              "parentUUID": "7201dd0a-408a-48d2-9177-02f499bf5472",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "test case #2",
+              "fullTitle": "#Describing Hooks test case #2",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "console.log('test case #2');\nerror",
+              "err": {},
+              "uuid": "c3764262-f1bd-4eee-a39e-06f1a048a453",
+              "parentUUID": "7201dd0a-408a-48d2-9177-02f499bf5472",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "731da0eb-66d5-45a2-92e2-8024c3d27173",
+            "c3764262-f1bd-4eee-a39e-06f1a048a453"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "75689ce6-45f8-4d43-88f5-8265015bf454",
+          "title": "#indexOf()",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\20-mocha-sync.js",
+          "file": "\\bdd\\20-mocha-sync.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "값이 일치하지 않는 경우 -1을 return 한다.",
+              "fullTitle": "#indexOf() 값이 일치하지 않는 경우 -1을 return 한다.",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect([1, 2, 3].indexOf(5)).to.equal(-1);\nexpect([1, 2, 3].indexOf(3)).to.equal(2);\nexpect([1, 2, 3].indexOf(0)).to.equal(-1);",
+              "err": {},
+              "uuid": "76917b40-97d6-42a4-ba73-8fa186f9895f",
+              "parentUUID": "75689ce6-45f8-4d43-88f5-8265015bf454",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "76917b40-97d6-42a4-ba73-8fa186f9895f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8774fae4-d630-4830-8e92-48a7f43a90cd",
+          "title": "#indexOf()",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\21-mocha-async.js",
+          "file": "\\bdd\\21-mocha-async.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "값이 일치하지 않는 경우 -1을 return 한다.",
+              "fullTitle": "#indexOf() 값이 일치하지 않는 경우 -1을 return 한다.",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect([1, 2, 3].indexOf(5)).to.equal(-1);\nexpect([1, 2, 3].indexOf(3)).to.equal(2);\nexpect([1, 2, 3].indexOf(0)).to.equal(-1);",
+              "err": {},
+              "uuid": "c158412e-a5e5-4bca-a414-ab4cdcff8919",
+              "parentUUID": "8774fae4-d630-4830-8e92-48a7f43a90cd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "setTimeout",
+              "fullTitle": "#indexOf() setTimeout",
+              "timedOut": false,
+              "duration": 1009,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "setTimeout(function(){\n    expect([1, 2, 3].indexOf(5)).to.equal(-1);\n    expect([1, 2, 3].indexOf(3)).to.equal(2);\n    expect([1, 2, 3].indexOf(0)).to.equal(-1);\n    done();\n}, 1000);",
+              "err": {},
+              "uuid": "030c3a50-9e78-4f6c-82ec-266e0ff51d4c",
+              "parentUUID": "8774fae4-d630-4830-8e92-48a7f43a90cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c158412e-a5e5-4bca-a414-ab4cdcff8919",
+            "030c3a50-9e78-4f6c-82ec-266e0ff51d4c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1009,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6276d2f4-9ee4-4452-a3a7-c0af24dd711a",
+          "title": "#ModuleSum",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\30-mocha-module-test.js",
+          "file": "\\bdd\\30-mocha-module-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "sum()",
+              "fullTitle": "#ModuleSum sum()",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(moduleSum.sum(1, 2)).to.equal(3);\nexpect(moduleSum.sum(3, 2)).to.equal(5);\nexpect(moduleSum.sum(5, 0)).to.equal(5);",
+              "err": {},
+              "uuid": "51fbc51c-9158-434f-ba81-42f949c50a21",
+              "parentUUID": "6276d2f4-9ee4-4452-a3a7-c0af24dd711a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "51fbc51c-9158-434f-ba81-42f949c50a21"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1bae5bec-030d-4d53-8a05-bfa34500369d",
+          "title": "#suite-master",
+          "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\50-mocha-inc-skip.js",
+          "file": "\\bdd\\50-mocha-inc-skip.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test #1",
+              "fullTitle": "#suite-master test #1",
+              "timedOut": false,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "if (false) {\n    // make assertions\n} else {\n    this.skip();\n}",
+              "err": {},
+              "uuid": "437ccae4-51e1-4d20-a4a3-bc0776fb2ef9",
+              "parentUUID": "1bae5bec-030d-4d53-8a05-bfa34500369d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "880b97c2-f6cd-41ea-ab8f-2e9ccafc5277",
+              "title": "#suite-#1",
+              "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\50-mocha-inc-skip.js",
+              "file": "\\bdd\\50-mocha-inc-skip.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "#suite-#1:test #1",
+                  "fullTitle": "#suite-master #suite-#1 #suite-#1:test #1",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "e1df34f0-f4bc-4dcb-bcf1-c0436d744129",
+                  "parentUUID": "880b97c2-f6cd-41ea-ab8f-2e9ccafc5277",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "#suite-#1:test #2",
+                  "fullTitle": "#suite-master #suite-#1 #suite-#1:test #2",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// this test will be run",
+                  "err": {},
+                  "uuid": "760def76-602a-4f45-9474-a19e264a29f5",
+                  "parentUUID": "880b97c2-f6cd-41ea-ab8f-2e9ccafc5277",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "760def76-602a-4f45-9474-a19e264a29f5"
+              ],
+              "failures": [],
+              "pending": [
+                "e1df34f0-f4bc-4dcb-bcf1-c0436d744129"
+              ],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3615ec3d-ea04-4d7b-97ce-f630787b3940",
+              "title": "#suite-#2",
+              "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\50-mocha-inc-skip.js",
+              "file": "\\bdd\\50-mocha-inc-skip.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "01793ec0-4a02-490c-9376-7c21e3d1ad5a",
+                  "title": "#suite-#2.1",
+                  "fullFile": "C:\\Users\\hcmoon\\Desktop\\2022\\Node.js 테스트 자동화\\src\\nodejs-nightwatch\\src-win\\01-mocha\\bdd\\50-mocha-inc-skip.js",
+                  "file": "\\bdd\\50-mocha-inc-skip.js",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "#suite-#2.1: test #1",
+                      "fullTitle": "#suite-master #suite-#2 #suite-#2.1 #suite-#2.1: test #1",
+                      "timedOut": false,
+                      "duration": 0,
+                      "state": "pending",
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": true,
+                      "context": null,
+                      "code": "",
+                      "err": {},
+                      "uuid": "bb231b99-fe21-4a01-bfcb-6c14e7a3a97a",
+                      "parentUUID": "01793ec0-4a02-490c-9376-7c21e3d1ad5a",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [],
+                  "pending": [
+                    "bb231b99-fe21-4a01-bfcb-6c14e7a3a97a"
+                  ],
+                  "skipped": [],
+                  "duration": 0,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "437ccae4-51e1-4d20-a4a3-bc0776fb2ef9"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [
+        "23e6f810-ee19-41d2-ad94-e34aaa528857"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 4,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

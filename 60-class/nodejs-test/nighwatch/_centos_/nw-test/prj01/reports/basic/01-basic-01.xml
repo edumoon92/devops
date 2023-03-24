@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="basic.01-basic-01"
+    errors="1" failures="0" hostname="" id="" package="basic" skipped="0"
+    tests="0" time="0.000" timestamp="">
+  
+
+  
+    <system-err>
+      [0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+[0;31m  Error: An error occurred while retrieving a new session: &#34;unknown error: Chrome failed to start: exited abnormally.&#34;[0m
+[0;90m       at endReadableNT (_stream_readable.js:1145:12)
+       at process._tickCallback (internal/process/next_tick.js:63:19)[0m
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>

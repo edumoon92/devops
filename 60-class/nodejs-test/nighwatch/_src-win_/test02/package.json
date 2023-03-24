@@ -1,0 +1,16 @@
+{
+  "name": "test02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "nightwatch": "^2.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
