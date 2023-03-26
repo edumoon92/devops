@@ -3,6 +3,8 @@ services:
   novnc:
     image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-v0.4
     # henry/ubuntu
+    cap_add:
+      - SYS_ADMIN
     environment:
       - USER=henry
       - VNC_PASSWORD=tta123!@
