@@ -1,7 +1,7 @@
 version: "3"
 services:
   novnc:
-    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-java17-code-git-mocha-v0.6
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-v0.6
     # henry/ubuntu
     cap_add:
       - SYS_ADMIN
