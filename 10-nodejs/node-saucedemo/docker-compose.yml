@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    image: hcmoon92/devops:node14-saucedemo-v0.1
+    ports:
+      - "3000:3000"
+    command:
+      - bash
+      - -c
+      - |
+        cd /app/saucedemo
+        npm run start
