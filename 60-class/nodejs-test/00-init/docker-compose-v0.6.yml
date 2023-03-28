@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3"
 services:
   novnc:
     image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-v0.6
@@ -14,13 +14,3 @@ services:
     volumes:
       - ./:/app
       - /dev/shm:/dev/shm
-  app:
-    image: hcmoon92/devops:node14-saucedemo-v0.1
-    ports:
-      - "3000:3000"
-    command:
-      - bash
-      - -c
-      - |
-        cd /app/saucedemo
-        npm run start
