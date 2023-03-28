@@ -9,7 +9,7 @@
   "author": "Agnieszka Burczyk",
   "license": "MIT",
   "devDependencies": {
-    "chromedriver": "^79.0.0",
+    "chromedriver": "^89.0.0",
     "mocha": "^6.2.2",
     "selenium-webdriver": "^4.0.0-alpha.5"
   }
