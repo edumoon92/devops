@@ -10,10 +10,10 @@ module.exports = {
         "host" : "127.0.0.1",
         "port" : 9515,
         "cli_args" : {
-            "webdriver.chrome.driver" : "./selenium/chromedriver.exe",
-            "webdriver.gecko.driver" : "./selenium/geckodriver.exe",
-            "webdriver.ie.driver" : "./selenium/IEDriverServer_Win32_3.14.0.exe",
-            "webdriver.edge.driver" : "./selenium/MicrosoftWebDriver.exe"
+            //"webdriver.chrome.driver" : "./selenium/chromedriver.exe",
+            //"webdriver.gecko.driver" : "./selenium/geckodriver.exe",
+            //"webdriver.ie.driver" : "./selenium/IEDriverServer_Win32_3.14.0.exe",
+            //"webdriver.edge.driver" : "./selenium/MicrosoftWebDriver.exe"
          }
     },
     
