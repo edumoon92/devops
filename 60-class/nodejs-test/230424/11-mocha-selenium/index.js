@@ -4,16 +4,44 @@ const app = express();
 app.get('/', (req, res) => {
   res.send(`
     <html>
-    <form action="/main">
+    <form action="/main" method="post">
       username: <input type="text" id="username" /><br />
       password: <input type="text" id="password" />
+
+      <label>
+      <input type="radio" name="gender" value="male" checked> Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female"> Female
+      </label>
+      <br>
+      <label>
+        Favorite color:
+        <select name="color">
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Favorite food:
+        <input type="text" name="food">
+      </label>
+      <br>
+            
       <input id="btn" type="submit" />
     </form>
     </html>
   `);
 });
 
-app.get('/main', (req, res) => {
+app.post('/main', (req, res) => {
+
+  const gender = req.body.gender;
+  const color = req.body.color;
+  const food = req.body.food;
+
   res.send(`
     <html>
     <title>
@@ -23,6 +51,8 @@ app.get('/main', (req, res) => {
     <div id="message">
       Welcome to my page!
     </div>
+
+    You selected ${gender}, ${color}, and ${food}
     </body>
     </html>
   `);
