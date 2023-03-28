@@ -14,11 +14,6 @@ const database = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), PRIMARY KEY(id))';
-database.query(sqlQuery, (err) => {
-	if (err) throw err;
-});
-
 app.get('/init', (req, res) => {
     const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), PRIMARY KEY(id))';
     database.query(sqlQuery, (err) => {
