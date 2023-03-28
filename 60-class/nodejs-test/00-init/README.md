@@ -24,7 +24,7 @@ code --no-sandbox
 # JAVA 설치
 ## openjdk 설치
 ```bash
-sudo apt-get install openjdk-17-jdk
+sudo apt-get install openjdk-8-jdk
 java -version
 javac -version
 ```
@@ -39,7 +39,7 @@ readlink -f /usr/bin/javac
 ...
 ...
 ...
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASS_PATH=$JAVA_HOME/lib:$CLASS_PATH
 ```
