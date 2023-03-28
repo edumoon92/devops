@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+// Parse JSON and URL-encoded query parameters
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
   res.send(`
     <html>
