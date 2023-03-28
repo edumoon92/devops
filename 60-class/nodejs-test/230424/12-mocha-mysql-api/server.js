@@ -14,6 +14,11 @@ const database = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
+const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), PRIMARY KEY(id))';
+database.query(sqlQuery, (err) => {
+	if (err) throw err;
+});
+
 app.get('/init', (req, res) => {
     const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), PRIMARY KEY(id))';
     database.query(sqlQuery, (err) => {
@@ -29,7 +34,7 @@ app.post("/echo", (req, res) => {
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+  return Math.floor(Math.random() * (max - min)) + min; //理쒕뙎媛믪? ?쒖쇅, 理쒖넖媛믪? ?ы븿
 }
 
 app.get('/add', (req, res) => {
