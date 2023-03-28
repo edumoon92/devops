@@ -24,14 +24,3 @@ services:
       - |
         cd /app/saucedemo
         npm run start
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: tta123!@
-      MYSQL_DATABASE: testdb
-      MYSQL_USER: henry
-      MYSQL_PASSWORD: tta123!@
-    volumes:
-      - ./data:/var/lib/mysql
-    ports:
-      - "3306:3306"

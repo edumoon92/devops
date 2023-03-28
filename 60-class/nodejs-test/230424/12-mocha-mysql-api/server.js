@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const database = mysql.createConnection({
-    user: 'hcmoon',
-    password: 'tta123',
+    user: 'henry',
+    password: 'tta123!@',
     database: 'testdb'
 });
 
