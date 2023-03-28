@@ -10,9 +10,9 @@ services:
       VNC_PASSWORD: tta123!@
       DB_HOST: db
       DB_PORT: 3306
-      DB_NAME: 'testdb'
-      DB_USER: 'henry'
-      DB_PASSWORD: 'tta123!@'
+      DB_NAME: testdb
+      DB_USER: henry
+      DB_PASSWORD: tta123!@
 
     ports:
       - "6080:80"
