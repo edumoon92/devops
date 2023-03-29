@@ -13,6 +13,7 @@
     "test20": "mocha test-post-01.js",
     "test30": "mocha test-del-01.js",
     "test-drop": "mocha test-drop.js",
+    "test-all": "mocha test-all.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
