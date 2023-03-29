@@ -37,7 +37,8 @@ app.post("/echo", (req, res) => {
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //筌ㅼ뮆?롥첎誘? ??뽰뇚, 筌ㅼ뮇?뽩첎誘? ??釉?}
+  return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+}
 
 app.get('/add', (req, res) => {
 	var number = getRandomInt(10000000,99999999);
