@@ -2,7 +2,7 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 //let server = require('../server');
-let server = 'https://mocha.run.goorm.io';
+let server = 'http://localhost:3000';
 
 chai.should();
 chai.use(chaiHttp);
@@ -25,30 +25,5 @@ describe('Books API #1', () => {
                 });
           });
   });
-
-  /*
-  ** Test the NOT GET route
-  */
-  describe('GET /book', () => {
-          it('it should NOT GET all the books', (done) => {
-                chai.request(server)
-                .get('/book')
-                .end((err, res) => {
-                        res.should.have.status(404);
-                done();
-                });
-          });
-
-          it('it should NOT GET all the books', (done) => {
-                    chai.request(server)
-                    .get('/book')
-                    .end((err, res) => {
-                            res.should.have.status(200);
-                    done();
-                    });
-            });
-
-  });  
-
 
 });

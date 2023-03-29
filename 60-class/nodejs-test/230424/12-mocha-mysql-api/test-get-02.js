@@ -2,7 +2,7 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 //let server = require('../server');
-let server = 'https://mocha.run.goorm.io';
+let server = 'http://localhost:3000';
 
 chai.should();
 chai.use(chaiHttp);

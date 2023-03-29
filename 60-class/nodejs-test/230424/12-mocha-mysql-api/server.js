@@ -15,10 +15,18 @@ const database = mysql.createConnection({
 });
 
 app.get('/init', (req, res) => {
-    const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), PRIMARY KEY(id))';
+    const sqlQuery =  'CREATE TABLE IF NOT EXISTS books(id int AUTO_INCREMENT, title VARCHAR(50), author VARCHAR(50), year VARCHAR(10), pages VARCHAR(10), PRIMARY KEY(id))';
     database.query(sqlQuery, (err) => {
 		if (err) throw err;
         res.send('Table created!')
+    });
+});
+
+app.get('/drop', (req, res) => {
+    const sqlQuery =  'DROP TABLE books';
+    database.query(sqlQuery, (err) => {
+		if (err) throw err;
+        res.send('Table dropped!!')
     });
 });
 
@@ -29,8 +37,7 @@ app.post("/echo", (req, res) => {
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //理쒕뙎媛믪? ?쒖쇅, 理쒖넖媛믪? ?ы븿
-}
+  return Math.floor(Math.random() * (max - min)) + min; //筌ㅼ뮆?롥첎誘? ??뽰뇚, 筌ㅼ뮇?뽩첎誘? ??釉?}
 
 app.get('/add', (req, res) => {
 	var number = getRandomInt(10000000,99999999);
@@ -126,8 +133,8 @@ app.get('/edit/:id', function (req, res) {
 /*
  * POST /book to save a new book.
  */
-app.put('/update', (req, res) => {
-	const book_id = req.params.bookid;
+app.put('/put/:id', (req, res) => {
+	const book_id = req.params.id;
 	const book = req.body;
 	
 	console.log(book);
