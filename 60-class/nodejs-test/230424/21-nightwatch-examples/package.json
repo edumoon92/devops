@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@nightwatch/selenium-server": "^4.5.0",
-    "chromedriver": "^109.0.0"
+    "chromedriver": "^89.0.0"
   }
 }
