@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   novnc:
-    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-java8-v0.8
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-java8-v0.7
     # vnc pw: tta123!@, sudo pw : henry/ubuntu
     # sysctl fs.inotify.max_user_watches
     # echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
