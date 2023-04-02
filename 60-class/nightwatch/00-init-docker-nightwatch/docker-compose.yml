@@ -20,7 +20,6 @@ services:
       - "5900:5900"
     volumes:
       - ./:/app
-      - /home/henry/devops:/home/henry/devops
       - /dev/shm:/dev/shm
   app:
     image: hcmoon92/devops:node14-saucedemo-v0.1
