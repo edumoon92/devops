@@ -27,3 +27,7 @@ chown root:docker /var/run/docker.sock
 ---
 - https://jerry92k.tistory.com/71 : Github - Jenkins로 CI 자동화 하기
 - https://jerry92k.tistory.com/72 : Jenkins CD 자동화 하기
+
+---
+- v0.4
+- wget, ngrok install
