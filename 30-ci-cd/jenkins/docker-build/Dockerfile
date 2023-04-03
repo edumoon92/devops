@@ -1,6 +1,6 @@
 FROM  hcmoon92/devops:jenkins-v0.2 
 USER root
-RUN apt-get update \
+RUN  apt-get clean && apt-get update \
   && apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common \
   && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor --output /usr/share/keyrings/docker-archive-keyring.gpg \
   && echo \
