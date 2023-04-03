@@ -4,7 +4,8 @@ services:
   jenkins:
     image: hcmoon92/devops:jenkins-docker-v0.3  
     # v0.3 : jenkins plug installed version + docker + docker-compose
-    container_name: jenkins
+    container_name: jenkins-docker
+    privileged: true
     ports:
       - "8080:8080"
       - "50000:50000"
