@@ -1,3 +1,8 @@
+```
+ngrok http 8080
+ngrok http --proto=http 8080
+```
+---
 To use a Jenkinsfile in your Jenkins build process, you can follow these steps:
 
 Open the Jenkins dashboard and create a new Jenkins job.
