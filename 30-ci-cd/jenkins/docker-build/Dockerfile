@@ -17,6 +17,9 @@ RUN apt-get update && \
 RUN groupadd -f docker
 RUN usermod -aG docker jenkins
 
-EXPOSE 2375 # docker ports
-
 USER jenkins
+
+VOLUME /var/lib/docker
+
+CMD ["sh", "-c", "dockerd"]
+
