@@ -17,5 +17,5 @@ Run the Jenkins job and watch the pipeline execute according to the steps define
 ---
 - root access
 ```
-docker exec -u 0 -it 9b8 /bin/bash
+docker exec -u 0 -it <container_id/container_name> /bin/bash
 ```
