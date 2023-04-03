@@ -19,3 +19,7 @@ Run the Jenkins job and watch the pipeline execute according to the steps define
 ```
 docker exec -u 0 -it <container_id/container_name> /bin/bash
 ```
+
+---
+- https://jerry92k.tistory.com/71 : Github - Jenkins로 CI 자동화 하기
+- https://jerry92k.tistory.com/72 : Jenkins CD 자동화 하기
