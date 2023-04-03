@@ -17,7 +17,4 @@ RUN apt-get update && \
 RUN groupadd -f docker
 RUN usermod -aG docker jenkins
 
-VOLUME /var/lib/docker
-
-CMD ["sh", "-c", "dockerd"]
-
+USER jenkins
