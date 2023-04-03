@@ -13,3 +13,9 @@ In the "Script Path" field, enter the path to your Jenkinsfile. For example, if 
 Save the job configuration.
 
 Run the Jenkins job and watch the pipeline execute according to the steps defined in the Jenkinsfile.
+
+---
+- root access
+```
+docker exec -u 0 -it 9b8 /bin/bash
+```
