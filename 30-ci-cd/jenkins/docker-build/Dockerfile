@@ -2,6 +2,7 @@ FROM  hcmoon92/devops:jenkins-v0.2
 USER root
 # Install dependencies
 RUN apt-get update && \
+    apt-get install -y software-properties-common && \
     apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
 
 # Install Docker
