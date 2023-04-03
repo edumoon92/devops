@@ -2,7 +2,7 @@ version: '3'
 
 services:
   jenkins:
-    image: hcmoon92/devops:jenkins-v0.3  
+    image: hcmoon92/devops:jenkins-docker-v0.3  
     # v0.3 : jenkins plug installed version + docker + docker-compose
     container_name: jenkins
     ports:
