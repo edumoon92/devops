@@ -12,8 +12,11 @@ RUN apt-get update && \
       $(lsb_release -cs) \
       stable" && \
    apt-get update && \
-   apt-get -y install docker-ce
+   apt-get -y install docker-ce docker-ce-cli containerd.io
    
 RUN groupadd -f docker
 RUN usermod -aG docker jenkins
+
+EXPOSE 2375 # docker ports
+
 USER jenkins
