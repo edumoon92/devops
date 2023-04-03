@@ -14,6 +14,11 @@ RUN apt-get update && \
    apt-get update && \
    apt-get -y install docker-ce docker-ce-cli containerd.io
    
+# Add Jenkins user to sudoers group
+RUN    apt-get install -y sudo
+RUN usermod -aG sudo jenkins && \
+    echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+    
 RUN groupadd -f docker
 RUN usermod -aG docker jenkins
 
