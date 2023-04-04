@@ -1,0 +1,25 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/test-item-freestyle
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/henry-2023/jenkins-test/
+ > git init /var/jenkins_home/workspace/test-item-freestyle # timeout=10
+Fetching upstream changes from https://github.com/henry-2023/jenkins-test/
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/henry-2023/jenkins-test/ +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/henry-2023/jenkins-test/ # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 2e68481fc58280d0ec98bb8b25a1c5da3dd80fcc (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2e68481fc58280d0ec98bb8b25a1c5da3dd80fcc # timeout=10
+Commit message: "Update test.md"
+First time build. Skipping changelog.
+[test-item-freestyle] $ /bin/sh -xe /tmp/jenkins12945553745924570572.sh
++ echo hello jenkins build
+hello jenkins build
+Finished: SUCCESS
