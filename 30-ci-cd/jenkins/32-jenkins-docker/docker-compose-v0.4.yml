@@ -2,9 +2,8 @@ version: '3.9'
 
 services:
   jenkins:
-    image: hcmoon92/devops:jenkins-docker-v0.5  
+    image: hcmoon92/devops:jenkins-docker-v0.4  
     # v0.3 : jenkins plug installed version + docker + docker-compose
-    # v0.5 : jenkins freestyle example 
     container_name: jenkins-docker
     privileged: true
     ports:
