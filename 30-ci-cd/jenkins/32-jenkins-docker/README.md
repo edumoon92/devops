@@ -1,4 +1,8 @@
 ```
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+```
+
+```
 ngrok http 8080
 ngrok http --proto=http 8080
 ```
