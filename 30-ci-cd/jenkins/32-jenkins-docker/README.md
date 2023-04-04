@@ -1,3 +1,10 @@
+- GitHub Project: https://github.com/henry-2023/jenkins-test/
+- Git Repository: https://github.com/henry-2023/jenkins-test
+- Branch Specifier (blank for 'any'): */main
+- Poll SCM : * * * * * 
+- Build Steps : Shell
+  - echo "hello jenkins build"
+
 ```
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 ```
