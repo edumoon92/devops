@@ -2,12 +2,12 @@ version: '3'
 
 services:
   jenkins:
-    image: hcmoon92/devops:jenkins-docker-v0.3  
+    image: hcmoon92/devops:jenkins-docker-v0.4  
     # v0.3 : jenkins plug installed version + docker + docker-compose
     container_name: jenkins-docker
     privileged: true
     ports:
-      - "8080:8080"
+      - "80:8080"
       - "50000:50000"
     volumes:
       - ../jenkins_home:/var/jenkins_home

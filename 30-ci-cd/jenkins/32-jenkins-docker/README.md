@@ -1,3 +1,12 @@
+```
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+```
+
+```
+ngrok http 8080
+ngrok http --proto=http 8080
+```
+---
 To use a Jenkinsfile in your Jenkins build process, you can follow these steps:
 
 Open the Jenkins dashboard and create a new Jenkins job.
@@ -27,3 +36,7 @@ chown root:docker /var/run/docker.sock
 ---
 - https://jerry92k.tistory.com/71 : Github - Jenkins로 CI 자동화 하기
 - https://jerry92k.tistory.com/72 : Jenkins CD 자동화 하기
+
+---
+- v0.4
+- wget, ngrok install
