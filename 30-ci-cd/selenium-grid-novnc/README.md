@@ -1,3 +1,9 @@
+## passwords
+```
+vnc : secret
+sudo : ubuntu
+```
+
 # TODOS
 
 - no vnc
