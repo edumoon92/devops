@@ -5,7 +5,8 @@ services:
     image: selenium/node-chrome:4.2.2-20220609
     shm_size: 2gb
     ports:
-      - "5900:5900"
+      - "5900:5900"  #vnc port
+      - "7900:7900"  #no vnc port
     depends_on:
       - selenium-hub
     environment:
@@ -19,7 +20,8 @@ services:
     image: selenium/node-firefox:4.2.2-20220609
     shm_size: 2gb
     ports:
-      - "5901:5900"    
+      - "5901:5900"  #vnc port
+      - "7901:7900"  #no vnc port      
     depends_on:
       - selenium-hub
     environment:
@@ -33,7 +35,8 @@ services:
     image: selenium/node-edge:4.2.2-20220609
     shm_size: 2gb
     ports:
-      - "5902:5900"    
+      - "5902:5900"    #vnc port
+      - "7902:7900"  #no vnc port            
     depends_on:
       - selenium-hub
     environment:
