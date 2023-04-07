@@ -63,7 +63,6 @@ services:
     ports:
       - "6080:80"
       - "5900:5900"
-      - "7900:7900"
     volumes:
       - ./tests:/root/tests
       - /dev/shm:/dev/shm         
