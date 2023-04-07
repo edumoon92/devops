@@ -1,0 +1,88 @@
+version: "3"
+services:
+
+  appium:
+    image: appium/appium:1.20.2
+    ports:
+      - "4723:4723"
+    environment:
+      - NODE_CONFIG={
+          "port":4723,
+          "cleanUpCycle":2000,
+          "timeout":30000,
+          "proxy":"false",
+          "maxInstances":1,
+          "register":true,
+          "registerCycle":5000,
+          "hubPort":4444,
+          "hubHost":"selenium-hub"
+        }
+    depends_on:
+      - selenium-hub
+
+  # 크롬 드라이버 컨테이너 설정
+  chrome:
+    image: selenium/node-chrome:4.2.2-20220609
+    shm_size: 2gb
+    ports:
+      - "5901:5900"  #vnc port
+      - "7901:7900"  #no vnc port
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=5
+
+  # 파이어폭스 드라이버 컨테이너 설정 
+  firefox:
+    image: selenium/node-firefox:4.2.2-20220609
+    shm_size: 2gb
+    ports:
+      - "5902:5900"  #vnc port
+      - "7902:7900"  #no vnc port      
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=5
+      
+  # 엣지 드라이버 컨테이너 설정
+  edge:
+    image: selenium/node-edge:4.2.2-20220609
+    shm_size: 2gb
+    ports:
+      - "5903:5900"    #vnc port
+      - "7903:7900"  #no vnc port            
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=5
+
+  # Selenium hub 컨테이너 설정
+  selenium-hub:
+    image: selenium/hub:4.2.2-20220609
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    
+  desktop-novnc-rf:
+    image: hcmoon92/devops:desktop-lxde-vnc-rf-v0.1	
+    # python, node10, robotframework
+    environment:
+      - USER=henry
+      #- VNC_PASSWORD=tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./tests:/root/tests
+      - /dev/shm:/dev/shm         
