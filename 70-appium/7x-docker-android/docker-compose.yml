@@ -48,26 +48,26 @@ services:
       #- BROWSER_NAME=chrome
 
   # Docker-Android for Android application testing
-  nexus_7.1.1:
-    image: budtmo/docker-android-x86-7.1.1
-    privileged: true
-    # Increase scale number if needed
-    scale: 1
-    depends_on:
-      - selenium_hub
-      - real_device
-    ports:
-      - 6080
-    # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
-    volumes:
-      - $PWD/org-docker-android/example/sample_apk:/root/tmp/sample_apk
-      - ./video-nexus_7.1.1:/tmp/video
-    environment:
-      - DEVICE=Nexus 5
-      - CONNECT_TO_GRID=true
-      - APPIUM=true
-      - SELENIUM_HOST=selenium_hub
-      - AUTO_RECORD=true
+  # nexus_7.1.1:
+  #   image: budtmo/docker-android-x86-7.1.1
+  #   privileged: true
+  #   # Increase scale number if needed
+  #   scale: 1
+  #   depends_on:
+  #     - selenium_hub
+  #     - real_device
+  #   ports:
+  #     - 6080
+  #   # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
+  #   volumes:
+  #     - $PWD/org-docker-android/example/sample_apk:/root/tmp/sample_apk
+  #     - ./video-nexus_7.1.1:/tmp/video
+  #   environment:
+  #     - DEVICE=Nexus 5
+  #     - CONNECT_TO_GRID=true
+  #     - APPIUM=true
+  #     - SELENIUM_HOST=selenium_hub
+  #     - AUTO_RECORD=true
 
   # Docker-Android for mobile website testing with chrome browser
   # Chrome browser exists only for version 7.0 and 7.1.1
@@ -93,22 +93,22 @@ services:
 
   # Docker-Android for mobile website testing with default browser
   # Default browser exists only for version 5.0.1, 5.1.1 and 6.0
-  samsung_galaxy_web_5.1.1:
-    image: budtmo/docker-android-x86-5.1.1
-    privileged: true
-    # Increase scale number if needed
-    scale: 1
-    depends_on:
-      - selenium_hub
-      - real_device
-    ports:
-      - 6080
-    volumes:
-      - ./video-samsung_5.1.1:/tmp/video
-    environment:
-      - DEVICE=Samsung Galaxy S6
-      - CONNECT_TO_GRID=true
-      - APPIUM=true
-      - SELENIUM_HOST=selenium_hub
-      - MOBILE_WEB_TEST=true
-      - AUTO_RECORD=true
+  # samsung_galaxy_web_5.1.1:
+  #   image: budtmo/docker-android-x86-5.1.1
+  #   privileged: true
+  #   # Increase scale number if needed
+  #   scale: 1
+  #   depends_on:
+  #     - selenium_hub
+  #     - real_device
+  #   ports:
+  #     - 6080
+  #   volumes:
+  #     - ./video-samsung_5.1.1:/tmp/video
+  #   environment:
+  #     - DEVICE=Samsung Galaxy S6
+  #     - CONNECT_TO_GRID=true
+  #     - APPIUM=true
+  #     - SELENIUM_HOST=selenium_hub
+  #     - MOBILE_WEB_TEST=true
+  #     - AUTO_RECORD=true
