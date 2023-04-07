@@ -1,0 +1,18 @@
+  appium:
+    image: appium/appium:1.20.2
+    ports:
+      - "4723:4723"
+    environment:
+      - NODE_CONFIG={
+          "port":4723,
+          "cleanUpCycle":2000,
+          "timeout":30000,
+          "proxy":"false",
+          "maxInstances":1,
+          "register":true,
+          "registerCycle":5000,
+          "hubPort":4444,
+          "hubHost":"selenium-hub"
+        }
+    depends_on:
+      - selenium-hub
