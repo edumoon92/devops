@@ -20,7 +20,8 @@
  - using different browser and operating system configurations. 
  - enables developers to speed up their testing process and reduce the time it takes to get feedback on their code changes.
 
-### Appium and Robot Framework can automate mobile application testing
-### Docker Compose and Selenium Grid can help developers manage and scale their testing infrastructure.
-### developers can use Docker Compose to define a multi-container environment that includes an Appium server and a Selenium Grid
-### used by Robot Framework to run tests in parallel across multiple devices and browsers.
+## Use Case
+ - Appium and Robot Framework can automate mobile application testing
+ - Docker Compose and Selenium Grid can help developers manage and scale their testing infrastructure.
+ - developers can use Docker Compose to define a multi-container environment that includes an Appium server and a Selenium Grid
+ - used by Robot Framework to run tests in parallel across multiple devices and browsers.
