@@ -3,7 +3,7 @@ version: "3"
 
 services:
   android-sdk-vnc-studio-tools:
-    image: hcmoon92/devops:android-sdk-vnc-studio-tools-v0.92
+    image: hcmoon92/devops:android-sdk-vnc-studio-v0.92
     ports:
       - "5901:5901"
     stop_grace_period: 5s
