@@ -8,7 +8,7 @@ RUN apt-get update && \
 # Install Android SDK
 ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
 RUN mkdir -p ${ANDROID_SDK_ROOT} && \
-    wget -q https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O /tmp/android.zip && \
+    wget -q https://dl.google.com/android/repository/commandlinetools-linux-latest.zip -O /tmp/android.zip && \
     unzip /tmp/android.zip -d ${ANDROID_SDK_ROOT} && \
     rm /tmp/android.zip && \
     yes | ${ANDROID_SDK_ROOT}/tools/bin/sdkmanager --licenses && \
