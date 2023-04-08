@@ -3,16 +3,14 @@ version: "3"
 
 services:
   android-sdk:
-    build: ./build-docker-android-sdk
+    images: hcmoon92/devops:android-sdk-v0.9
     ports:
       - "2222:22"
 #    volumes:
 #      - ./tests:/root/tests
   android-sdk-vnc:
-    build: ./build-docker-android-sdk/vnc
+    images: hcmoon92/devops:android-sdk-vnc-v0.9
     ports:
       - "5901:5901"
-    depends_on:
-      - android-sdk-vnc
 #    volumes:
 #      - ./tests:/root/tests
