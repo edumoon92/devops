@@ -8,7 +8,7 @@ FROM android-sdk:latest
 
 # Author
 # ---------------------------------------------------------------------- #
-LABEL maintainer "thyrlian@gmail.com"
+LABEL maintainer "henry.moon"
 
 # install and configure VNC server
 ENV USER root
