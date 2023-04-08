@@ -1,4 +1,8 @@
 ```
+./gradlew wrapper --gradle-version 7.4.1
+```
+
+```
 FROM openjdk:8-jdk-slim
 
 # Install dependencies
