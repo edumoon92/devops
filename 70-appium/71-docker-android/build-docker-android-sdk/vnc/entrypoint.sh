@@ -9,3 +9,6 @@ autocutsel -fork
 
 # Keep the container running
 # tail -f /dev/null
+
+# Remove X1-lock file
+rm -f /tmp/.X1-lock
