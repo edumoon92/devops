@@ -17,6 +17,13 @@ emulator -avd test -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect &
 emulator -avd test -no-audio -no-boot-anim -no-window -accel on -gpu off
 ```
 
+## Android Studio Install
+```
+apt-get install software-properties-common
+add-apt-repository ppa:maarten-fonville/android-studio
+apt install android-studio
+```
+
 ## Docker Compose
 ```
 docker-compose up 
