@@ -4,6 +4,7 @@ version: "3"
 services:
   android-sdk:
     image: hcmoon92/devops:android-sdk-v0.9
+    command: sh -c "sdkmanager platform-tools emulator"
     ports:
       - "2222:22"
 #    volumes:
