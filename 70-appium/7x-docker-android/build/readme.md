@@ -6,8 +6,7 @@ Create a new file named Dockerfile in your project directory.
 
 Open the Dockerfile in a text editor and add the following contents:
 
-bash
-Copy code
+```bash
 # Base image
 FROM openjdk:8-jdk-alpine
 
@@ -39,6 +38,8 @@ WORKDIR /app
 
 # Build the app
 RUN ./gradlew assembleDebug
+```
+
 This Dockerfile installs OpenJDK as the base image, installs the necessary dependencies (curl, tar, bash) to download and install the Android SDK, and installs the necessary Android SDK components for building Android applications.
 
 Next, it copies the project directory into the container, sets the working directory to the project directory, and runs the assembleDebug Gradle task to build the app.
@@ -52,21 +53,20 @@ This command builds a Docker image named my-android-app using the Dockerfile in 
 
 Run the Docker container by running the following command in the terminal:
 
-bash
-Copy code
+```
 docker run -it --rm -v $(pwd):/app my-android-app /bin/bash
+```
 This command starts a Docker container from the my-android-app image, opens a Bash terminal in the container, and maps the current directory to the /app directory in the container.
 
 Once inside the container, navigate to the project directory using the following command:
 
-bash
-Copy code
+```
 cd /app
+```
 Finally, run the following command to build the app inside the container:
-
-bash
-Copy code
+```
 ./gradlew assembleDebug
+```
 This command builds the app using the assembleDebug Gradle task.
 
 After the build is complete, you can find the built APK file in the app/build/outputs/apk/debug/ directory
