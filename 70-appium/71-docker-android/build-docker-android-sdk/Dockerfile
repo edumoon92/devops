@@ -51,6 +51,7 @@ RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
     rm *tools*linux*.zip
     
 RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager "platform-tools"    
+RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
 
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-${JDK_VERSION}-openjdk-amd64
