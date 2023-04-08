@@ -32,3 +32,7 @@ RUN apt-get install autocutsel
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
+
+# Stop VNC server when container exits
+CMD ["bash", "-c", "trap 'tightvncserver -kill :1 ; exit 0' TERM; tail -f /dev/null & wait"]
