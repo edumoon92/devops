@@ -26,11 +26,11 @@ RUN apt-get update && \
     FILE_SSH_ENV="/root/.ssh/environment" && \
     echo "DISPLAY=:1" >> $FILE_SSH_ENV
 
-RUN apt-get install software-properties-common
+RUN apt-get -y install software-properties-common
 RUN add-apt-repository ppa:maarten-fonville/android-studio
-RUN apt install android-studio
+RUN apt -y install android-studio
 
-RUN apt-get install autocutsel
+RUN apt-get -y install autocutsel
 
 # Set up VNC server to start automatically
 COPY entrypoint.sh /usr/local/bin/
