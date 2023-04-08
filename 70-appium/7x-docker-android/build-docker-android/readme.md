@@ -1,8 +1,8 @@
 ```
-docker run -it --rm -v $(pwd):/app android-app-sdk /bin/bash
+docker run -it --rm -v $(pwd):/app android-sdk /bin/bash
 ```
 ```
-docker run -it --rm -v $(pwd):/app android-app-sdk-vnc /bin/bash
+docker run -it --rm -v $(pwd):/app android-sdk-vnc /bin/bash
 ```
 ---
 
