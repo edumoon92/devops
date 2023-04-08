@@ -26,9 +26,9 @@ RUN apt-get update && \
     FILE_SSH_ENV="/root/.ssh/environment" && \
     echo "DISPLAY=:1" >> $FILE_SSH_ENV
 
-RUN apt-get -y install software-properties-common
+RUN aptt-get install -y software-properties-common
 RUN add-apt-repository ppa:maarten-fonville/android-studio
-RUN apt -y install android-studio
+RUN aptt-get install -y android-studio
 
 RUN apt-get -y install autocutsel
 
