@@ -1,0 +1,9 @@
+  novnc:
+    build: ./build-docker-android-sdk
+    ports:
+      - "6080:80"
+    depends_on:
+      - chrome
+      - firefox
+    volumes:
+      - ./tests:/root/tests
