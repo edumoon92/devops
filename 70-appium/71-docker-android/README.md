@@ -13,6 +13,10 @@ How to run emulator
 Check available emulator system images from remote SDK repository
 
 ```
+sdkmanager --install "system-images;android-24;google_apis;x86_64"
+```
+
+```
 sdkmanager --list --verbose
 ```
 
