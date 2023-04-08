@@ -1,9 +1,18 @@
-  novnc:
+# Usage: docker-compose up -d
+version: "3"
+
+services:
+  android-sdk:
     build: ./build-docker-android-sdk
     ports:
-      - "6080:80"
+      - "2222:22"
+#    volumes:
+#      - ./tests:/root/tests
+  android-sdk-vnc:
+    build: ./build-docker-android-sdk/vnc
+    ports:
+      - "5901:5901"
     depends_on:
-      - chrome
-      - firefox
-    volumes:
-      - ./tests:/root/tests
+      - android-sdk-vnc
+#    volumes:
+#      - ./tests:/root/tests
