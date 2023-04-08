@@ -1,4 +1,9 @@
 
+```
+apt-get install qemu qemu-system-arm
+#apt-get update && apt-get install -y libpulse0
+```
+
 
 ## Docker Compose
 ```
