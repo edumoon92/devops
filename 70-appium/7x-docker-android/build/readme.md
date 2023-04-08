@@ -1,6 +1,7 @@
-```
-./gradlew wrapper --gradle-version 7.4.1
-```
+Upgrade Gradle: 
+- `gradle/wrapper/gradle-wrapper.properties` file and update the distributionUrl property to the latest Gradle version. Then, run the ./gradlew wrapper command to update the Gradle wrapper.
+
+Downgrade the Android Gradle plugin: If you cannot upgrade your Gradle version, you can try downgrading the version of the Android Gradle plugin that you are using to a version that is compatible with your current Gradle version. To do this, you can modify the build.gradle file and update the com.android.tools.build:gradle dependency to a compatible version.
 
 ```
 FROM openjdk:8-jdk-slim
