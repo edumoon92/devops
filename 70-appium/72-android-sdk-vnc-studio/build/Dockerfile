@@ -6,6 +6,8 @@
 # ---------------------------------------------------------------------- #
 FROM hcmoon92/devops:android-sdk-v0.9
 
+WORKDIR ../71-docker-android/build-docker-android-sdk/vnc
+
 # Author
 # ---------------------------------------------------------------------- #
 LABEL maintainer "henry.moon"
@@ -36,6 +38,7 @@ RUN apt-get install autocutsel
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
 
 
 # Stop VNC server when container exits
