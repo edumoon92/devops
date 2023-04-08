@@ -16,12 +16,18 @@ emulator -avd test -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect &
 How to run emulator
 Check available emulator system images from remote SDK repository
 
+```
 sdkmanager --list --verbose
+```
+
 Make sure that the required SDK packages are installed, you can find out by above command. To install, use the command below. Whenever you see error complains about ANDROID_SDK_ROOT, such as PANIC: Cannot find AVD system path. Please define ANDROID_SDK_ROOT or PANIC: Broken AVD system path. Check your ANDROID_SDK_ROOT value, it means that you need to install following packages.
 
+```
 sdkmanager "platform-tools" "platforms;android-<api_level>" "emulator"
+```
 Download emulator system image(s) (on the host machine)
 
+```
 sdkmanager "system_image_1" "system_image_2"
 # e.g.:
 # system-images;android-24;android-tv;x86
@@ -34,10 +40,13 @@ sdkmanager "system_image_1" "system_image_2"
 # system-images;android-24;google_apis;x86
 # system-images;android-24;google_apis;x86_64
 # system-images;android-24;google_apis_playstore;x86
+```
 Run Docker container in privileged mode (not necessary for ARM emulator)
 
 # required by KVM
+```
 docker run -it --privileged -v $(pwd)/sdk:/opt/android-sdk:ro thyrlian/android-sdk /bin/bash
+```
 Check acceleration ability (not necessary for ARM emulator)
 
 emulator -accel-check
@@ -55,12 +64,16 @@ accel:
 accel
 Create a new Android Virtual Device
 
+```
 echo "no" | avdmanager create avd -n <name> -k <sdk_id>
 # e.g.:
 echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;armeabi-v7a"
+```
 List existing Android Virtual Devices
 
+```
 avdmanager list avd
+```
 # ==================================================
 Available Android Virtual Devices:
     Name: test
@@ -70,15 +83,18 @@ Available Android Virtual Devices:
 # ==================================================
 
 # or
-
+```
 emulator -list-avds
+```
 # 32-bit Linux Android emulator binaries are DEPRECATED
 # ==================================================
 test
 # ==================================================
 Launch emulator in background
 
+```
 emulator -avd <virtual_device_name> -no-audio -no-boot-anim -no-window -accel on -gpu off &
+```
 
 # if the container is not running in privileged mode, you should see below errors:
 #=> emulator: ERROR: x86_64 emulation currently requires hardware acceleration!
@@ -88,22 +104,27 @@ emulator -avd <virtual_device_name> -no-audio -no-boot-anim -no-window -accel on
 #=> CPU acceleration status: KVM requires a CPU that supports vmx or svm
 Check the virtual device status
 
+```
 adb devices
 # ==================================================
 List of devices attached
 emulator-5554	offline
 # "offline" means it's still booting up
 # ==================================================
+```
 
+```
 # ==================================================
 List of devices attached
 emulator-5554	device
 # "device" means it's ready to be used
 # ==================================================
+```
 Now you can for instance run UI tests on the emulator (just remember, the performance is POOR):
 
+```
 <your_android_project>/gradlew connectedAndroidTest
-
+```
 
 
 ---
