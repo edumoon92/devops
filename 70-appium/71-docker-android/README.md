@@ -9,6 +9,7 @@ docker-compose up
 ```
 sdkmanager "platform-tools" "emulator"
 sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
+sdkmanager "platforms;android-25"
 ```
 
 ```
