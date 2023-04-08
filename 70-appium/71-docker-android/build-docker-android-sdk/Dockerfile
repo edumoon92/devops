@@ -49,6 +49,8 @@ RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
     unzip *tools*linux*.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools && \
     mv ${ANDROID_SDK_ROOT}/cmdline-tools/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/tools && \
     rm *tools*linux*.zip
+    
+RUN sdkmanager "platform-tools"    
 
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-${JDK_VERSION}-openjdk-amd64
