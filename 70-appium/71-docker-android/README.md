@@ -2,6 +2,10 @@
 ## Docker Compose
 
 ```
+sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
+```
+
+```
 # setup and launch emulator inside the container
 # create a new Android Virtual Device
 echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
@@ -12,9 +16,6 @@ emulator -avd test -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect &
 How to run emulator
 Check available emulator system images from remote SDK repository
 
-```
-sdkmanager --install "system-images;android-24;google_apis;x86_64"
-```
 
 ```
 sdkmanager --list --verbose
