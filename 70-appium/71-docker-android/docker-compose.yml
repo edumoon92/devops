@@ -3,13 +3,13 @@ version: "3"
 
 services:
   android-sdk:
-    image: hcmoon92/devops:android-sdk-v0.9
+    image: hcmoon92/devops:android-sdk-v0.92
     ports:
       - "2222:22"
 #    volumes:
 #      - ./tests:/root/tests
   android-sdk-vnc:
-    image: hcmoon92/devops:android-sdk-vnc-v0.9
+    image: hcmoon92/devops:android-sdk-vnc-v0.92
     ports:
       - "5901:5901"
 #    volumes:
