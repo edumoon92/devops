@@ -1,11 +1,4 @@
 
-## Build Android SDK Docker Container
-```
-docker build -t android-sdk .
-docker run -it --rm -v $(pwd):/app android-sdk /bin/bash
-docker run -it --rm -v $(pwd):/app android-sdk-vnc /bin/bash
-```
-
 ## Docker Compose
 
 ```
