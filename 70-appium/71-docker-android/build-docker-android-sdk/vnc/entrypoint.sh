@@ -10,5 +10,3 @@ autocutsel -fork
 # Keep the container running
 # tail -f /dev/null
 
-# stop vnc server
-vncserver -kill :1
