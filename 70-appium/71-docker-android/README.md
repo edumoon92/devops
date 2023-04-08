@@ -17,6 +17,7 @@ sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
 echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
 # launch emulator
 emulator -avd test -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect &
+emulator -avd test -no-audio -no-boot-anim -no-window -accel on -gpu off
 ```
 
 ---
