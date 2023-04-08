@@ -73,7 +73,7 @@ List existing Android Virtual Devices
 
 ```
 avdmanager list avd
-```
+
 # ==================================================
 Available Android Virtual Devices:
     Name: test
@@ -83,18 +83,13 @@ Available Android Virtual Devices:
 # ==================================================
 
 # or
-```
 emulator -list-avds
 ```
-# 32-bit Linux Android emulator binaries are DEPRECATED
-# ==================================================
-test
-# ==================================================
+
 Launch emulator in background
 
 ```
 emulator -avd <virtual_device_name> -no-audio -no-boot-anim -no-window -accel on -gpu off &
-```
 
 # if the container is not running in privileged mode, you should see below errors:
 #=> emulator: ERROR: x86_64 emulation currently requires hardware acceleration!
@@ -102,6 +97,8 @@ emulator -avd <virtual_device_name> -no-audio -no-boot-anim -no-window -accel on
 #=> CPU acceleration status: /dev/kvm is not found: VT disabled in BIOS or KVM kernel module not loaded
 # or it's running on top of a VM
 #=> CPU acceleration status: KVM requires a CPU that supports vmx or svm
+```
+
 Check the virtual device status
 
 ```
@@ -111,9 +108,7 @@ List of devices attached
 emulator-5554	offline
 # "offline" means it's still booting up
 # ==================================================
-```
 
-```
 # ==================================================
 List of devices attached
 emulator-5554	device
