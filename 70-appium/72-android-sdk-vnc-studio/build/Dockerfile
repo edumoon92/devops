@@ -6,7 +6,7 @@
 # ---------------------------------------------------------------------- #
 FROM hcmoon92/devops:android-sdk-v0.9
 
-WORKDIR ../71-docker-android/build-docker-android-sdk/vnc
+WORKDIR ../../71-docker-android/build-docker-android-sdk/vnc
 
 # Author
 # ---------------------------------------------------------------------- #
