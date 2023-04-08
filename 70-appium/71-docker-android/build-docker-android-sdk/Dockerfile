@@ -50,7 +50,6 @@ RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
     mv ${ANDROID_SDK_ROOT}/cmdline-tools/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/tools && \
     rm *tools*linux*.zip
     
-RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager "platform-tools"    
 RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
 
 # set the environment variables
@@ -94,6 +93,8 @@ RUN apt-get update && \
     do if [ -f "$file" ]; then echo "\n" >> $FILE_AUTH_KEYS && cat $file >> $FILE_AUTH_KEYS && echo "\n" >> $FILE_AUTH_KEYS; fi; \
     done && \
     (rm /tmp/*.pub 2> /dev/null || true)
+
+RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager "platform-tools"    
 
 ADD supervisord.conf /etc/supervisor/conf.d/
 CMD ["/usr/bin/supervisord"]
