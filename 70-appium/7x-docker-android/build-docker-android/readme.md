@@ -43,27 +43,6 @@ sdkmanager "system_image_1" "system_image_2"
 ```
 Run Docker container in privileged mode (not necessary for ARM emulator)
 
-# required by KVM
-```
-docker run -it --privileged -v $(pwd)/sdk:/opt/android-sdk:ro thyrlian/android-sdk /bin/bash
-```
-Check acceleration ability (not necessary for ARM emulator)
-
-emulator -accel-check
-
-# when succeeds
-accel:
-0
-KVM (version 12) is installed and usable.
-accel
-
-# when fails (probably due to unprivileged mode)
-accel:
-8
-/dev/kvm is not found: VT disabled in BIOS or KVM kernel module not loaded
-accel
-Create a new Android Virtual Device
-
 ```
 echo "no" | avdmanager create avd -n <name> -k <sdk_id>
 # e.g.:
@@ -121,7 +100,6 @@ Now you can for instance run UI tests on the emulator (just remember, the perfor
 <your_android_project>/gradlew connectedAndroidTest
 ```
 
-
 ---
 
 Upgrade Gradle: 
@@ -129,33 +107,16 @@ Upgrade Gradle:
 
 Downgrade the Android Gradle plugin: If you cannot upgrade your Gradle version, you can try downgrading the version of the Android Gradle plugin that you are using to a version that is compatible with your current Gradle version. To do this, you can modify the build.gradle file and update the com.android.tools.build:gradle dependency to a compatible version.
 
+## build command
 ```
-FROM openjdk:8-jdk-slim
-
-# Install dependencies
-RUN apt-get update && \
-    apt-get install -y wget unzip && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install Android SDK
-ENV ANDROID_SDK_ROOT /opt/android-sdk-linux
-RUN mkdir -p ${ANDROID_SDK_ROOT} && \
-    wget -q https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -O /tmp/android.zip && \
-    unzip /tmp/android.zip -d ${ANDROID_SDK_ROOT} && \
-    rm /tmp/android.zip && \
-    yes | ${ANDROID_SDK_ROOT}/tools/bin/sdkmanager --licenses && \
-    ${ANDROID_SDK_ROOT}/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"
-
-# Set up environment variables
-ENV PATH ${PATH}:${ANDROID_SDK_ROOT}/platform-tools
-
-# Create project directory and copy files
-RUN mkdir /app
-COPY . /app
-
 # Start the build process
 WORKDIR /app
+
 CMD ./gradlew build
+
+# Build the app
+RUN ./gradlew assembleDebug
+```
 ```
 
 ```bash
