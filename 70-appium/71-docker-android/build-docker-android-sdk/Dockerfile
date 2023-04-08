@@ -50,7 +50,9 @@ RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
     mv ${ANDROID_SDK_ROOT}/cmdline-tools/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/tools && \
     rm *tools*linux*.zip
     
-RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
+RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager "platform-tools" "emulator"
+    
+RUN echo "y" | ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
 
 # set the environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-${JDK_VERSION}-openjdk-amd64
@@ -94,7 +96,6 @@ RUN apt-get update && \
     done && \
     (rm /tmp/*.pub 2> /dev/null || true)
 
-RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager "platform-tools"    
 
 ADD supervisord.conf /etc/supervisor/conf.d/
 CMD ["/usr/bin/supervisord"]
