@@ -1,0 +1,9 @@
+# Usage: docker-compose up -d
+version: "3"
+
+services:
+  android-sdk-vnc-studio-tools:
+    image: hcmoon92/devops:android-sdk-vnc-studio-tools-v1.0
+    ports:
+      - "5901:5901"
+    stop_grace_period: 5s
