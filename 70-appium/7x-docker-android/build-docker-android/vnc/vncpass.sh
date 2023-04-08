@@ -1,7 +1,7 @@
 #!/bin/sh
 
-password="android"
-password_view_only="docker"
+password="tta123!@"
+password_view_only="tta123!@#"
 
 /usr/bin/expect <<EOF
 spawn vncpasswd

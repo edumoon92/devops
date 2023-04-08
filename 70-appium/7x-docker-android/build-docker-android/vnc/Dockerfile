@@ -25,3 +25,8 @@ RUN apt-get update && \
     apt-get remove -y expect && apt-get autoremove -y && \
     FILE_SSH_ENV="/root/.ssh/environment" && \
     echo "DISPLAY=:1" >> $FILE_SSH_ENV
+
+# Set up VNC server to start automatically
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
