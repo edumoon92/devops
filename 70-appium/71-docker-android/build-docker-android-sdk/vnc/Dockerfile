@@ -18,7 +18,6 @@ ADD vncpass.sh /tmp/
 ADD watchdog.sh /usr/local/bin/
 ADD supervisord_vncserver.conf /etc/supervisor/conf.d/
 RUN apt-get update && \
-    apt-get install autocutsel && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends xfce4 xfce4-goodies xfonts-base dbus-x11 tightvncserver expect && \
     chmod +x /tmp/vncpass.sh; sync && \
     /tmp/vncpass.sh && \
@@ -26,6 +25,8 @@ RUN apt-get update && \
     apt-get remove -y expect && apt-get autoremove -y && \
     FILE_SSH_ENV="/root/.ssh/environment" && \
     echo "DISPLAY=:1" >> $FILE_SSH_ENV
+
+RUN apt-get install autocutsel
 
 # Set up VNC server to start automatically
 COPY entrypoint.sh /usr/local/bin/
