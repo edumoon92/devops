@@ -1,22 +1,4 @@
 
-
-## VNC : In android-sdk container
-```
-apt-get install qemu qemu-system-arm
-#apt-get update && apt-get install -y libpulse0
-
-sdkmanager "platform-tools" "emulator"
-sdkmanager --install "system-images;android-25;google_apis;armeabi-v7a"
-sdkmanager "platforms;android-25"
-
-# setup and launch emulator inside the container
-# create a new Android Virtual Device
-echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
-# launch emulator
-emulator -avd test -no-audio -no-boot-anim -accel on -gpu swiftshader_indirect &
-emulator -avd test -no-audio -no-boot-anim -no-window -accel on -gpu off
-```
-
 ## Android Studio Install
 ```
 apt-get install software-properties-common
