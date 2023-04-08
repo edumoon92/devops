@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim
+FROM openjdk:15-jdk-slim
 
 # Install dependencies
 RUN apt-get update && \
