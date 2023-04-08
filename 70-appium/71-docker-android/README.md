@@ -1,9 +1,12 @@
+
+## Build Android SDK Docker Container
 ```
+docker build -t android-sdk .
 docker run -it --rm -v $(pwd):/app android-sdk /bin/bash
-```
-```
 docker run -it --rm -v $(pwd):/app android-sdk-vnc /bin/bash
 ```
+
+## Docker Compose
 
 ```
 # setup and launch emulator inside the container
@@ -118,11 +121,6 @@ CMD ./gradlew build
 RUN ./gradlew assembleDebug
 ```
 
-## Docker Android SDK Build
-```
-docker build -t android-sdk .
-docker run -it --rm -v $(pwd):/app android-sdk /bin/bash
-```
 ```
 cd /app
 ```
