@@ -1,3 +1,11 @@
+```
+docker run -it --rm -v $(pwd):/app android-sdk /bin/bash
+```
+```
+docker run -it --rm -v $(pwd):/app android-sdk-vnc /bin/bash
+```
+---
+
 Upgrade Gradle: 
 - `gradle/wrapper/gradle-wrapper.properties` file and update the distributionUrl property to the latest Gradle version. Then, run the ./gradlew wrapper command to update the Gradle wrapper.
 
@@ -72,15 +80,15 @@ Next, it copies the project directory into the container, sets the working direc
 
 Build the Docker image by running the following command in the terminal from the project directory:
 
-perl
-Copy code
-docker build -t my-android-app .
+```
+docker build -t android-sdk .
+```
 This command builds a Docker image named my-android-app using the Dockerfile in the project directory.
 
 Run the Docker container by running the following command in the terminal:
 
 ```
-docker run -it --rm -v $(pwd):/app my-android-app /bin/bash
+docker run -it --rm -v $(pwd):/app android-app-sdk /bin/bash
 ```
 This command starts a Docker container from the my-android-app image, opens a Bash terminal in the container, and maps the current directory to the /app directory in the container.
 
