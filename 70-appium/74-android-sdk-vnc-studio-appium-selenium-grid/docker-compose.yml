@@ -76,6 +76,7 @@ services:
 
   android-sdk-vnc-studio-tools:
     image: hcmoon92/devops:android-sdk-vnc-studio-v0.92
+    privileged: true  # for usb connection 
     ports:
       - "5901:5901"
     stop_grace_period: 5s
