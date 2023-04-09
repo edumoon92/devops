@@ -50,20 +50,6 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=5
       
-  # 엣지 드라이버 컨테이너 설정
-  edge:
-    image: selenium/node-edge:4.2.2-20220609
-    shm_size: 2gb
-    ports:
-      - "5903:5900"    #vnc port
-      - "7903:7900"  #no vnc port            
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_MAX_SESSIONS=5
 
   # Selenium hub 컨테이너 설정
   selenium-hub:
@@ -78,7 +64,7 @@ services:
     image: hcmoon92/devops:android-sdk-vnc-studio-v0.92
     privileged: true  # for usb connection 
     ports:
-      - "5901:5901"
+      - "5905:5901"
     stop_grace_period: 5s
     volumes:
       - ./tests:/root/tests
