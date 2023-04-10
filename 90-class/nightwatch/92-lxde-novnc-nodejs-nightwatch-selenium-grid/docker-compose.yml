@@ -57,6 +57,7 @@ services:
   desktop-novnc-nodejs:
     image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-java8-v0.8
     container_name: desktop-novnc-nodejs
+    privileged: true
     environment:
       - USER=henry
       #- VNC_PASSWORD=tta123!@
