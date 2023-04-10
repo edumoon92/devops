@@ -55,7 +55,7 @@ services:
       - "4444:4444"
     
   desktop-novnc-nodejs:
-    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-v0.5
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-java8-v0.8
     environment:
       - USER=henry
       #- VNC_PASSWORD=tta123!@
