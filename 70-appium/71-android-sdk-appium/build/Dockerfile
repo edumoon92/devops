@@ -65,7 +65,10 @@ ENV QTWEBENGINE_DISABLE_SANDBOX 1
 ADD license_accepter.sh /opt/
 RUN chmod +x /opt/license_accepter.sh && /opt/license_accepter.sh $ANDROID_SDK_ROOT
 
+
+RUN sdkmanager "platform-tools" "platforms;android-13" "build-tools;31.0.0"
+
 # setup adb server
 EXPOSE 5037
 
-RUN sdkmanager "platform-tools" "platforms;android-13" "build-tools;31.0.0"
+CMD ["/bin/bash"]
