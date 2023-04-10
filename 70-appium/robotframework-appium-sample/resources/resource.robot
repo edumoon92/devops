@@ -7,7 +7,7 @@ Library  BuiltIn
 ${ANDROID_AUTOMATION_NAME}    UIAutomator2
 ${ANDROID_APP}                ${CURDIR}/../demoapp/ApiDemos-debug.apk
 ${ANDROID_PLATFORM_NAME}      Android
-${ANDROID_PLATFORM_VERSION}   %{ANDROID_PLATFORM_VERSION=11}
+${ANDROID_PLATFORM_VERSION}   %{ANDROID_PLATFORM_VERSION=13}
 ${ANDROID_APP_PACKAGE}        io.appium.android.apis
 
 ${IOS_AUTOMATION_NAME}        XCUITest
