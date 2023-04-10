@@ -54,7 +54,7 @@ services:
       - "4443:4443"
       - "4444:4444"
     
-  desktop-novnc-rf:
+  desktop-novnc-nodejs:
     image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-v0.3
     environment:
       - USER=henry
