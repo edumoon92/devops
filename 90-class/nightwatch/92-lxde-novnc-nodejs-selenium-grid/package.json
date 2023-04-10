@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx nightwatch tests/01-basic-01.js",
+    "test": "npx nightwatch tests/01-basic-01.js"
   },
   "keywords": [],
   "author": "",
