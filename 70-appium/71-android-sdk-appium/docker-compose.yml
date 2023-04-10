@@ -2,8 +2,13 @@
 version: "3"
 
 services:
-  android-sdk-vnc-studio:
-    image: hcmoon92/devops:android-sdk-vnc-studio-v0.92
+  svc:
+    image: sample-docker:latest
+    privileged: true  # for usb connection 
+    volumes:
+      - ./tests:/root/tests
+      - /dev/shm:/dev/shm        
+      - /dev/bus/usb:/dev/bus/usb
     ports:
       - "5901:5901"
     stop_grace_period: 5s
