@@ -68,7 +68,7 @@ RUN chmod +x /opt/license_accepter.sh && /opt/license_accepter.sh $ANDROID_SDK_R
 # setup adb server
 EXPOSE 5037
 
-sdkmanager "platform-tools" "platforms;android-31" "build-tools;31.0.0"
+RUN sdkmanager "platform-tools" "platforms;android-31" "build-tools;31.0.0"
 
 # install and configure SSH server
 EXPOSE 22
