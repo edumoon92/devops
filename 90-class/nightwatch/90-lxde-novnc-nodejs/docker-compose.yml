@@ -1,0 +1,13 @@
+version: "3"
+services:
+  novnc:
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-v0.3
+    environment:
+      - USER=henry
+      #- VNC_PASSWORD=ubuntu
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm
