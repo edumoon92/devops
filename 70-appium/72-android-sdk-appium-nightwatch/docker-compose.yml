@@ -6,7 +6,7 @@ services:
     build: ./build
     privileged: true  # for usb connection
     volumes:
-      - ./tests:/root/tests
+      - ./work:/work
       - /dev/shm:/dev/shm
       - /dev/bus/usb:/dev/bus/usb
     ports:
