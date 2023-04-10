@@ -1,11 +1,11 @@
 module.exports = {
   "Demo test Google": function (browser) {
     browser
-      .url("http://www.google.com")
+      .url("http://www.ecosia.org")
       .waitForElementVisible("body", 1000)
-      .setValue("input[type=text]", "nightwatch")
-      .waitForElementVisible("button[name=btnK]", 1000)
-      .click("button[name=btnK]")
+      .setValue("input[name=q]", "nightwatch")
+      .waitForElementVisible("button[type=submit]", 1000)
+      .click("button[type=submit]")
       .pause(1000)
       .assert.containsText("#main", "Nightwatch.js");
   },
