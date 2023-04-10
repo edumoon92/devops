@@ -11,4 +11,5 @@ services:
       - /dev/bus/usb:/dev/bus/usb
     ports:
       - "5901:5901"
+      - "4723:4723"
     stop_grace_period: 5s
