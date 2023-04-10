@@ -59,9 +59,10 @@ services:
     environment:
       - USER=henry
       #- VNC_PASSWORD=tta123!@
+      - SELENIUM_HOST=selenium-hub
     ports:
       - "6080:80"
       - "5900:5900"
     volumes:
-      - ./tests:/root/tests
+      - ./work:/home/henry/work
       - /dev/shm:/dev/shm         
