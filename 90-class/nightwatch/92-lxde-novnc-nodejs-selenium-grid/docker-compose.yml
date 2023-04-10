@@ -56,6 +56,7 @@ services:
     
   desktop-novnc-nodejs:
     build: .
+    container_name: desktop-novnc-nodejs
     environment:
       - USER=henry
       #- VNC_PASSWORD=tta123!@
