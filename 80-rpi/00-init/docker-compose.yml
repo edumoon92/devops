@@ -3,7 +3,7 @@ version: "3"
 
 services:
   rpi:
-    image: arm32v7/debian:buster
+    image: hexxeh/rpi-stretch
     privileged: true
     volumes:
       - /dev:/dev 
