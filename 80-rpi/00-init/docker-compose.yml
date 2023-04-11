@@ -1,0 +1,10 @@
+# Usage: docker-compose up -d
+version: "3"
+
+services:
+  rpi:
+    image: arm32v7/debian:buster
+    privileged: true
+    volumes:
+      - /dev:/dev 
+      - /lib/modules:/lib/modules
