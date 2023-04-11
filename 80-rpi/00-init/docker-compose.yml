@@ -3,7 +3,7 @@ version: "3"
 
 services:
   rpi:
-    image: hexxeh/rpi-stretch
+    image: hypriot/rpi-stretch
     privileged: true
     volumes:
       - /dev:/dev 
