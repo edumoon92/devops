@@ -1,6 +1,6 @@
 describe('Sauce Labs Demo', () => {
   it('should add the two cheapest products to the cart', () => {
-    cy.visit('https://www.saucedemo.com/')
+    cy.visit('http://192.168.56.101:3000/')
 
     // Login
     cy.get('[data-test="username"]').type('standard_user')
