@@ -1,5 +1,6 @@
 describe('Sauce Labs Demo App', () => {
   beforeEach(() => {
+    cy.visit('http://192.168.56.101:3000/');
     cy.login('standard_user', 'secret_sauce');
   });
 
