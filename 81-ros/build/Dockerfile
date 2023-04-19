@@ -20,7 +20,7 @@ RUN apt-get update -q && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu terminator && \
     rm -rf /var/lib/apt/lists/*
 RUN rm /etc/apt/apt.conf.d/docker-clean
-RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
+RUN useradd --create-home --home-dir /home/henry --shell /bin/bash --user-group --groups adm,sudo henry && \
     echo henry:tta123!@ | chpasswd && \
     echo "henry ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -43,10 +43,10 @@ RUN apt-get update -q && \
 RUN gosu ubuntu rosdep update && \
     grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/ubuntu/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/ubuntu/.bashrc && \
     grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/ubuntu/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/ubuntu/.bashrc && \
-    sudo chown ubuntu:ubuntu /home/ubuntu/.bashrc
+    sudo chown henry:henry /home/henru/.bashrc
 
 # temporally fix to enable resize uri
 # https://github.com/fcwu/docker-ubuntu-vnc-desktop/pull/247
 RUN sed -i "s#location ~ .*/(api/.*|websockify) {#location ~ .*/(api/.*|websockify|resize) {#" /etc/nginx/sites-enabled/default
 
-ENV USER ubuntu
+ENV USER henry
