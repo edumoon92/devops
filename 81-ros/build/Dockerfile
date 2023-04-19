@@ -40,9 +40,9 @@ RUN apt-get update -q && \
     rosdep init && \
     rm -rf /var/lib/apt/lists/*
 
-RUN gosu ubuntu rosdep update && \
-    grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/ubuntu/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/ubuntu/.bashrc && \
-    grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/ubuntu/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/ubuntu/.bashrc && \
+RUN gosu henry rosdep update && \
+    grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/henry/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/henry/.bashrc && \
+    grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/henry/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/henry/.bashrc && \
     sudo chown henry:henry /home/henru/.bashrc
 
 # temporally fix to enable resize uri
