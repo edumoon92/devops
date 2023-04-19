@@ -21,8 +21,8 @@ RUN apt-get update -q && \
     rm -rf /var/lib/apt/lists/*
 RUN rm /etc/apt/apt.conf.d/docker-clean
 RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
-    echo ubuntu:ubuntu | chpasswd && \
-    echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    echo henry:tta123!@ | chpasswd && \
+    echo "henry ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 ARG ROS_DISTRO=foxy
 ARG INSTALL_PACKAGE=desktop
