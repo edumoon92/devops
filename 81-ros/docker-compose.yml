@@ -1,0 +1,6 @@
+# Usage: docker-compose up -d
+version: "3"
+
+services:
+  ros2:
+    build: ./build
