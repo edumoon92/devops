@@ -17,12 +17,13 @@ LABEL maintainer="Tiryoh<tiryoh@gmail.com>"
 
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - 
 RUN apt-get update -q && \
+    apt-get upgrade -yq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu terminator && \
     rm -rf /var/lib/apt/lists/*
 RUN rm /etc/apt/apt.conf.d/docker-clean
-RUN useradd --create-home --home-dir /home/henry --shell /bin/bash --user-group --groups adm,sudo henry && \
-    echo henry:tta123!@ | chpasswd && \
-    echo "henry ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
+    echo ubuntu:ubuntu | chpasswd && \
+    echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 ARG ROS_DISTRO=foxy
 ARG INSTALL_PACKAGE=desktop
@@ -40,13 +41,13 @@ RUN apt-get update -q && \
     rosdep init && \
     rm -rf /var/lib/apt/lists/*
 
-RUN gosu henry rosdep update && \
-    grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/henry/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/henry/.bashrc && \
-    grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/henry/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/henry/.bashrc && \
-    sudo chown henry:henry /home/henru/.bashrc
+RUN gosu ubuntu rosdep update && \
+    grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/ubuntu/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/ubuntu/.bashrc && \
+    grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/ubuntu/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/ubuntu/.bashrc && \
+    sudo chown ubuntu:ubuntu /home/ubuntu/.bashrc
 
 # temporally fix to enable resize uri
 # https://github.com/fcwu/docker-ubuntu-vnc-desktop/pull/247
 RUN sed -i "s#location ~ .*/(api/.*|websockify) {#location ~ .*/(api/.*|websockify|resize) {#" /etc/nginx/sites-enabled/default
 
-ENV USER henry
+ENV USER ubuntu
