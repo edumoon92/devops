@@ -4,3 +4,6 @@ version: "3"
 services:
   ros2:
     build: ./build
+    ports:
+      - 6080:6080
+      - 5900:5900
