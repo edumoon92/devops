@@ -3,8 +3,7 @@ version: "3"
 
 services:
   ros2:
-    images: hcmoon92/devops:ubuntu-vnc-ros2-foxy-init	
-    # id:ubuntu, pw:ubuntu
+    build: ./build
     ports:
       - 6080:80
       - 5900:5900
