@@ -1,5 +1,5 @@
 *** Settings ***
-Library  MyLibrary
+Library  MyLibrary.py
 
 *** Test Cases ***
 Example Test Case
