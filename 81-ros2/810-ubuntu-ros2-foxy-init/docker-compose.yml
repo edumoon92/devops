@@ -5,6 +5,7 @@ services:
   ros2:
     image: hcmoon92/devops:ubuntu-vnc-ros2-foxy-init	
     # id:ubuntu, pw:ubuntu
+    privileged: true  # for date change
     ports:
       - 6080:80
       - 5900:5900
