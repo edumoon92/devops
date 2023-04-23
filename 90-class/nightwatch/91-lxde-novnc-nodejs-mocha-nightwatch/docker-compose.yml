@@ -23,6 +23,8 @@ services:
     volumes:
       - ./:/app
       - /dev/shm:/dev/shm
+    depends_on: 
+      - db
   app:
     image: hcmoon92/devops:node14-saucedemo-v0.1
     ports:
