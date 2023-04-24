@@ -9,7 +9,7 @@ docker-compose up
 
 # 230425
 - demo site 
-- - https://coffee-cart.netlify.app/
+  - https://coffee-cart.netlify.app/
 
 # Recorder
 - Nightwatch Chrome Recorder : https://chrome.google.com/webstore/detail/nightwatch-chrome-recorde/nhbccjfogdgkahamfohokdhcnemjafjk
