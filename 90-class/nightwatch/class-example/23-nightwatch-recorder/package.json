@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "geckodriver": "^3.2.0",
+    "nightwatch": "^2.6.20"
+  }
+}
