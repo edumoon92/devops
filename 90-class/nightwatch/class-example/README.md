@@ -1,3 +1,6 @@
+## vm501r1... 
+- id : henry, pw: tta123!@
+
 # 230424
 ```
 cd devops
@@ -6,6 +9,10 @@ cd 90-class/nightwatch
 cd 91-lxde-novnc-nodejs-mocha-nightwatch
 docker-compose up
 ```
+```
+sudo pw: ubuntu
+```
+
 
 # 230425
 - demo site 
