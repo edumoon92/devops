@@ -7,7 +7,9 @@ cd 91-lxde-novnc-nodejs-mocha-nightwatch
 docker-compose up
 ```
 
+# 230425
+- demo site 
+- - https://coffee-cart.netlify.app/
 
 # Recorder
-- https://coffee-cart.netlify.app/
 - Nightwatch Chrome Recorder : https://chrome.google.com/webstore/detail/nightwatch-chrome-recorde/nhbccjfogdgkahamfohokdhcnemjafjk
