@@ -21,7 +21,10 @@
     "test03-02": "node runner.js -t tests/test03/03-todo-02.js --env crn",
     "test04-all": "node runner.js tests/test04 --env crn",
     "test04-03": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env crn",
-    "test04-03-ffn": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env ffn"
+    "test04-03-ffn": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env ffn",
+    "test05": "npx nightwatch tests/test05 --env crn",
+    "test06": "npx nightwatch tests/test06-mocha-style/duckduckgo.js --env crn",
+    "test06-report": "npx nightwatch tests/test06-mocha-style/duckduckgo.js --env crn --reporter=html --open"
   },
   "keywords": [],
   "author": "",
