@@ -22,8 +22,7 @@
     "test04-all": "node runner.js tests/test04 --env crn",
     "test04-03": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env crn",
     "test04-03-ffn": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env ffn",
-    "test05": "npx nightwatch tests/test05-mocha/ecosia.js --env crn",
-    "test05-report": "npx nightwatch tests/test05-mocha/ecosia.js --env crn --reporter=html --open"
+    "test05": "npx nightwatch tests/test05-mocha/ecosia.js --env crn"
   },
   "keywords": [],
   "author": "",
