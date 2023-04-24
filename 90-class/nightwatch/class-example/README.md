@@ -1,3 +1,11 @@
+# 230424
+```
+cd devops
+git pull
+cd 90-class/nightwatch
+cd 91-lxde-novnc-nodejs-mocha-nightwatch
+docker-compose up
+```
 
 
 # Recorder
