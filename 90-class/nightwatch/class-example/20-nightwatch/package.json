@@ -5,20 +5,53 @@
   "main": "index.js",
   "scripts": {
     "test": "npx nightwatch tests/test00/01-basic-01.js",
-    "test-ie0": "node runner.js tests/test00/02-ecosia.js --env edge",
+    "test00-02": "npx nightwatch tests/test00/01-basic-02.js",
+    "test00-03": "npx nightwatch tests/test00/01-basic-03.js",
+
+
+    "test00-04": "npx nightwatch tests/test00/01-basic-03.js --env crn,crh,ffn,ffh",
+
+
+
+    "test00-05": "node runner.js tests/test00/02-ecosia.js --env ffn",
     "test-ie1": "node runner.js tests/test00/02-ecosia-01-ie.js --env ie11",
-    "test-ie2": "node runner.js tests/test00/02-ecosia-02.js --env ie11",
+    "test00-06": "node runner.js tests/test00/02-ecosia-02.js --env ffn",
     "test00-ffh": "node runner.js tests/test00 --env ffh",
     "test00-ie": "node runner.js tests/test00 --env ie11",
     "test00-ffn": "node runner.js tests/test00 --env ffn",
     "test00-crh": "node runner.js tests/test00 --env crh",
+
+
+
     "test01-crn": "node runner.js tests/test01 --env crn",
+    "test01-0": "node runner.js tests/test01/01-api-waitfor.js --env crh",
+    "test01-1": "node runner.js tests/test01/03-api-url-01.js --env crh",
     "test01-ffn": "node runner.js tests/test01 --env ffn",
-    "test02-crn": "node tests/test02/server.js && node runner.js tests/test02 --env crn",
+
+    
+    "test02-crn": "cd tests/test02/ && node tests/test02/server.js && node runner.js tests/test02 --env crn",
+
+
+
+
     "test03-crn": "node runner.js tests/test03 --env crn",
     "test03-ffn": "node runner.js tests/test03 --env ffn",
-    "test03-01": "node runner.js -t tests/test03/03-todo-01.js --env crn",
-    "test03-02": "node runner.js -t tests/test03/03-todo-02.js --env crn",
+    "test03-01": "node runner.js -t tests/test03-todo/03-todo-01.js --env crh,ffh",
+    "test03-02": "node runner.js -t tests/test03-todo/03-todo-02.js --env crh,ffh",
+    "test03-03": "node runner.js -t tests/test03-todo/03-todo-03.js --env crh,ffh",
+    "test03-04": "node runner.js -t tests/test03-todo/03-todo-04.js --env crh,ffh",
+    "test03-05": "node runner.js -t tests/test03-todo/03-todo-05.js --env ffh",
+
+
+
+
+
+    "test-record": "node runner.js -t tests/record/new-coffee.js --env ffn",
+
+
+    
+
+
     "test04-all": "node runner.js tests/test04 --env crn",
     "test04-03": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env crn",
     "test04-03-ffn": "node runner.js -t tests/test04/01-page-03-cjdocs.js --env ffn",
@@ -32,7 +65,7 @@
     "chromedriver": "^89.0.0",
     "csv-parse": "^4.11.1",
     "geckodriver": "^3.2.0",
-    "nightwatch": "^1.3.4",
+    "nightwatch": "^2.6.11",
     "nightwatch-html-reporter": "^2.0.6"
   }
 }
