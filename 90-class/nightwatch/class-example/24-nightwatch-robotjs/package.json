@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "chromedriver": "^89.0.0",
+    "geckodriver": "^3.2.0",
+    "mkdirp": "^3.0.1",
+    "nightwatch": "^2.6.20",
+    "robotjs": "^0.6.0"
+  },
+  "name": "24-nightwatch-robotjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+    "test-01": "npx nightwatch tests/01-test-trigger-click.js --env chrome",
+    "test-02": "npx nightwatch tests/02-test-html-capture.js --env chrome",
+    "test-03": "npx nightwatch tests/03-test-robotjs.js --env chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
