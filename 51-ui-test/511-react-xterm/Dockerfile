@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install any needed packages
 RUN npm install
 
+# Install react-scripts globally
+RUN npm install -g react-scripts
+
 # Copy the rest of the project files to the working directory
 COPY . .
 
