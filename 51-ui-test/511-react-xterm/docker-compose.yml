@@ -1,11 +1,11 @@
 version: '3'
 services:
   app:
-    build: ./build
-    ports:
-      - "3000:3000"
-  backend:
-    build: ./build
+    build: ./build/ui
     ports:
       - "5000:5000"
-    command: node backend/index.js
+  backend:
+    build: ./build/backend
+    ports:
+      - "3000:3000"
+    ##command: node backend/index.js

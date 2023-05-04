@@ -2,7 +2,7 @@
 FROM node:14
 
 # Set the working directory to /app
-WORKDIR /app
+WORKDIR /app/ui
 
 # Copy the package.json file to the working directory
 COPY package*.json ./
