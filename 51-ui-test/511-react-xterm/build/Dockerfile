@@ -1,12 +1,23 @@
-FROM node:14.17.0-alpine
+# Use an official Node.js runtime as a parent image
+FROM node:14
 
+# Set the working directory to /app
 WORKDIR /app
 
+# Copy the package.json file to the working directory
 COPY package*.json ./
+
+# Install any needed packages
 RUN npm install
 
+# Install react-scripts globally
+RUN npm install -g react-scripts
+
+# Copy the rest of the project files to the working directory
 COPY . .
 
-EXPOSE 3000
+# Build the React app
+RUN npm run build
 
-CMD ["npm", "start"]
+# Set the command to start the Node.js backend
+CMD [ "npm", "start", "--prefix", "backend" ]
