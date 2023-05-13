@@ -3,6 +3,10 @@ services:
   desktop-novnc-rf:
     image: hcmoon92/devops:desktop-lxde-vnc-rf-v0.1	
     # python, node10, robotframework
+    # vnc: henry/tta123!@,   sudo-pw: ubuntu
+    cap_add:
+      - SYS_ADMIN
+    privileged: true
     environment:
       USER: henry
       VNC_PASSWORD: tta123!@
