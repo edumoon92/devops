@@ -1,3 +1,3 @@
 *** Test Cases ***
-TC31.1 Ride Example
+TC0.1 Ride Example
     Log To Console    Hello Robotframework
