@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  desktop-novnc-rf:
+    image: hcmoon92/devops:desktop-lxde-vnc-rf-v0.1	
+    # python, node10, robotframework
+    environment:
+      USER: henry
+      VNC_PASSWORD: tta123!@
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm   
