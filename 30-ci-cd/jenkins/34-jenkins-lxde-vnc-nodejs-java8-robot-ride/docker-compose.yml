@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  novnc:
+    image: hcmoon92/devops:ubuntu-desktop-lxde-vnc-node16-code-git-mocha-java8-robot-ride
+    # vnc pw: tta123!@, sudo pw : henry/ubuntu
+    # sysctl fs.inotify.max_user_watches
+    # echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+    cap_add:
+      - SYS_ADMIN
+    privileged: true
+    environment:
+      USER: henry
+      VNC_PASSWORD: tta123!@
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: testdb
+      DB_USER: henry
+      DB_PASSWORD: tta123!@
+
+    ports:
+      - "6080:80"
+      - "5900:5900"
+    volumes:
+      - ./:/app
+      - /dev/shm:/dev/shm
+
+  jenkins:
+    image: hcmoon92/devops:jenkins-v0.2  # v0.2 : jenkin plug installed version
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    user: "1000:1000"      
+    volumes:
+      - ../jenkins_home:/var/jenkins_home
+
+  app:
+    image: hcmoon92/devops:node14-saucedemo-v0.1
+    ports:
+      - "3000:3000"
+    command:
+      - bash
+      - -c
+      - |
+        cd /app/saucedemo
+        npm run start
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: tta123!@
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: henry
+      MYSQL_PASSWORD: tta123!@
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
