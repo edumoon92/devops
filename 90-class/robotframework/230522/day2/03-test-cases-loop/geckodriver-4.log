@@ -1,0 +1,15 @@
+1653981585446	geckodriver	INFO	Listening on 127.0.0.1:7642
+1653981588412	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileRI5TGa"
+1653981589915	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileRI5TGa\\search.json.mozlz4", (void 0)))
+1653981595413	Marionette	INFO	Listening on port 7679
+Read port: 7679
+1653981595475	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 44920, MediaDecoderStateMachine #1] WARNING: 1cdadcba020 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 70012, MediaDecoderStateMachine #1] WARNING: 1205d630f00 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+1653981610760	Marionette	INFO	Stopped listening on port 7679

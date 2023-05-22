@@ -1,0 +1,2 @@
+인질TC - CGV 검색 - Builtin Variable - 인질 - PASS 
+TC - CGV 검색 - Builtin Variable - 인질 - PASS 

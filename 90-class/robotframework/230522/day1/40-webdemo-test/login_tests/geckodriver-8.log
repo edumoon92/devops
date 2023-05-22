@@ -1,0 +1,24 @@
+1653873098116	geckodriver	INFO	Listening on 127.0.0.1:3154
+1653873101135	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "3155" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileL8iIfc"
+1653873101605	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileL8iIfc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:3155/devtools/browser/1f2d2287-b002-4af9-9e1f-166c4fa1fecc
+1653873104732	Marionette	INFO	Listening on port 3175
+Read port: 3175
+1653873104778	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:7272"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:7272"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1653873105578	Marionette	INFO	Stopped listening on port 3175
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: Send(msgname=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

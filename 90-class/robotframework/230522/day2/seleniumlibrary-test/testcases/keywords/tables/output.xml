@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.7.2 on win32)" generated="20220529 22:33:50.422" rpa="false" schemaversion="3">
+<suite id="s1" name="Table Should Contain" source="C:\dev\z-work\tta-academy\class\robot-0530\day2\robotframework-seleniumlibrary\testcases\keywords\tables\table_should_contain.robot">
+<kw name="Open Browser To Start Page" library="resource" type="SETUP">
+<doc>This keyword also tests 'Set Selenium Speed' and 'Set Selenium Timeout'
+against all reason.</doc>
+<kw name="Open Browser To Start Page Without Testing Default Options" library="resource">
+<var>${default speed}</var>
+<var>${default timeout}</var>
+<doc>Open Browser To Start Page Without Testing Default Options</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${FRONT PAGE}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220529 22:33:50.833" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7000/html/'.</msg>
+<msg timestamp="20220529 22:33:50.836" level="INFO">Firefox driver log is always forced to to: C:\dev\z-work\tta-academy\class\robot-0530\day2\robotframework-seleniumlibrary\testcases\keywords\tables\geckodriver-9.log</msg>
+<status status="PASS" starttime="20220529 22:33:50.831" endtime="20220529 22:34:03.604"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<var>${orig speed}</var>
+<arg>${SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20220529 22:34:03.606" level="INFO">${orig speed} = 0 seconds</msg>
+<status status="PASS" starttime="20220529 22:34:03.605" endtime="20220529 22:34:03.606"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<var>${orig timeout}</var>
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<msg timestamp="20220529 22:34:03.617" level="INFO">${orig timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220529 22:34:03.607" endtime="20220529 22:34:03.617"/>
+</kw>
+<msg timestamp="20220529 22:34:03.618" level="INFO">${default speed} = 0 seconds</msg>
+<msg timestamp="20220529 22:34:03.618" level="INFO">${default timeout} = 5 seconds</msg>
+<status status="PASS" starttime="20220529 22:33:50.829" endtime="20220529 22:34:03.618"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default speed}</arg>
+<arg>0 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220529 22:34:03.619" endtime="20220529 22:34:03.620"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${default timeout}</arg>
+<arg>5 seconds</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220529 22:34:03.621" endtime="20220529 22:34:03.622"/>
+</kw>
+<status status="PASS" starttime="20220529 22:33:50.828" endtime="20220529 22:34:03.623"/>
+</kw>
+<test id="s1-t1" name="Should Find Text In Table Content" line="8">
+<kw name="Go To Page &quot;tables/tables.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:34:03.631" level="INFO">Opening url 'http://localhost:7000/html/tables/tables.html'</msg>
+<status status="PASS" starttime="20220529 22:34:03.630" endtime="20220529 22:34:03.832"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:03.628" endtime="20220529 22:34:03.833"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>simpleTable</arg>
+<arg>simpleTable_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:03.843" endtime="20220529 22:34:04.162"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id:simpleTable</arg>
+<arg>simpleTable_C3</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:04.164" endtime="20220529 22:34:04.303"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>css:#simpleWithNested</arg>
+<arg>simpleWithNested_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:04.305" endtime="20220529 22:34:04.549"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>simpleWithNested</arg>
+<arg>nestedTable_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:04.550" endtime="20220529 22:34:04.786"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>nestedTable</arg>
+<arg>nestedTable_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:04.789" endtime="20220529 22:34:04.928"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>nestedTable</arg>
+<arg>nestedTable_C3</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:04.929" endtime="20220529 22:34:05.069"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>tableWithSingleHeader</arg>
+<arg>tableWithSingleHeader_B1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:05.070" endtime="20220529 22:34:05.154"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>tableWithSingleHeader</arg>
+<arg>tableWithSingleHeader_B2</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:05.155" endtime="20220529 22:34:05.257"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>withHeadAndFoot</arg>
+<arg>withHeadAndFoot_AH1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:05.261" endtime="20220529 22:34:05.339"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>withHeadAndFoot</arg>
+<arg>withHeadAndFoot_B2</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:05.340" endtime="20220529 22:34:05.781"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>withHeadAndFoot</arg>
+<arg>withHeadAndFoot_CF1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:05.782" endtime="20220529 22:34:06.053"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>//*[@id="mergedRows"]</arg>
+<arg>mergedRows_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.054" endtime="20220529 22:34:06.124"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>mergedCols</arg>
+<arg>mergedCols_B2</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.126" endtime="20220529 22:34:06.202"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_A1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.203" endtime="20220529 22:34:06.288"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_B1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.289" endtime="20220529 22:34:06.385"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_C1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.386" endtime="20220529 22:34:06.480"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_D1</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.481" endtime="20220529 22:34:06.556"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_A2</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.557" endtime="20220529 22:34:06.658"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_B2</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.659" endtime="20220529 22:34:06.764"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>formattedTable_ÄÖÜäöüß</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.765" endtime="20220529 22:34:06.880"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>formattedTable</arg>
+<arg>äöü€&amp;äöü€&amp;</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="PASS" starttime="20220529 22:34:06.882" endtime="20220529 22:34:06.983"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:03.624" endtime="20220529 22:34:06.985"/>
+</test>
+<test id="s1-t2" name="Should Give Error Message When Content Not Found In Table" line="32">
+<kw name="Go To Page &quot;tables/tables.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:34:06.990" level="INFO">Opening url 'http://localhost:7000/html/tables/tables.html'</msg>
+<status status="PASS" starttime="20220529 22:34:06.990" endtime="20220529 22:34:07.102"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:06.989" endtime="20220529 22:34:07.103"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>Table 'simpleTable' did not contain text 'Not here'.</arg>
+<arg>Table Should Contain</arg>
+<arg>simpleTable</arg>
+<arg>Not here</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>simpleTable</arg>
+<arg>Not here</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<msg timestamp="20220529 22:34:07.513" level="FAIL">Table 'simpleTable' did not contain text 'Not here'.</msg>
+<status status="FAIL" starttime="20220529 22:34:07.106" endtime="20220529 22:34:07.517"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:07.104" endtime="20220529 22:34:07.517"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:06.987" endtime="20220529 22:34:07.518"/>
+</test>
+<test id="s1-t3" name="Should Give Error Message When Content Not Found In Table But Is In Table In Below" line="38">
+<kw name="Go To Page &quot;tables/tables.html&quot;" library="resource" type="SETUP" sourcename="Go To Page &quot;${relative url}&quot;">
+<doc>Goes to page</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ROOT}/${relative url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220529 22:34:07.529" level="INFO">Opening url 'http://localhost:7000/html/tables/tables.html'</msg>
+<status status="PASS" starttime="20220529 22:34:07.528" endtime="20220529 22:34:07.635"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:07.526" endtime="20220529 22:34:07.636"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>Table 'simpleTable' did not contain text 'impleTableName_C4'.</arg>
+<arg>Table Should Contain</arg>
+<arg>simpleTable</arg>
+<arg>impleTableName_C4</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>simpleTable</arg>
+<arg>impleTableName_C4</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<msg timestamp="20220529 22:34:08.064" level="FAIL">Table 'simpleTable' did not contain text 'impleTableName_C4'.</msg>
+<status status="FAIL" starttime="20220529 22:34:07.639" endtime="20220529 22:34:08.065"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:07.638" endtime="20220529 22:34:08.067"/>
+</kw>
+<status status="PASS" starttime="20220529 22:34:07.522" endtime="20220529 22:34:08.068"/>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220529 22:34:08.074" endtime="20220529 22:34:09.890"/>
+</kw>
+<status status="PASS" starttime="20220529 22:33:50.425" endtime="20220529 22:34:09.890"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Table Should Contain">Table Should Contain</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

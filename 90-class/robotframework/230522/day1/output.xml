@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20220530 19:44:12.302" rpa="false" schemaversion="3">
+<suite id="s1" name="02-Proj-01-Browser" source="C:\dev\z-work\tta-academy\class\robot-0530\day1\02-proj-01-browser.robot">
+<test id="s1-t1" name="TC1 - 브라우저 열기 (#1)" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.naver.com</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:44:12.694" level="INFO">Opening browser 'firefox' to base url 'https://www.naver.com'.</msg>
+<msg timestamp="20220530 19:44:12.696" level="INFO">Firefox driver log is always forced to to: C:\dev\z-work\tta-academy\class\robot-0530\day1\geckodriver-1.log</msg>
+<status status="PASS" starttime="20220530 19:44:12.693" endtime="20220530 19:44:21.024"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220530 19:44:21.025" endtime="20220530 19:44:22.788"/>
+</kw>
+<status status="PASS" starttime="20220530 19:44:12.689" endtime="20220530 19:44:22.788"/>
+</test>
+<test id="s1-t2" name="TC2 - 브라우저 열기 (chrome)" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.daum.net</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:44:22.794" level="INFO">Opening browser 'chrome' to base url 'https://www.daum.net'.</msg>
+<status status="PASS" starttime="20220530 19:44:22.794" endtime="20220530 19:44:27.402"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220530 19:44:27.403" endtime="20220530 19:44:29.791"/>
+</kw>
+<status status="PASS" starttime="20220530 19:44:22.791" endtime="20220530 19:44:29.791"/>
+</test>
+<test id="s1-t3" name="TC3 - 브라우저 열기 (chrome) - Go To" line="13">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.daum.net</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:44:29.796" level="INFO">Opening browser 'chrome' to base url 'https://www.daum.net'.</msg>
+<status status="PASS" starttime="20220530 19:44:29.796" endtime="20220530 19:44:34.286"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.naver.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:44:34.288" level="INFO">Opening url 'https://www.naver.com'</msg>
+<status status="PASS" starttime="20220530 19:44:34.287" endtime="20220530 19:44:35.862"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220530 19:44:35.863" endtime="20220530 19:44:37.896"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220530 19:44:37.896" endtime="20220530 19:44:40.318"/>
+</kw>
+<status status="PASS" starttime="20220530 19:44:29.793" endtime="20220530 19:44:40.319"/>
+</test>
+<test id="s1-t4" name="TC4 - 브라우저 열기 (chrome) - Multi" line="19">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.daum.net</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:44:40.323" level="INFO">Opening browser 'chrome' to base url 'https://www.daum.net'.</msg>
+<status status="PASS" starttime="20220530 19:44:40.323" endtime="20220530 19:44:44.453"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.naver.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:44:44.466" level="INFO">Opening url 'https://www.naver.com'</msg>
+<status status="PASS" starttime="20220530 19:44:44.466" endtime="20220530 19:44:45.853"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220530 19:44:45.854" endtime="20220530 19:44:47.854"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://dict.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:44:47.866" level="INFO">Opening url 'https://dict.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:44:47.866" endtime="20220530 19:44:48.968"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://news.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:44:48.969" level="INFO">Opening url 'https://news.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:44:48.969" endtime="20220530 19:44:50.432"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220530 19:44:50.432" endtime="20220530 19:44:52.759"/>
+</kw>
+<status status="PASS" starttime="20220530 19:44:40.321" endtime="20220530 19:44:52.760"/>
+</test>
+<test id="s1-t5" name="TC5 - 브라우저 열기 (chrome, ff)" line="27">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.daum.net</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:44:52.764" level="INFO">Opening browser 'chrome' to base url 'https://www.daum.net'.</msg>
+<status status="PASS" starttime="20220530 19:44:52.764" endtime="20220530 19:44:57.338"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.naver.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:44:57.340" level="INFO">Opening url 'https://www.naver.com'</msg>
+<status status="PASS" starttime="20220530 19:44:57.340" endtime="20220530 19:44:59.081"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220530 19:44:59.082" endtime="20220530 19:45:01.637"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://dict.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:45:01.638" level="INFO">Opening url 'https://dict.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:45:01.638" endtime="20220530 19:45:02.715"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://news.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:45:02.718" level="INFO">Opening url 'https://news.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:45:02.717" endtime="20220530 19:45:04.638"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://news.naver.com/</arg>
+<arg>ff</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220530 19:45:04.640" level="INFO">Opening browser 'ff' to base url 'https://news.naver.com/'.</msg>
+<msg timestamp="20220530 19:45:04.641" level="INFO">Firefox driver log is always forced to to: C:\dev\z-work\tta-academy\class\robot-0530\day1\geckodriver-2.log</msg>
+<status status="PASS" starttime="20220530 19:45:04.639" endtime="20220530 19:45:14.659"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.naver.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:45:14.754" level="INFO">Opening url 'https://www.naver.com'</msg>
+<status status="PASS" starttime="20220530 19:45:14.753" endtime="20220530 19:45:16.382"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220530 19:45:16.392" endtime="20220530 19:45:18.031"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://dict.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:45:18.044" level="INFO">Opening url 'https://dict.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:45:18.043" endtime="20220530 19:45:20.322"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://news.naver.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220530 19:45:20.324" level="INFO">Opening url 'https://news.naver.com/'</msg>
+<status status="PASS" starttime="20220530 19:45:20.324" endtime="20220530 19:45:21.408"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220530 19:45:21.410" endtime="20220530 19:45:27.101"/>
+</kw>
+<status status="PASS" starttime="20220530 19:44:52.762" endtime="20220530 19:45:27.103"/>
+</test>
+<status status="PASS" starttime="20220530 19:44:12.305" endtime="20220530 19:45:27.107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="02-Proj-01-Browser">02-Proj-01-Browser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

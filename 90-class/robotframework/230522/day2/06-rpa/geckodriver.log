@@ -1,0 +1,25 @@
+1592296833647	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "--disable-dev-shm-usage" "-foreground" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofile5gv4CT"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1592296841617	Marionette	INFO	Listening on port 3056
+1592296842028	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.h-bid.com/prebid/latest/prebid.js, line 25: TypeError: n is undefined
+1592296851778	Marionette	INFO	Stopped listening on port 3056
+1622418846702	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "--disable-dev-shm-usage" "-foreground" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofilegDVuzW"
+*** You are running in headless mode.
+1622418847812	Marionette	INFO	Marionette enabled
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622418850263	Marionette	INFO	Listening on port 4417
+1622418850467	Marionette	WARN	TLS certificate errors will be ignored for this session
+1622418877327	Marionette	INFO	Stopped listening on port 4417
+gram Files\\Mozilla Firefox\\firefox.exe" "-marionette" "--headless" "--disable-gpu" "--disable-dev-shm-usage" "-foreground" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileCFLZJl"
+*** You are running in headless mode.
+1622418867906	Marionette	INFO	Marionette enabled
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1622418870679	Marionette	INFO	Listening on port 4527
+1622418870899	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://cdn.snigelweb.com/pub/w3schools.com/20200508/snhb-w3schools.com.min.js?202105201225, line 129: TypeError: d.loadGlobalSettings is undefined
+1622418878769	Marionette	INFO	Stopped listening on port 4527
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\hcmoon\AppData\Local\Temp\rust_mozprofileCFLZJl\protections.sqlite

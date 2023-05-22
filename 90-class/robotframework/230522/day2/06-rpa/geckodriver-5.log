@@ -1,0 +1,16 @@
+1653908022081	geckodriver	INFO	Listening on 127.0.0.1:7093
+1653908025103	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileDw6bmw"
+1653908026500	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileDw6bmw\\search.json.mozlz4", (void 0)))
+1653908030821	Marionette	INFO	Listening on port 7123
+Read port: 7123
+1653908030919	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[Child 91332, MediaDecoderStateMachine #1] WARNING: 20eb1760570 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 91332, MediaDecoderStateMachine #2] WARNING: 20eadcdb230 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 91332, MediaDecoderStateMachine #6] WARNING: 20eaea71230 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 91332, MediaDecoderStateMachine #7] WARNING: 20eae315bd0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 91332, MediaDecoderStateMachine #9] WARNING: 20eadcdb340 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+1653912293923	Marionette	INFO	Stopped listening on port 7123
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
