@@ -1,25 +1,12 @@
 *** Settings ***
-Library    MouseControlLibrary.py
+Library    MouseKeyboardControlLibrary.py
 
 *** Test Cases ***
-Move Mouse To Init Position
-    Move To Init
-
-Move Mouse To Element
-    Move To Element
-
-Click Element
-    Click Element
-
-Click Init
-    Click Init
-    
-Double Click Element
-    Double Click Element
-
-Right Click Element
-    Right Click Element
-
-Scroll
-    No Operation
-    #Scroll    5
+Step1
+      Click Start Menu
+Step2
+      Open Firefox
+Step3
+      Maximize And Show Menu
+Step4
+      Click New Tab And Type Url
