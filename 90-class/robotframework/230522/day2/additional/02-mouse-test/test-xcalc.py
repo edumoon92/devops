@@ -9,7 +9,7 @@ time.sleep(0.5)  # Wait for the search results to appear
 pyautogui.press('enter')  # Press Enter to open xcalc
 
 # Wait for xcalc to open (you can adjust the sleep duration as needed)
-time.sleep(2)
+time.sleep(5)
 
 # Perform a simple calculation
 pyautogui.press('2')  # Press 2
