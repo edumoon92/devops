@@ -1,0 +1,21 @@
+1653981805396	geckodriver	INFO	Listening on 127.0.0.1:8164
+1653981808445	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileNo74ZF"
+1653981809601	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileNo74ZF\\search.json.mozlz4", (void 0)))
+1653981813883	Marionette	INFO	Listening on port 8197
+Read port: 8197
+1653981813995	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 68420, MediaDecoderStateMachine #1] WARNING: 23e74af0de0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+1653981828087	Marionette	INFO	Stopped listening on port 8197
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Msg_DestroyBrowsingContextGroup) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Msg_DestroyBrowsingContextGroup) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

@@ -1,0 +1,17 @@
+1653830829710	geckodriver	INFO	Listening on 127.0.0.1:6148
+1653830832759	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "6149" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileigf20v"
+1653830834019	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileigf20v\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:6149/devtools/browser/720e7466-36f5-41bb-9bca-f3be0249ea74
+1653830839784	Marionette	INFO	Listening on port 6175
+Read port: 6175
+1653830839909	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://localhost:7000/html/javascript/jquery.js, line 3579: unreachable code after return statement
+JavaScript warning: http://localhost:7000/html/javascript/jquery.js, line 3579: unreachable code after return statement
+JavaScript warning: http://localhost:7000/html/javascript/jquery.js, line 3579: unreachable code after return statement
+JavaScript warning: http://localhost:7000/html/javascript/jquery.js, line 3579: unreachable code after return statement
+JavaScript warning: http://localhost:7000/html/javascript/jquery.js, line 3579: unreachable code after return statement
+1653830847453	Marionette	INFO	Stopped listening on port 6175
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.10 on win32)" generated="20220530 20:02:04.089" rpa="true" schemaversion="3">
+<suite id="s1" name="007-Rpa-Pdf-01" source="C:\dev\z-work\tta-academy\class\robot-0530\day2\06-rpa\007-rpa-pdf-01.robot">
+<test id="s1-t1" name="Fill Form" line="5">
+<kw name="Open Pdf" library="RPA.PDF">
+<arg>./sample.pdf</arg>
+<doc>Open a PDF document for reading.</doc>
+<msg timestamp="20220530 20:02:04.395" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'sample.pdf'</msg>
+<status status="FAIL" starttime="20220530 20:02:04.392" endtime="20220530 20:02:04.397"/>
+</kw>
+<kw name="Set Field Value" library="RPA.PDF">
+<arg>phone_nr</arg>
+<arg>080123123</arg>
+<doc>Set value for field with given name on the active document.</doc>
+<status status="NOT RUN" starttime="20220530 20:02:04.397" endtime="20220530 20:02:04.397"/>
+</kw>
+<kw name="Set Field Value" library="RPA.PDF">
+<arg>address</arg>
+<arg>robot street 14</arg>
+<doc>Set value for field with given name on the active document.</doc>
+<status status="NOT RUN" starttime="20220530 20:02:04.398" endtime="20220530 20:02:04.398"/>
+</kw>
+<kw name="Save Field Values" library="RPA.PDF">
+<arg>output_path=output.pdf</arg>
+<doc>Save field values in PDF if it has fields.</doc>
+<status status="NOT RUN" starttime="20220530 20:02:04.398" endtime="20220530 20:02:04.399"/>
+</kw>
+<status status="FAIL" starttime="20220530 20:02:04.390" endtime="20220530 20:02:04.400">FileNotFoundError: [Errno 2] No such file or directory: 'sample.pdf'</status>
+</test>
+<status status="FAIL" starttime="20220530 20:02:04.092" endtime="20220530 20:02:04.404"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="007-Rpa-Pdf-01">007-Rpa-Pdf-01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

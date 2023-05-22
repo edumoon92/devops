@@ -1,0 +1,28 @@
+1653983355793	geckodriver	INFO	Listening on 127.0.0.1:11120
+1653983358944	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofile1nY0FC"
+1653983361755	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofile1nY0FC\\search.json.mozlz4", (void 0)))
+1653983371006	Marionette	INFO	Listening on port 11161
+Read port: 11161
+1653983371128	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 18476, MediaDecoderStateMachine #1] WARNING: 1798a1f6de0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript warning: http://www.cgv.co.kr/movies/detail-view/?midx=84775, line 2576: unreachable code after return statement
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 74660, MediaDecoderStateMachine #1] WARNING: 238f1b2ccd0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript warning: http://www.cgv.co.kr/movies/detail-view/?midx=84785, line 2534: unreachable code after return statement
+[Parent 71940, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 63968, MediaDecoderStateMachine #1] WARNING: 24e8f1a9cd0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+1653983429467	Marionette	INFO	Stopped listening on port 11161
+[Parent 71940, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:725
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

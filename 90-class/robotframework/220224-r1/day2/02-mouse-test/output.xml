@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20230224 16:26:54.891" rpa="false" schemaversion="3">
+<suite id="s1" name="MouseAuto" source="/home/henry/robot/mouse-test/MouseAuto.robot">
+<test id="s1-t1" name="Move Mouse To Init Position" line="5">
+<kw name="Move To Init" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:54.977" endtime="20230224 16:26:55.081"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:54.976" endtime="20230224 16:26:55.082"/>
+</test>
+<test id="s1-t2" name="Move Mouse To Element" line="8">
+<kw name="Move To Element" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:55.083" endtime="20230224 16:26:55.188"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:55.082" endtime="20230224 16:26:55.188"/>
+</test>
+<test id="s1-t3" name="Click Element" line="11">
+<kw name="Click Element" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:55.189" endtime="20230224 16:26:55.301"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:55.189" endtime="20230224 16:26:55.301"/>
+</test>
+<test id="s1-t4" name="Click Init" line="14">
+<kw name="Click Init" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:55.302" endtime="20230224 16:26:55.406"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:55.302" endtime="20230224 16:26:55.406"/>
+</test>
+<test id="s1-t5" name="Double Click Element" line="17">
+<kw name="Double Click Element" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:55.407" endtime="20230224 16:26:55.724"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:55.407" endtime="20230224 16:26:55.726"/>
+</test>
+<test id="s1-t6" name="Right Click Element" line="20">
+<kw name="Right Click Element" library="MouseControlLibrary">
+<status status="PASS" starttime="20230224 16:26:55.729" endtime="20230224 16:26:56.050"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:55.727" endtime="20230224 16:26:56.050"/>
+</test>
+<test id="s1-t7" name="Scroll" line="23">
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" starttime="20230224 16:26:56.051" endtime="20230224 16:26:56.051"/>
+</kw>
+<status status="PASS" starttime="20230224 16:26:56.051" endtime="20230224 16:26:56.052"/>
+</test>
+<status status="PASS" starttime="20230224 16:26:54.892" endtime="20230224 16:26:56.052"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="MouseAuto">MouseAuto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

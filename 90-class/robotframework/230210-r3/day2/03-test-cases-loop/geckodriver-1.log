@@ -1,0 +1,15 @@
+1653981492031	geckodriver	INFO	Listening on 127.0.0.1:7318
+1653981495025	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileluLU4O"
+1653981496141	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hcmoon\\AppData\\Local\\Temp\\rust_mozprofileluLU4O\\search.json.mozlz4", (void 0)))
+1653981499549	Marionette	INFO	Listening on port 7350
+Read port: 7350
+1653981499645	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://img.cgv.co.kr/R2014/js/app.utils.js, line 910: unreachable code after return statement
+JavaScript error: https://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/main@TopBar_EX, line 18: SyntaxError: "" string literal contains an unescaped line break
+[Child 70112, MediaDecoderStateMachine #1] WARNING: 22f30c0c130 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+1653981506924	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:235:19
+TimedPromise@chrome://remote/content/marionette/sync.js:220:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
