@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 # Open xcalc (replace with your calculator application if necessary)
-pyautogui.press('alt')  # Press Alt key to open the application menu
+pyautogui.press('win')  # Press Alt key to open the application menu
 time.sleep(0.5)  # Wait for the menu to open
 pyautogui.typewrite('xcalc')  # Type 'xcalc' to search for the calculator
 time.sleep(0.5)  # Wait for the search results to appear
