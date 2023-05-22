@@ -9,7 +9,7 @@ time.sleep(0.5)  # Wait for the search results to appear
 pyautogui.press('enter')  # Press Enter to open xcalc
 
 # Wait for xcalc to open (you can adjust the sleep duration as needed)
-time.sleep(5)
+time.sleep(10)
 
 # Perform a simple calculation
 pyautogui.press('2')  # Press 2
@@ -17,6 +17,7 @@ pyautogui.press('+')  # Press +
 pyautogui.press('3')  # Press 3
 pyautogui.press('=')  # Press = to perform the calculation
 
+time.sleep(11)
 # Get the result
 result_location = pyautogui.locateOnScreen('result.png')  # Replace 'result.png' with the actual image of the result
 if result_location is not None:
