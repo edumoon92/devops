@@ -4,6 +4,12 @@ import time
 
 subprocess.Popen(['xcalc'])  # Replace with the appropriate command to open xcalc
 
+ # Replace with the appropriate command to open xdotool windows_id
+cmd = ['xdotool', 'getwindowgeometry', str(33554539)]
+result = subprocess.run(cmd, capture_output=True, text=True)
+output = result.stdout
+Print(output)
+
 # Wait for xcalc to open (you can adjust the sleep duration as needed)
 time.sleep(1)
 
