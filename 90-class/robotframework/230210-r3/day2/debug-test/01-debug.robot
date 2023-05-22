@@ -1,3 +1,6 @@
+*** Settings ***
+Library    Debug
+
 *** Test Cases ***
 Example Test
     Log    This is the first step
