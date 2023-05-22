@@ -21,6 +21,11 @@ pyautogui.press('3')  # Press 3
 pyautogui.press('=')  # Press = to perform the calculation
 
 time.sleep(3)
+
+im1 = pyautogui.screenshot()
+im2 = pyautogui.screenshot('my_screenshot.png')
+im3 = pyautogui.screenshot('my_region.png', region=(0, 0, 300, 300))
+
 # Get the result
 result_location = pyautogui.locateOnScreen('result.png')  # Replace 'result.png' with the actual image of the result
 if result_location is not None:
