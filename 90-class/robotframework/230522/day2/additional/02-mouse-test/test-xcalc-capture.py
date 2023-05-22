@@ -16,7 +16,7 @@ pyautogui.press('=')  # Press = to perform the calculation
 time.sleep(3)
 
 #im2 = pyautogui.screenshot('my_screenshot.png')
-im3 = pyautogui.screenshot('result.png', region=(0, 0, 300, 300))
+im3 = pyautogui.screenshot('result.png', region=(0, 0, 50, 100))
 
 # Close xcalc
 pyautogui.hotkey('alt', 'f4')  # Press Alt+F4 to close the application
