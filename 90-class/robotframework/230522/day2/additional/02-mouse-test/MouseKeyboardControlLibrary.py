@@ -4,7 +4,7 @@ import pyautogui as gui, time
 class MouseKeyboardControlLibrary(object):
     def click_start_menu(self):
       screenWidth, screenHeight = gui.size()
-      gui.moveTo(0,screenHeight)
+      gui.moveTo(0,screenHeight-5)
       gui.click()
 
     def open_firefox(self):
