@@ -24,10 +24,8 @@ time.sleep(3)
 # Get the result
 result_location = pyautogui.locateOnScreen('result.png')  # Replace 'result.png' with the actual image of the result
 if result_location is not None:
-    result_center = pyautogui.center(result_location)
-    pyautogui.click(result_center)  # Click on the result to select it
-    selected_text = pyautogui.hotkey('ctrl', 'c')  # Copy the selected text to the clipboard
-    print("Result:", selected_text)
+    #result_center = pyautogui.center(result_location)
+    pyautogui.click(result_location) # Click on the result to select it
 else:
     print("Result not found.")
 
