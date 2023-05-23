@@ -37,4 +37,6 @@ ride
 ```
 ![ride](https://user-images.githubusercontent.com/106457765/170911931-6971295c-b5a7-4542-be68-4fe1a3afafd1.png)
 
+## XPATH & CSS Selector
+- https://www.lambdatest.com/blog/xpath-vs-css-selectors/
 
