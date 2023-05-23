@@ -39,4 +39,5 @@ ride
 
 ## XPATH & CSS Selector
 - https://www.lambdatest.com/blog/xpath-vs-css-selectors/
+- https://saucelabs.com/resources/blog/selenium-tips-css-selectors
 
