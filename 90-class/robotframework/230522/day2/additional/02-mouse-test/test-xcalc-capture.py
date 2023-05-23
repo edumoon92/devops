@@ -5,9 +5,6 @@ import time
 # Replace with the appropriate command to open xcalc
 subprocess.Popen(['xcalc'])  
 
- # Replace with the appropriate command to open xdotool windows_id
-subprocess.Popen(['xdotool', 'getwindowgeometry', str(33554539)])  
-
 # Wait for xcalc to open (you can adjust the sleep duration as needed)
 time.sleep(1)
 
