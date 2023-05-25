@@ -4,3 +4,4 @@ services:
     image: python:3.11
     stdin_open: true
     tty: true
+    command: bash -c "while true; do sleep 1; done"
