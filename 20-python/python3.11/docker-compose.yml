@@ -3,3 +3,5 @@ services:
   myapp:
     image: python:3.11
     command: bash
+    stdin_open: true
+    tty: true
