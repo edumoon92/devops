@@ -3,3 +3,6 @@
 
 # Getting Started
 - https://www.softwaretestinghelp.com/getting-started-with-robot-framework-ride/
+
+# RobotDemo
+- https://smartbear.com/blog/how-to-get-started-with-robot-framework/
