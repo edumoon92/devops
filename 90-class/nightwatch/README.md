@@ -25,3 +25,6 @@ Functional test script with mocha JavaScript and selenium web driver
 
 API Automation Testing Full Course | JavaScript API Automation
 - https://www.youtube.com/watch?v=yuRCVJAuhfA&t=6466s
+
+
+https://languagestory.tistory.com/154 (ubuntu + jdk install)
