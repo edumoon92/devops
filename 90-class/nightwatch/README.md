@@ -31,6 +31,7 @@ https://languagestory.tistory.com/154 (ubuntu + jdk install)
 https://i5i5.tistory.com/949 (android sdk)
 
 
+
 # JAVA and ANDROID
 ```
 sudo apt update
@@ -55,3 +56,9 @@ sudo vi /etc/envrionment
 ```
 ANDROID_HOME="/usr/lib/android-sdk"
 ```
+
+## android phone
+1. 개발자옵션 활성화 (소프웨어정보 7번이상 탭)
+2. 개발자옵션 usb debugging enable
+3. adb devices
+4. (virtual box) USB 추가 설정 
