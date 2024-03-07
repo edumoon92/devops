@@ -29,3 +29,29 @@ API Automation Testing Full Course | JavaScript API Automation
 
 https://languagestory.tistory.com/154 (ubuntu + jdk install)
 https://i5i5.tistory.com/949 (android sdk)
+
+
+# JAVA and ANDROID
+```
+sudo apt update
+sudo apt install openjdk-17-jdk
+sudo vi /etc/environment
+```
+
+```
+JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+```
+
+## ANDROID SDK
+```
+sudo apt update
+sudo apt install android-sdk
+```
+
+env
+```
+sudo vi /etc/envrionment
+```
+```
+ANDROID_SDK=""
+```
