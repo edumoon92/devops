@@ -53,5 +53,5 @@ env
 sudo vi /etc/envrionment
 ```
 ```
-ANDROID_SDK=""
+ANDROID_HOME="/usr/lib/android-sdk"
 ```
