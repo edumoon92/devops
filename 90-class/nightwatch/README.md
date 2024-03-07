@@ -28,3 +28,4 @@ API Automation Testing Full Course | JavaScript API Automation
 
 
 https://languagestory.tistory.com/154 (ubuntu + jdk install)
+https://i5i5.tistory.com/949 (android sdk)
